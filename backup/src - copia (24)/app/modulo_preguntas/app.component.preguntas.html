@@ -1,0 +1,252 @@
+  <form #f="ngForm" novalidate>
+    <div *ngFor="let cuestionario of cuestionarios; let i = index">
+      <br>
+      <h5>{{cuestionario.idPregunta.pregunta}}</h5>             
+       
+      <div *ngIf="cuestionario.idPregunta.id==1" class="btn-group">
+        <select name="resp1" [(ngModel)]="cuesto.resp1" >
+          <option [value]="cuestionario.idRespuesta1.id" *ngIf="cuestionario.idRespuesta1.id!=1">
+          {{cuestionario.idRespuesta1.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta2.id" *ngIf="cuestionario.idRespuesta2.id!=1">
+          {{cuestionario.idRespuesta2.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta3.id" *ngIf="cuestionario.idRespuesta3.id!=1">
+          {{cuestionario.idRespuesta3.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta4.id" *ngIf="cuestionario.idRespuesta4.id!=1">
+          {{cuestionario.idRespuesta4.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta5.id" *ngIf="cuestionario.idRespuesta5.id!=1">
+          {{cuestionario.idRespuesta5.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta6.id" *ngIf="cuestionario.idRespuesta6.id!=1">
+          {{cuestionario.idRespuesta6.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta7.id" *ngIf="cuestionario.idRespuesta7.id!=1">
+          {{cuestionario.idRespuesta7.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta8.id" *ngIf="cuestionario.idRespuesta8.id!=1">
+          {{cuestionario.idRespuesta8.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta9.id" *ngIf="cuestionario.idRespuesta9.id!=1">
+          {{cuestionario.idRespuesta9.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta10.id" *ngIf="cuestionario.idRespuesta10.id!=1">
+          {{cuestionario.idRespuesta10.respuesta}}</option>
+        </select>        
+      </div>
+
+      <div *ngIf="cuestionario.idPregunta.id==2" class="btn-group">          
+        <select name="resp2" [(ngModel)]="cuesto.resp2">
+          <option [value]="cuestionario.idRespuesta1.id" *ngIf="cuestionario.idRespuesta1.id!=1">
+          {{cuestionario.idRespuesta1.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta2.id" *ngIf="cuestionario.idRespuesta2.id!=1">
+          {{cuestionario.idRespuesta2.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta3.id" *ngIf="cuestionario.idRespuesta3.id!=1">
+          {{cuestionario.idRespuesta3.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta4.id" *ngIf="cuestionario.idRespuesta4.id!=1">
+          {{cuestionario.idRespuesta4.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta5.id" *ngIf="cuestionario.idRespuesta5.id!=1">
+          {{cuestionario.idRespuesta5.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta6.id" *ngIf="cuestionario.idRespuesta6.id!=1">
+          {{cuestionario.idRespuesta6.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta7.id" *ngIf="cuestionario.idRespuesta7.id!=1">
+          {{cuestionario.idRespuesta7.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta8.id" *ngIf="cuestionario.idRespuesta8.id!=1">
+          {{cuestionario.idRespuesta8.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta9.id" *ngIf="cuestionario.idRespuesta9.id!=1">
+          {{cuestionario.idRespuesta9.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta10.id" *ngIf="cuestionario.idRespuesta10.id!=1">
+          {{cuestionario.idRespuesta10.respuesta}}</option>
+        </select>        
+      </div>
+
+      <div *ngIf="cuestionario.idPregunta.id==3" class="btn-group">
+        <select name="resp3" [(ngModel)]="cuesto.resp3">
+          <option [value]="cuestionario.idRespuesta1.id" *ngIf="cuestionario.idRespuesta1.id!=1">
+          {{cuestionario.idRespuesta1.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta2.id" *ngIf="cuestionario.idRespuesta2.id!=1">
+          {{cuestionario.idRespuesta2.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta3.id" *ngIf="cuestionario.idRespuesta3.id!=1">
+          {{cuestionario.idRespuesta3.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta4.id" *ngIf="cuestionario.idRespuesta4.id!=1">
+          {{cuestionario.idRespuesta4.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta5.id" *ngIf="cuestionario.idRespuesta5.id!=1">
+          {{cuestionario.idRespuesta5.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta6.id" *ngIf="cuestionario.idRespuesta6.id!=1">
+          {{cuestionario.idRespuesta6.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta7.id" *ngIf="cuestionario.idRespuesta7.id!=1">
+          {{cuestionario.idRespuesta7.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta8.id" *ngIf="cuestionario.idRespuesta8.id!=1">
+          {{cuestionario.idRespuesta8.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta9.id" *ngIf="cuestionario.idRespuesta9.id!=1">
+          {{cuestionario.idRespuesta9.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta10.id" *ngIf="cuestionario.idRespuesta10.id!=1">
+          {{cuestionario.idRespuesta10.respuesta}}</option>
+        </select>        
+      </div>
+
+      <div *ngIf="cuestionario.idPregunta.id==4" class="btn-group">
+        <select name="resp4" [(ngModel)]="cuesto.resp4">
+          <option [value]="cuestionario.idRespuesta1.id" *ngIf="cuestionario.idRespuesta1.id!=1">
+          {{cuestionario.idRespuesta1.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta2.id" *ngIf="cuestionario.idRespuesta2.id!=1">
+          {{cuestionario.idRespuesta2.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta3.id" *ngIf="cuestionario.idRespuesta3.id!=1">
+          {{cuestionario.idRespuesta3.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta4.id" *ngIf="cuestionario.idRespuesta4.id!=1">
+          {{cuestionario.idRespuesta4.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta5.id" *ngIf="cuestionario.idRespuesta5.id!=1">
+          {{cuestionario.idRespuesta5.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta6.id" *ngIf="cuestionario.idRespuesta6.id!=1">
+          {{cuestionario.idRespuesta6.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta7.id" *ngIf="cuestionario.idRespuesta7.id!=1">
+          {{cuestionario.idRespuesta7.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta8.id" *ngIf="cuestionario.idRespuesta8.id!=1">
+          {{cuestionario.idRespuesta8.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta9.id" *ngIf="cuestionario.idRespuesta9.id!=1">
+          {{cuestionario.idRespuesta9.respuesta}}</option>
+          <option [value]="cuestionario.idRespuesta10.id" *ngIf="cuestionario.idRespuesta10.id!=1">
+          {{cuestionario.idRespuesta10.respuesta}}</option>
+        </select>        
+      </div>
+
+      <div *ngIf="cuestionario.idPregunta.id==5" class="btn-group">
+        <select name="resp5" [(ngModel)]="cuesto.resp5">
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta1.id" *ngIf="cuestionario.idRespuesta1.id!=1">
+          {{cuestionario.idRespuesta1.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta2.id" *ngIf="cuestionario.idRespuesta2.id!=1">
+          {{cuestionario.idRespuesta2.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta3.id" *ngIf="cuestionario.idRespuesta3.id!=1">
+          {{cuestionario.idRespuesta3.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta4.id" *ngIf="cuestionario.idRespuesta4.id!=1">
+          {{cuestionario.idRespuesta4.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta5.id" *ngIf="cuestionario.idRespuesta5.id!=1">
+          {{cuestionario.idRespuesta5.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta6.id" *ngIf="cuestionario.idRespuesta6.id!=1">
+          {{cuestionario.idRespuesta6.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta7.id" *ngIf="cuestionario.idRespuesta7.id!=1">
+          {{cuestionario.idRespuesta7.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta8.id" *ngIf="cuestionario.idRespuesta8.id!=1">
+          {{cuestionario.idRespuesta8.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta9.id" *ngIf="cuestionario.idRespuesta9.id!=1">
+          {{cuestionario.idRespuesta9.respuesta}}</option>
+          <option (click)="onReset1()" [value]="cuestionario.idRespuesta10.id" *ngIf="cuestionario.idRespuesta10.id!=1">
+          {{cuestionario.idRespuesta10.respuesta}}</option>
+        </select>              
+       
+        <!--respuesta nivel2 INICIO-->
+        <div *ngIf="f.value['resp5']==cuestionario.idSubrespNivel11.id" align="right" >
+          <select  name="subresp11" [(ngModel)]="cuesto.subresp11" >
+            <option (click)="onReset2()" (click)="changeShowStatus1()" [value]="cuestionario.idSubrespNivel211.id" *ngIf="cuestionario.idSubrespNivel211.id!=1">
+            {{cuestionario.idSubrespNivel211.respuesta}}</option>
+            <option (click)="onReset2()" (click)="changeShowStatus2()" [value]="cuestionario.idSubrespNivel212.id" *ngIf="cuestionario.idSubrespNivel212.id!=1">
+            {{cuestionario.idSubrespNivel212.respuesta}}</option>
+          </select>  
+        </div> 
+                  <!--respuesta nivel3_1 INICIO-->
+                  <div *ngIf="showHide1 && cuestionario.idSubrespNivel3111.id!=1 && f.value['subresp11']" align="right" >
+                    <select  name="subresp12" [(ngModel)]="cuesto.subresp12" >
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3111.id" *ngIf="cuestionario.idSubrespNivel3111.id!=1">
+                      {{cuestionario.idSubrespNivel3111.respuesta}}</option>
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3112.id" *ngIf="cuestionario.idSubrespNivel3112.id!=1">
+                      {{cuestionario.idSubrespNivel3112.respuesta}}</option>
+                    </select>  
+                  </div> 
+
+
+                  <div *ngIf="showHide2 && cuestionario.idSubrespNivel3121.id!=1 && f.value['subresp11']" align="right" >
+                    <select  name="subresp12" [(ngModel)]="cuesto.subresp12" >
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3121.id" *ngIf="cuestionario.idSubrespNivel3121.id!=1">
+                      {{cuestionario.idSubrespNivel3121.respuesta}}</option>
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3122.id" *ngIf="cuestionario.idSubrespNivel3122.id!=1">
+                      {{cuestionario.idSubrespNivel3122.respuesta}}</option>
+                    </select>  
+                  </div>
+                  <!--respuesta nivel3_1 INICIO-->
+                
+
+        <!--<div *ngIf="f.value['resp5']==cuestionario.idSubrespNivel12.id" align="right">
+          <select  name="subresp11" [(ngModel)]="cuesto.subresp11">
+            <option (click)="onReset2()" [value]="cuestionario.idSubrespNivel221.id" *ngIf="cuestionario.idSubrespNivel221.id!=1">
+            {{cuestionario.idSubrespNivel221.respuesta}}</option>
+            <option (click)="onReset2()" [value]="cuestionario.idSubrespNivel222.id" *ngIf="cuestionario.idSubrespNivel222.id!=1">
+            {{cuestionario.idSubrespNivel222.respuesta}}</option>
+          </select>        
+        </div>-->
+          
+          
+          
+
+
+
+        
+                  <!--respuesta nivel3_2 INICIO
+                  <div *ngIf="f.value['subresp11']==cuestionario.idSubrespNivel3221.id && cuesto.subresp11 && f.value['resp5']==cuestionario.idSubrespNivel12.id" align="right" >
+                    <select  name="subresp12" [(ngModel)]="cuesto.subresp12" >
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3211.id" *ngIf="cuestionario.idSubrespNivel3211.id!=1">
+                      {{cuestionario.idSubrespNivel3111.respuesta}}</option>
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3212.id" *ngIf="cuestionario.idSubrespNivel3212.id!=1">
+                      {{cuestionario.idSubrespNivel3112.respuesta}}</option>
+                    </select>  
+                  </div>
+
+                  <div *ngIf="f.value['subresp11']==cuestionario.idSubrespNivel3212.id!=1 && cuesto.subresp11 && f.value['resp5']==cuestionario.idSubrespNivel12.id" align="right" >
+                    <select  name="subresp12" [(ngModel)]="cuesto.subresp12" >
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3221.id" *ngIf="cuestionario.idSubrespNivel3221.id!=1">
+                      {{cuestionario.idSubrespNivel3121.respuesta}}</option>
+                      <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel3222.id" *ngIf="cuestionario.idSubrespNivel3222.id!=1">
+                      {{cuestionario.idSubrespNivel3122.respuesta}}</option>
+                    </select>  
+                  </div>   
+                  respuesta nivel3_2 FIN-->
+        
+        
+        <!--subrespuesta nivel1 FIN-->
+    
+      </div><!--respuesta 5 FIN-->
+
+  </div><!--fin ngFor-->
+  
+  </form>
+        
+  <pre>Valores enviados: <br>{{f.value | json}}</pre>
+  <button type="submit" (click)="OnSubmit(f.value)" (click)="goHome(f.value['resp1'],f.value['resp2'],f.value['resp3'],f.value['resp4'],f.value['resp5'],f.value['subresp11'],f.value['subresp12'],f.value['subresp13'])" class="btn btn-default">Enviar</button>
+
+
+
+  <!--respuesta nivel3_1 FIN-->
+
+
+                        <!--respuesta nivel4_1_1 INICIO-->
+                        <!--<div *ngIf="cuesto.subresp12 && cuestionario.idSubrespNivel41111.id!=1" align="right" >
+                          <select  name="subresp13" [(ngModel)]="cuesto.subresp13" >
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41111.id" *ngIf="cuestionario.idSubrespNivel41111.id!=1">
+                            {{cuestionario.idSubrespNivel41111.respuesta}}</option>
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41112.id" *ngIf="cuestionario.idSubrespNivel41112.id!=1">
+                            {{cuestionario.idSubrespNivel41112.respuesta}}</option>
+                          </select>  
+                        </div>
+                        <div *ngIf="cuesto.subresp12 && cuestionario.idSubrespNivel41121.id!=1" align="right" >
+                          <select  name="subresp13" [(ngModel)]="cuesto.subresp13" >
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41121.id" *ngIf="cuestionario.idSubrespNivel41121.id!=1">
+                            {{cuestionario.idSubrespNivel41121.respuesta}}</option>
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41122.id" *ngIf="cuestionario.idSubrespNivel41122.id!=1">
+                            {{cuestionario.idSubrespNivel41122.respuesta}}</option>
+                          </select>  
+                        </div>   
+                        respuesta nivel4_1_1 FIN
+ 
+
+                        respuesta nivel4_1_1 INICIO
+                        <div *ngIf="f.value['subresp12']==cuestionario.idSubrespNivel3111.id && cuesto.subresp12 && f.value['resp5']==cuestionario.idSubrespNivel11.id" align="right" >
+                          <select  name="subresp13" [(ngModel)]="cuesto.subresp13" >
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41111.id" *ngIf="cuestionario.idSubrespNivel41111.id!=1">
+                            {{cuestionario.idSubrespNivel41111.respuesta}}</option>
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41112.id" *ngIf="cuestionario.idSubrespNivel41112.id!=1">
+                            {{cuestionario.idSubrespNivel41112.respuesta}}</option>
+                          </select>  
+                        </div>
+
+                        <div *ngIf="f.value['subresp12']==cuestionario.idSubrespNivel3112.id!=1 && cuesto.subresp12 && f.value['resp5']==cuestionario.idSubrespNivel11.id" align="right" >
+                          <select  name="subresp13" [(ngModel)]="cuesto.subresp13" >
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41121.id" *ngIf="cuestionario.idSubrespNivel41121.id!=1">
+                            {{cuestionario.idSubrespNivel41121.respuesta}}</option>
+                            <option (click)="onReset3()" [value]="cuestionario.idSubrespNivel41122.id" *ngIf="cuestionario.idSubrespNivel41122.id!=1">
+                            {{cuestionario.idSubrespNivel41122.respuesta}}</option>
+                          </select>  
+                        </div>   
+                        respuesta nivel4_1_1 FIN-->
+ 

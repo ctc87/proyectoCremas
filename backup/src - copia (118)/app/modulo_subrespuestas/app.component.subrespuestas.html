@@ -1,0 +1,92 @@
+
+<div class="box" *ngIf="showHide11"> 
+  <app-subrespuesta-nivel2
+  [IdCuestionarioNivel211]=IdCuestionarioNivel211       
+  [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+  [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+  [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+  [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>
+  </app-subrespuesta-nivel2>
+</div>
+<div class="box" *ngIf="showHide12"> 
+  <app-subrespuesta-nivel2
+  [IdCuestionarioNivel212]=IdCuestionarioNivel212
+  [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+  [IdCuestionarioNivel3122]=IdCuestionarioNivel3122  
+  [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+  [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>
+  </app-subrespuesta-nivel2>
+</div>
+
+<div class="box" *ngIf="showHide21"> 
+  <app-subrespuesta-nivel2
+  [IdCuestionarioNivel221]=IdCuestionarioNivel221
+  [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+  [IdCuestionarioNivel3212]=IdCuestionarioNivel3212>
+  </app-subrespuesta-nivel2>
+</div>
+
+<div class="box" *ngIf="showHide22"> 
+  <app-subrespuesta-nivel2
+  [IdCuestionarioNivel222]=IdCuestionarioNivel222
+  [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+  [IdCuestionarioNivel3222]=IdCuestionarioNivel3222>
+  </app-subrespuesta-nivel2>
+</div>
+<form [formGroup]="radioGroupForm">
+  <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+  
+    <div class="btn-group" *ngIf="IdCuestionarioNivel11==Respuesta">   
+        <label ngbButtonLabel class="btn-primary" *ngIf="IdCuestionarioNivel211">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel211;else elseClick">       
+            <input ngbButton type="radio" [value]="1" ngbButton (click)="changeShowStatus11()">
+            <!--(click)="showHide11 = !showHide11"> -->
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="1"> 
+          </ng-template>            
+          {{IdCuestionarioNivel211}}
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="IdCuestionarioNivel212">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel212;else elseClick">       
+              <input ngbButton type="radio" [value]="2" ngbButton (click)="changeShowStatus12()">
+              <!--(click)="showHide12 = !showHide12"> -->
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="2"> 
+          </ng-template>   
+          {{IdCuestionarioNivel212}}       
+        </label>
+    </div>
+    
+    <div class="btn-group" *ngIf="IdCuestionarioNivel12==Respuesta"> 
+      <label ngbButtonLabel class="btn-primary" *ngIf="IdCuestionarioNivel221">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel221;else elseClick">       
+          <input ngbButton type="radio" [value]="1" ngbButton (click)="changeShowStatus21()">
+          <!--(click)="showHide21 = !showHide21"> -->
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="1"> 
+        </ng-template>
+        {{IdCuestionarioNivel221}}  
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="IdCuestionarioNivel222">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel222;else elseClick">       
+            <input ngbButton type="radio" [value]="2" ngbButton (click)="changeShowStatus22()">
+            <!--(click)="showHide22 = !showHide22"> -->
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="2"> 
+        </ng-template>            
+        {{IdCuestionarioNivel222}}
+      </label>
+  </div>
+  </div>    
+</form>     
+    
+<!--
+<div *ngIf="radioGroupForm.value['model'] ==0">
+<div [ngStyle]="{'color': 'red'}">No ha seleccionado una opcion.</div>
+</div><pre>{{radioGroupForm.value['model']}}</pre>-->

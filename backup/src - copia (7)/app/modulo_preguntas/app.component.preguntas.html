@@ -1,0 +1,103 @@
+<br> 
+
+  <ngb-alert [dismissible]="false" type="light">
+    <strong><h4>CUESTIONARIO</h4></strong>
+  </ngb-alert>
+
+<ul>
+  <!--  
+  <ngb-tabset type="pills" orientation="vertical">
+    <ngb-tab >
+      <ng-template ngbTabTitle><b>4</b>
+      </ng-template>
+       
+      <ng-template ngbTabContent>
+        <p>Raw deni</p>
+      </ng-template>    
+    </ngb-tab>    
+
+    <ngb-tab>
+      <ng-template ngbTabTitle><b>Fancy</b>
+      </ng-template>
+      
+      <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+        <p>Exercitatio</p>
+      </ng-template>
+    </ngb-tab> 
+  </ngb-tabset>
+-->
+
+<!--
+  <ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1" title="1">
+      <ng-template ngbPanelContent>
+        Anim 
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel id="static-2" title="2">   
+      <ng-template ngbPanelContent>
+        Anim 
+      </ng-template>
+    </ngb-panel>
+
+  </ngb-accordion>-->  
+  
+<form>       
+<!--For con Paginador 
+<div *ngFor="let cuestionario of cuestionarios | paginate: { itemsPerPage: 4, currentPage: p }">
+For sin Paginador --> 
+<div *ngFor="let cuestionario of cuestionarios" >
+    
+  <ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="cuestionario.id" title={{cuestionario.idPregunta.pregunta}}>
+      <ng-template ngbPanelContent >
+       
+  <div *ngIf ="cuestionario.idPregunta.respuestasMulti==0" >      
+    <app-respuesta-unica 
+    [respuestaUni1] =cuestionario.idRespuesta1.respuesta
+    [respuestaUni2] =cuestionario.idRespuesta2.respuesta
+    [respuestaUni3] =cuestionario.idRespuesta3.respuesta
+    [respuestaUni4] =cuestionario.idRespuesta4.respuesta
+    [respuestaUni5] =cuestionario.idRespuesta5.respuesta
+    [respuestaUni6] =cuestionario.idRespuesta6.respuesta
+    [respuestaUni7] =cuestionario.idRespuesta7.respuesta
+    [respuestaUni8] =cuestionario.idRespuesta8.respuesta
+    [respuestaUni9] =cuestionario.idRespuesta9.respuesta
+    [respuestaUni10] =cuestionario.idRespuesta10.respuesta
+    
+    ></app-respuesta-unica>
+  </div>
+
+  <div *ngIf ="cuestionario.idPregunta.respuestasMulti==1" >      
+    <app-respuesta-multi
+    [respuestaMulti1] =cuestionario.idRespuesta1.respuesta
+    [respuestaMulti2] =cuestionario.idRespuesta2.respuesta
+    [respuestaMulti3] =cuestionario.idRespuesta3.respuesta
+    [respuestaMulti4] =cuestionario.idRespuesta4.respuesta
+    [respuestaMulti5] =cuestionario.idRespuesta5.respuesta
+    [respuestaMulti6] =cuestionario.idRespuesta6.respuesta
+    [respuestaMulti7] =cuestionario.idRespuesta7.respuesta
+    [respuestaMulti8] =cuestionario.idRespuesta8.respuesta
+    [respuestaMulti9] =cuestionario.idRespuesta9.respuesta
+    [respuestaMulti10] =cuestionario.idRespuesta10.respuesta
+    ></app-respuesta-multi>
+  </div>
+
+</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+
+
+
+</div>
+<br>
+
+<app-popup></app-popup>
+<!--Paginador inicio
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+Paginador fin-->
+</form>
+
+</ul>

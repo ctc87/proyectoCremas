@@ -1,0 +1,459 @@
+<div *ngIf="RespuestaMulti==0">
+ 
+  <form  [formGroup]="radioGroupForm">
+    <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+    
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta1==IdCuestionarioNivel11||Respuesta1==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="1" (click)="changeShowStatus1()" (click)= "sendNotification(1)" >
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="1" (click)="cerrarTodos()" (click)= "sendNotification(1)"> 
+          </ng-template>            
+          {{Respuesta1}}    
+        </label> 
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta2==IdCuestionarioNivel11||Respuesta2==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="2" (click)="changeShowStatus2()" (click)= "sendNotification(2)"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="2" (click)="cerrarTodos()" (click)= "sendNotification(2)"> 
+          </ng-template>            
+          {{Respuesta2}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta3==IdCuestionarioNivel11||Respuesta3==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="3" (click)="changeShowStatus3()"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="3" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta3}}          
+        </label>
+       
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta4==IdCuestionarioNivel11||Respuesta4==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="4" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="4" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta4}}          
+        </label>
+     
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta5==IdCuestionarioNivel11||Respuesta5==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="5" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="5" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta5}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta6==IdCuestionarioNivel11||Respuesta6==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="6" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="6" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta6}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta7==IdCuestionarioNivel11||Respuesta7==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="7" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="7" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta7}} 
+        </label>
+          
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta8==IdCuestionarioNivel11||Respuesta8==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="8" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="8" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta8}}          
+        </label> 
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta9==IdCuestionarioNivel11||Respuesta9==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="9" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="9" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta9}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta10==IdCuestionarioNivel11||Respuesta10==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="10" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="10" (click)="cerrarTodos()"> 
+          </ng-template>            
+          {{Respuesta10}}          
+        </label>
+        
+    </div>
+
+  </form>
+  
+  <pre>{{radioGroupForm.value['model']}}</pre>
+  
+  </div>  
+
+<!--  .......................................................   
+                      MULTI RESPUESTAS
+      ....................................................... -->
+
+  <div *ngIf="RespuestaMulti==1">
+  
+    <div class="box" *ngIf="showHide1">  
+      
+      <app-subrespuesta
+      [Respuesta]=Respuesta1
+      [IdCuestionarioNivel11]=IdCuestionarioNivel11
+      [IdCuestionarioNivel12]=IdCuestionarioNivel12
+      [IdCuestionarioNivel211]=IdCuestionarioNivel211
+      [IdCuestionarioNivel212]=IdCuestionarioNivel212          
+      [IdCuestionarioNivel221]=IdCuestionarioNivel221
+      [IdCuestionarioNivel222]=IdCuestionarioNivel222      
+      [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+      [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+      [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+      [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+      [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+      [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+      [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+      [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+      [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+      [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>
+      </app-subrespuesta>        
+    </div> 
+  
+    <div class="box" *ngIf="showHide2">  
+      <app-subrespuesta
+      [Respuesta]=Respuesta2 
+      [IdCuestionarioNivel11]=IdCuestionarioNivel11
+      [IdCuestionarioNivel12]=IdCuestionarioNivel12
+      [IdCuestionarioNivel211]=IdCuestionarioNivel211
+      [IdCuestionarioNivel212]=IdCuestionarioNivel212          
+      [IdCuestionarioNivel221]=IdCuestionarioNivel221
+      [IdCuestionarioNivel222]=IdCuestionarioNivel222      
+      [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+      [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+      [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+      [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+      [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+      [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+      [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+      [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+      [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+      [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>
+      </app-subrespuesta>        
+    </div>
+  
+  <form [formGroup]="checkboxGroupForm">      
+    <div class="btn-group" data-toggle="buttons" >
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0">
+        <div class="btn-group" *ngIf="Respuesta1==IdCuestionarioNivel11 || Respuesta1==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="1" ngbButton (click)="changeShowStatus1()">
+        </div>              
+        <ng-template #elseClick>
+          <input type="checkbox" formControlName="1" ngbButton>
+        </ng-template>            
+        {{Respuesta1}}  
+      </label>  
+     
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0">
+        <div class="btn-group" *ngIf="Respuesta2==IdCuestionarioNivel11 || Respuesta2==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="2" ngbButton (click)="changeShowStatus2()">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="2" ngbButton>
+        </ng-template>            
+        {{Respuesta2}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0">
+        <div class="btn-group" *ngIf="Respuesta3==IdCuestionarioNivel11 || Respuesta3==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="3" ngbButton (click)="changeShowStatus3()">
+        </div>
+        <ng-template #elseClick>
+          <input type="checkbox" formControlName="3" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta3}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0">
+        <div class="btn-group" *ngIf="Respuesta4==IdCuestionarioNivel11 || Respuesta4==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="4" ngbButton (click)="changeShowStatus4()">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="4" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta4}}          
+      </label> 
+    </div>     
+        
+    <br><br>
+    <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+      
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0">
+        <div class="btn-group" *ngIf="Respuesta5==IdCuestionarioNivel11 || Respuesta5==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="5" ngbButton (click)="showHide5 = !showHide5">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="5" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta5}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0">
+        <div class="btn-group" *ngIf="Respuesta6==IdCuestionarioNivel11 || Respuesta6==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="6" ngbButton (click)="showHide6 = !showHide6">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="6" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta6}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0">
+        <div class="btn-group" *ngIf="Respuesta7==IdCuestionarioNivel11 || Respuesta7==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="7" ngbButton (click)="showHide7 = !showHide7">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="7" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta7}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0">
+        <div class="btn-group" *ngIf="Respuesta8==IdCuestionarioNivel11 || Respuesta8==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="8" ngbButton (click)="showHide8 = !showHide8">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="8" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta8}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0">
+        <div class="btn-group" *ngIf="Respuesta9==IdCuestionarioNivel11 || Respuesta9==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="9" ngbButton (click)="showHide9 = !showHide9">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="9" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta9}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0">
+        <div class="btn-group" *ngIf="Respuesta10==IdCuestionarioNivel11 || Respuesta10==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="10" ngbButton (click)="showHide10 = !showHide10">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="10" ngbButton (click)="cerrarTodos()">
+        </ng-template>            
+        {{Respuesta10}}          
+      </label>
+
+    </div>
+    <!--<pre>{{checkboxGroupForm.value['1'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['2'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['3'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['4'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['5'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['6'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['7'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['8'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['9'] | json}}</pre>
+    <pre>{{checkboxGroupForm.value['10'] | json}}</pre>
+    -->
+</form> 
+
+
+<!--
+  <div class="box" *ngIf="showHide3">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta3
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12    
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212              
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+
+  <div class="box" *ngIf="showHide4">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta4   
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12 
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212     
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+
+  <div class="box" *ngIf="showHide5">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta5
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12    
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212           
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+  <div class="box" *ngIf="showHide6">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta6  
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212       
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+  <div class="box" *ngIf="showHide7">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta7  
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212           
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+  <div class="box" *ngIf="showHide8">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta8  
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212      
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+  <div class="box" *ngIf="showHide9">  
+    <app-subrespuesta
+    [Respuesta]=Respuesta9 
+    [IdCuestionarioNivel11]=IdCuestionarioNivel11
+    [IdCuestionarioNivel12]=IdCuestionarioNivel12
+    [IdCuestionarioNivel211]=IdCuestionarioNivel211
+    [IdCuestionarioNivel212]=IdCuestionarioNivel212           
+    [IdCuestionarioNivel221]=IdCuestionarioNivel221
+    [IdCuestionarioNivel222]=IdCuestionarioNivel222
+    [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+    [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+    [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+    [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+    [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+    [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+    [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+    [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+    [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+    [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+    </app-subrespuesta>
+  </div>
+  <div class="box" *ngIf="showHide10">  
+      <app-subrespuesta
+      [Respuesta]=Respuesta10
+      [IdCuestionarioNivel11]=IdCuestionarioNivel11
+      [IdCuestionarioNivel12]=IdCuestionarioNivel12
+      [IdCuestionarioNivel211]=IdCuestionarioNivel211
+      [IdCuestionarioNivel212]=IdCuestionarioNivel212           
+      [IdCuestionarioNivel221]=IdCuestionarioNivel221
+      [IdCuestionarioNivel222]=IdCuestionarioNivel222
+      [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+      [IdCuestionarioNivel3112]=IdCuestionarioNivel3112  
+      [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+      [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+      [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+      [IdCuestionarioNivel3212]=IdCuestionarioNivel3212  
+      [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+      [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+      [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+      [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>       
+      </app-subrespuesta>
+  </div>
+
+
+    </div> -->

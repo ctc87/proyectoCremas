@@ -1,0 +1,843 @@
+<div *ngIf="RespuestaMulti==0">
+  
+  <form [formGroup]="radioGroupForm">
+    <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+    
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta1==IdCuestionarioNivel11||Respuesta1==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="1" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="1"> 
+          </ng-template>            
+          {{Respuesta1}}    
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta2==IdCuestionarioNivel11||Respuesta2==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="2" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="2"> 
+          </ng-template>            
+          {{Respuesta2}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta3==IdCuestionarioNivel11||Respuesta3==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="3" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="3"> 
+          </ng-template>            
+          {{Respuesta3}}          
+        </label>
+       
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta4==IdCuestionarioNivel11||Respuesta4==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="4" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="4"> 
+          </ng-template>            
+          {{Respuesta4}}          
+        </label>
+    
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta5==IdCuestionarioNivel11||Respuesta5==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="5" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="5"> 
+          </ng-template>            
+          {{Respuesta5}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta6==IdCuestionarioNivel11||Respuesta6==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="6" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="6"> 
+          </ng-template>            
+          {{Respuesta6}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta7==IdCuestionarioNivel11||Respuesta7==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="7" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="7"> 
+          </ng-template>            
+          {{Respuesta7}} 
+        </label>
+          
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta8==IdCuestionarioNivel11||Respuesta8==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="8" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="8"> 
+          </ng-template>            
+          {{Respuesta8}}          
+        </label> 
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta9==IdCuestionarioNivel11||Respuesta9==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="9" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="9"> 
+          </ng-template>            
+          {{Respuesta9}}          
+        </label>
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0">
+          <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta10==IdCuestionarioNivel11||Respuesta10==IdCuestionarioNivel12;else elseClick">       
+            <input ngbButton type="radio" [value]="10" (click)="showHide = !showHide"> 
+          </div>
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="10"> 
+          </ng-template>            
+          {{Respuesta10}}          
+        </label>
+        
+    </div>
+  </form>
+  
+  <div class="box" *ngIf="showHide">  
+      <app-subrespuesta
+      [Respuesta1]=Respuesta1            
+      [Respuesta2]=Respuesta2            
+      [Respuesta3]=Respuesta3            
+      [Respuesta4]=Respuesta4            
+      [Respuesta5]=Respuesta5            
+      [Respuesta6]=Respuesta6            
+      [Respuesta7]=Respuesta7            
+      [Respuesta8]=Respuesta8          
+      [Respuesta9]=Respuesta9          
+      [Respuesta10]=Respuesta10
+      [IdCuestionarioNivel11]=IdCuestionarioNivel11
+      [IdCuestionarioNivel12]=IdCuestionarioNivel12
+      [IdCuestionarioNivel211]=IdCuestionarioNivel211
+      [IdCuestionarioNivel212]=IdCuestionarioNivel212
+      [IdCuestionarioNivel221]=IdCuestionarioNivel221
+      [IdCuestionarioNivel222]=IdCuestionarioNivel222
+      [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+      [IdCuestionarioNivel3112]=IdCuestionarioNivel3112
+      [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+      [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+      [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+      [IdCuestionarioNivel3212]=IdCuestionarioNivel3212
+      [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+      [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+      [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+      [IdCuestionarioNivel41112]=IdCuestionarioNivel41112
+      ></app-subrespuesta>
+  </div>
+  
+  </div>  
+    
+  <div *ngIf="RespuestaMulti==1">
+  
+  <form [formGroup]="checkboxGroupForm">
+      
+    <div class="btn-group" data-toggle="buttons" >
+  
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta1==IdCuestionarioNivel11;else elseClick">       
+          <input type="checkbox" formControlName="1" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="1" ngbButton>
+        </ng-template>            
+        {{Respuesta1}}    
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta2==IdCuestionarioNivel11||Respuesta2==IdCuestionarioNivel12 ;else elseClick">       
+          <input type="checkbox" formControlName="2" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="2" ngbButton>
+        </ng-template>            
+        {{Respuesta2}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta3==IdCuestionarioNivel11||Respuesta3==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="3" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="3" ngbButton>
+        </ng-template>            
+        {{Respuesta3}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta4==IdCuestionarioNivel11||Respuesta4==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="4" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="4" ngbButton>
+        </ng-template>            
+        {{Respuesta4}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta5==IdCuestionarioNivel11||Respuesta5==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="5" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="5" ngbButton>
+        </ng-template>            
+        {{Respuesta5}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta6==IdCuestionarioNivel11||Respuesta6==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="6" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="6" ngbButton>
+        </ng-template>            
+        {{Respuesta6}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta7==IdCuestionarioNivel11||Respuesta7==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="7" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="7" ngbButton>
+        </ng-template>            
+        {{Respuesta7}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta8==IdCuestionarioNivel11||Respuesta8==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="8" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="8" ngbButton>
+        </ng-template>            
+        {{Respuesta8}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta9==IdCuestionarioNivel11||Respuesta9==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="9" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="9" ngbButton>
+        </ng-template>            
+        {{Respuesta9}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0">
+        <div class="btn-group" *ngIf="IdCuestionarioNivel11!=0 && Respuesta10==IdCuestionarioNivel11||Respuesta10==IdCuestionarioNivel12;else elseClick">       
+          <input type="checkbox" formControlName="10" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClick>
+        <input type="checkbox" formControlName="10" ngbButton>
+        </ng-template>            
+        {{Respuesta10}}          
+      </label>
+
+    </div>
+      
+  </form>
+      
+    <div class="box" *ngIf="showHide">  
+        <app-subrespuesta
+        [Respuesta1]=Respuesta1            
+        [Respuesta2]=Respuesta2            
+        [Respuesta3]=Respuesta3            
+        [Respuesta4]=Respuesta4            
+        [Respuesta5]=Respuesta5            
+        [Respuesta6]=Respuesta6            
+        [Respuesta7]=Respuesta7            
+        [Respuesta8]=Respuesta8          
+        [Respuesta9]=Respuesta9          
+        [Respuesta10]=Respuesta10
+        [IdCuestionarioNivel11]=IdCuestionarioNivel11
+        [IdCuestionarioNivel12]=IdCuestionarioNivel12
+        [IdCuestionarioNivel211]=IdCuestionarioNivel211
+        [IdCuestionarioNivel212]=IdCuestionarioNivel212
+        [IdCuestionarioNivel221]=IdCuestionarioNivel221
+        [IdCuestionarioNivel222]=IdCuestionarioNivel222
+        [IdCuestionarioNivel3111]=IdCuestionarioNivel3111
+        [IdCuestionarioNivel3112]=IdCuestionarioNivel3112
+        [IdCuestionarioNivel3121]=IdCuestionarioNivel3121
+        [IdCuestionarioNivel3122]=IdCuestionarioNivel3122
+        [IdCuestionarioNivel3211]=IdCuestionarioNivel3211
+        [IdCuestionarioNivel3212]=IdCuestionarioNivel3212
+        [IdCuestionarioNivel3221]=IdCuestionarioNivel3221
+        [IdCuestionarioNivel3222]=IdCuestionarioNivel3222
+        [IdCuestionarioNivel41111]=IdCuestionarioNivel41111
+        [IdCuestionarioNivel41112]=IdCuestionarioNivel41112>
+        </app-subrespuesta>
+      </div>
+    
+  </div>
+  
+  <!--.................................................................-->
+  
+  
+  
+     <!-- <pre>{{radioGroupForm.value['model']}}</pre>-->
+  
+
+<!--<div *ngIf="RespuestaMulti==0">
+
+<form [formGroup]="radioGroupForm">
+  
+  <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+    <div class="btn-group" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+        
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0 && i==1">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta1}}
+      </label>  
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0 && i==2">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta2}}
+      </label> 
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0 && i==3">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta3}}
+      </label> 
+            
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0 && i==4">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta4}}
+      </label>
+   
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0 && i==5">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta5}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0 && i==6">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta6}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0 && i==7">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta7}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0 && i==8">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta8}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0 && i==9">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta9}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0 && i==10">
+        <div *ngIf="SubRespuestaId!=0;else elseClick"> 
+          <input ngbButton type="radio" [value]="i" (click)="showHide = !showHide"> 
+        </div>
+        <ng-template #elseClick>
+          <input ngbButton type="radio" [value]="i"> 
+        </ng-template>
+        {{Respuesta10}}
+      </label>
+   
+    </div>
+</div>
+</form>
+
+<div class="box" *ngIf="showHide">  
+    <app-subrespuesta
+    [SubRespuesta]=SubRespuesta>   
+    </app-subrespuesta>
+</div>
+
+</div>
+
+<div *ngIf="RespuestaMulti==1">
+
+<form [formGroup]="checkboxGroupForm">
+    
+  <div class="btn-group"  data-toggle="buttons">
+    <div class="btn-group" *ngFor="let j of [1,2,3,4,5,6,7,8,9,10]">
+              
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0 && j==1">
+        <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+          
+          
+          <div class="btn-group" *ngFor="let c of cuestionarios">
+            <div *ngIf="c.idSubrespuesta.idRespuesta.respuesta=Respuesta1 && c.idSubrespuesta.nivel==1" >   
+              <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+            </div>
+          </div>
+
+
+        </div>
+        <ng-template #elseClickMulti>
+          <input type="checkbox" formControlName="j" ngbButton>
+        </ng-template>
+        {{Respuesta1}}
+      </label>  
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0 && j==2">
+        <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+          <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+        </div>
+        <ng-template #elseClickMulti>
+          <input type="checkbox" formControlName="j" ngbButton>
+        </ng-template>
+        {{Respuesta2}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0 && j==3">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta3}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0 && j==4">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta4}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0 && j==5">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta5}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0 && j==6">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta6}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0 && j==7">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta7}}          
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0 && j==8">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta8}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0 && j==9">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta9}}
+      </label>
+
+      <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0 && j==10">
+          <div *ngIf="SubRespuestaId!=0;else elseClickMulti"> 
+            <input type="checkbox" formControlName="j" ngbButton (click)="showHide = !showHide">
+          </div>
+          <ng-template #elseClickMulti>
+            <input type="checkbox" formControlName="j" ngbButton>
+          </ng-template>
+          {{Respuesta10}}
+      </label>
+    
+    </div>
+    
+  </div>
+    
+  </form>
+    
+  <div class="box" *ngIf="showHide">  
+    <app-subrespuesta
+    [SubRespuesta]=SubRespuesta>   
+    </app-subrespuesta>
+  </div>
+
+</div>
+
+<pre>{{radioGroupForm.value['model']}}</pre>-->
+
+
+<!--
+
+
+
+
+<div *ngIf="RespuestaMulti==0">
+  
+  <form [formGroup]="radioGroupForm">
+    <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+    
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta1!=0">
+          <div class="btn-group" *ngIf="SubRespuestaId!=0;else elseClick">       
+            <input ngbButton type="radio" [value]="1" (click)="showHide = !showHide"> 
+          <ng-template #elseClick>
+            <input ngbButton type="radio" [value]="1"> 
+          </ng-template>             
+          {{Respuesta1}}  
+          </div>
+        </label>
+      
+
+
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta2!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="2" (click)="showHide = !showHide"> 
+              {{Respuesta2}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="2"> 
+              {{Respuesta2}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta3!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="3" (click)="showHide = !showHide"> 
+              {{Respuesta3}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="3"> 
+              {{Respuesta3}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta4!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="4" (click)="showHide = !showHide"> 
+              {{Respuesta4}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="4"> 
+              {{Respuesta4}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta5!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="5" (click)="showHide = !showHide"> 
+              {{Respuesta5}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="5"> 
+              {{Respuesta5}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta6!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="2" (click)="showHide = !showHide"> 
+              {{Respuesta6}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="6"> 
+              {{Respuesta6}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta7!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="7" (click)="showHide = !showHide"> 
+              {{Respuesta7}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="7"> 
+              {{Respuesta7}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta8!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="8" (click)="showHide = !showHide"> 
+              {{Respuesta8}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="8"> 
+              {{Respuesta8}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta9!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="9" (click)="showHide = !showHide"> 
+              {{Respuesta9}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="9"> 
+              {{Respuesta9}}  
+            </div>
+        </label>
+  
+        <label ngbButtonLabel class="btn-primary" *ngIf="Respuesta10!=0">
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">       
+              <input ngbButton type="radio" [value]="10" (click)="showHide = !showHide"> 
+              {{Respuesta10}}  
+            </div>
+            <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">       
+              <input ngbButton type="radio" [value]="10"> 
+              {{Respuesta10}}  
+            </div>
+        </label>    
+     
+    </div>
+  </form>
+  
+  <div class="box" *ngIf="showHide">  
+      <app-subrespuesta>
+      
+      </app-subrespuesta>
+    </div>
+    
+    </div>
+    
+      
+    <div *ngIf="RespuestaMulti==1">
+    
+    <form [formGroup]="checkboxGroupForm">
+        
+          <div class="btn-group" data-toggle="buttons" >
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta1!=0">
+                <div *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta1==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="1" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta1}}
+                  </div>
+                  <div *ngIf="Respuesta1!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="1" ngbButton>{{Respuesta1}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                    <input type="checkbox" formControlName="1" ngbButton> {{Respuesta1}}
+                </div>                
+              </label>
+              
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta2!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta2==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="2" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta2}}
+                  </div>
+                  <div *ngIf="Respuesta2!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="2" ngbButton>{{Respuesta2}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="2" ngbButton> {{Respuesta2}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta3!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta3==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="3" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta3}}
+                  </div>
+                  <div *ngIf="Respuesta3!=SubRespuestaNivel1Origen1">
+                      <input type="checkbox" formControlName="3" ngbButton>{{Respuesta3}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                    <input type="checkbox" formControlName="3" ngbButton> {{Respuesta3}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta4!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta4==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="4" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta4}}
+                  </div>
+                  <div *ngIf="Respuesta4!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="4" ngbButton>{{Respuesta4}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="4" ngbButton> {{Respuesta4}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta5!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta5==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="5" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta5}}
+                  </div>
+                  <div *ngIf="Respuesta5!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="5" ngbButton>{{Respuesta5}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="5" ngbButton> {{Respuesta5}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta6!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta6==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="6" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta6}}
+                  </div>
+                  <div *ngIf="Respuesta6!=SubRespuestaNivel1Origen1">
+                      <input type="checkbox" formControlName="6" ngbButton>{{Respuesta6}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="6" ngbButton> {{Respuesta6}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta7!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta7==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="7" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta7}}
+                  </div>
+                  <div *ngIf="Respuesta7!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="7" ngbButton>{{Respuesta7}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="7" ngbButton> {{Respuesta7}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta8!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta8==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="8" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta8}}
+                  </div>
+                  <div *ngIf="Respuesta8!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="8" ngbButton>{{Respuesta8}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="8" ngbButton> {{Respuesta8}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta9!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta9==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="9" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta9}}
+                  </div>
+                  <div *ngIf="Respuesta9!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="9" ngbButton>{{Respuesta9}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                    <input type="checkbox" formControlName="9" ngbButton> {{Respuesta9}}
+                </div>                 
+              </label>
+    
+              <label ngbButtonLabel class="btn-primary" *ngIf= "Respuesta10!=0">
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1!=0">
+                  <div *ngIf="Respuesta10==SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="10" ngbButton (click)="showHide = !showHide">
+                      {{Respuesta10}}
+                  </div>
+                  <div *ngIf="Respuesta10!=SubRespuestaNivel1Origen1">
+                    <input type="checkbox" formControlName="10" ngbButton>{{Respuesta10}}
+                  </div>
+                </div>
+                <div class="btn-group" *ngIf="SubRespuestaNivel1Origen1==0">
+                  <input type="checkbox" formControlName="10" ngbButton> {{Respuesta10}}
+                </div>                 
+              </label>
+    
+            </div>
+        
+      </form>
+        
+      <div class="box" *ngIf="showHide">  
+          <app-subrespuesta>
+          </app-subrespuesta>
+        </div>
+    
+    
+    </div>
+-->

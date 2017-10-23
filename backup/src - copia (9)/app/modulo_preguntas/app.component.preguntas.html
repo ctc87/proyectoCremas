@@ -1,0 +1,76 @@
+<form>       
+  <ngb-carousel interval=-1 >
+    <div *ngFor="let cuestionario of cuestionarios">
+      <ng-template ngbSlide>
+        <img src="https://www.start.education/_uploads/images/bel1020x405.jpg" alt={{cuestionario.id}}
+        width="1024px"
+        >
+
+        <div class="carousel-caption">
+        <h3>{{cuestionario.idPregunta.pregunta}}</h3>
+          <div *ngIf="cuestionario.idPregunta.respuestasMulti==0">
+              <app-respuesta-unica
+              [RespuestaUni1]=cuestionario.idRespuesta1.respuesta            
+              [RespuestaUni2]=cuestionario.idRespuesta2.respuesta            
+              [RespuestaUni3]=cuestionario.idRespuesta3.respuesta            
+              [RespuestaUni4]=cuestionario.idRespuesta4.respuesta            
+              [RespuestaUni5]=cuestionario.idRespuesta5.respuesta            
+              [RespuestaUni6]=cuestionario.idRespuesta6.respuesta            
+              [RespuestaUni7]=cuestionario.idRespuesta7.respuesta            
+              [RespuestaUni8]=cuestionario.idRespuesta8.respuesta            
+              [RespuestaUni9]=cuestionario.idRespuesta9.respuesta            
+              [RespuestaUni10]=cuestionario.idRespuesta10.respuesta 
+              [SubRespuestaOrigen1]=cuestionario.idSubrespuestanivel1.idRespuesta.respuesta            
+              [SubRespuestaOrigen1Uni1]=cuestionario.idSubrespuestanivel1.idSubrespuesta1.respuesta            
+              [SubRespuestaOrigen1Uni2]=cuestionario.idSubrespuestanivel1.idSubrespuesta2.respuesta            
+              [SubRespuestaOrigen2]=cuestionario.idSubrespuestanivel2.idRespuesta.respuesta            
+              [SubRespuestaOrigen2Uni1]=cuestionario.idSubrespuestanivel2.idSubrespuesta1.respuesta            
+              [SubRespuestaOrigen2Uni2]=cuestionario.idSubrespuestanivel2.idSubrespuesta2.respuesta            
+              [SubRespuestaOrigen3]=cuestionario.idSubrespuestanivel3.idRespuesta.respuesta            
+              [SubRespuestaOrigen3Uni1]=cuestionario.idSubrespuestanivel3.idSubrespuesta1.respuesta            
+              [SubRespuestaOrigen3Uni2]=cuestionario.idSubrespuestanivel3.idSubrespuesta2.respuesta            
+              ></app-respuesta-unica>       
+          </div>   
+          <div *ngIf="cuestionario.idPregunta.respuestasMulti!=0">
+             <app-respuesta-multi
+            [RespuestaMulti1]=cuestionario.idRespuesta1.respuesta            
+            [RespuestaMulti2]=cuestionario.idRespuesta2.respuesta            
+            [RespuestaMulti3]=cuestionario.idRespuesta3.respuesta            
+            [RespuestaMulti4]=cuestionario.idRespuesta4.respuesta            
+            [RespuestaMulti5]=cuestionario.idRespuesta5.respuesta            
+            [RespuestaMulti6]=cuestionario.idRespuesta6.respuesta            
+            [RespuestaMulti7]=cuestionario.idRespuesta7.respuesta            
+            [RespuestaMulti8]=cuestionario.idRespuesta8.respuesta            
+            [RespuestaMulti9]=cuestionario.idRespuesta9.respuesta            
+            [RespuestaMulti10]=cuestionario.idRespuesta10.respuesta            
+            [SubRespuestaOrigen1]=cuestionario.idSubrespuestanivel1.idRespuesta.respuesta            
+            [SubRespuestaOrigen1Uni1]=cuestionario.idSubrespuestanivel1.idSubrespuesta1.respuesta            
+            [SubRespuestaOrigen1Uni2]=cuestionario.idSubrespuestanivel1.idSubrespuesta2.respuesta            
+            [SubRespuestaOrigen2]=cuestionario.idSubrespuestanivel2.idRespuesta.respuesta            
+            [SubRespuestaOrigen2Uni1]=cuestionario.idSubrespuestanivel2.idSubrespuesta1.respuesta            
+            [SubRespuestaOrigen2Uni2]=cuestionario.idSubrespuestanivel2.idSubrespuesta2.respuesta            
+            [SubRespuestaOrigen3]=cuestionario.idSubrespuestanivel3.idRespuesta.respuesta            
+            [SubRespuestaOrigen3Uni1]=cuestionario.idSubrespuestanivel3.idSubrespuesta1.respuesta            
+            [SubRespuestaOrigen3Uni2]=cuestionario.idSubrespuestanivel3.idSubrespuesta2.respuesta            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ></app-respuesta-multi>
+          </div>          
+      
+        </div> 
+      </ng-template>
+    </div>
+  </ngb-carousel>
+<br>
+<div align="center">
+<app-popup></app-popup>
+</div>
+</form>

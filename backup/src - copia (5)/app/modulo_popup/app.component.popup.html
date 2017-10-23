@@ -1,0 +1,11 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  
+  <div class="modal-body">
+    <p>¡Gracias por contestar!</p>
+    <p>Será reenviado a una página web</p>
+<div align="right">
+    <button  type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cerrar</button>
+  </div>  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)" >Enviar</button>

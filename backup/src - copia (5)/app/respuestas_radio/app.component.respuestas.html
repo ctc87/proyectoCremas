@@ -1,0 +1,38 @@
+<app-nav></app-nav>   
+<br> 
+
+  <ngb-alert [dismissible]="false" type="light">
+    <strong><h4>CUESTIONARIO</h4></strong>
+  </ngb-alert>
+
+<ul>
+    
+<form>       
+  
+<div *ngFor="let cuestionario of cuestionarios| paginate: { itemsPerPage: 1, currentPage: p }">
+       
+<h4>{{cuestionario.idPregunta.pregunta}}</h4>        
+<app-preguntas-boton 
+[respuesta1] =cuestionario.idRespuesta1.respuesta
+[respuesta2] =cuestionario.idRespuesta2.respuesta
+[respuesta3] =cuestionario.idRespuesta3.respuesta
+[respuesta4] =cuestionario.idRespuesta4.respuesta
+[respuesta5] =cuestionario.idRespuesta5.respuesta
+[respuesta6] =cuestionario.idRespuesta6.respuesta
+[respuesta7] =cuestionario.idRespuesta7.respuesta
+[respuesta8] =cuestionario.idRespuesta8.respuesta
+[respuesta9] =cuestionario.idRespuesta9.respuesta
+[respuesta10] =cuestionario.idRespuesta10.respuesta
+></app-preguntas-boton>
+</div>
+<br>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<app-popup></app-popup>
+
+</form>
+
+</ul>
+
+
+

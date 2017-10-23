@@ -1,0 +1,25 @@
+<app-nav></app-nav>   
+<br> 
+
+  <ngb-alert [dismissible]="false" type="light">
+    <strong><h4>CUESTIONARIO</h4></strong> <br>Seleccione el grado de satisfacción. <br>
+    Siendo 1 el que menos (Muy poco o totalmente en desacuerdo) y siendo 5 el que mas (Muchísimo o totalmente de acuerdo)
+  </ngb-alert>
+
+<ul>
+    
+    <form>       
+        <div *ngFor="let pregunta of preguntas| unique">
+        <br>          
+          <h4> {{ pregunta.pregunta }}     </h4>
+          {{ pregunta.id }}
+        <app-preguntas-boton></app-preguntas-boton>        
+        </div>
+        
+        <app-popup></app-popup>
+
+    </form>
+
+</ul>
+
+  

@@ -1,0 +1,74 @@
+<form [formGroup]="checkboxGroupForm">
+  
+  <table >
+    <div class="btn-group" data-toggle="buttons">
+        
+        <div class="btn-group" *ngIf= "respuestaMulti1!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="1" ngbButton> {{respuestaMulti1}}
+          </label>                
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti2!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="2" ngbButton> {{respuestaMulti2}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti3!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="3" ngbButton> {{respuestaMulti3}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti4!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="4" ngbButton> {{respuestaMulti4}}
+          </label>
+        </div>
+    <br>     
+        <div class="btn-group"   *ngIf= "respuestaMulti5!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="5" ngbButton> {{respuestaMulti5}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti6!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="6" ngbButton> {{respuestaMulti6}}
+          </label>
+        </div>      
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti7!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="7" ngbButton> {{respuestaMulti7}}
+          </label>
+        </div>
+    <br>
+         <div class="btn-group"   *ngIf= "respuestaMulti8!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="8" ngbButton> {{respuestaMulti8}}
+          </label>
+        </div>      
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti9!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="9" ngbButton> {{respuestaMulti9}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuestaMulti10!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input type="checkbox" formControlName="10" ngbButton> {{respuestaMulti10}}
+          </label>
+        </div>
+
+    </div>
+    <!-- <div *ngIf="radioGroupForm.value['model'] ==0">
+    <div [ngStyle]="{'color': 'red'}">No ha seleccionado una opcion.</div>
+    </div>-->
+  </table> 
+  
+</form>
+
+<!--<pre>{{checkboxGroupForm.value | json}}</pre>-->

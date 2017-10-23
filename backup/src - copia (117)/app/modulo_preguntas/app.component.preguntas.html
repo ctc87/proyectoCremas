@@ -1,0 +1,72 @@
+<form (ngSubmit)="OnSubmit()">       
+  <ngb-carousel interval=-1 >
+    <div *ngFor="let cuestionario of cuestionarios">
+      <ng-template ngbSlide>
+        <img src="https://www.start.education/_uploads/images/bel1020x405.jpg" alt={{cuestionario.id}}
+        width="1024px">
+
+        <div class="carousel-caption">
+        <h3>{{cuestionario.idPregunta.pregunta}}</h3>       
+            
+        <app-respuesta
+        [RespuestaMulti]=cuestionario.idPregunta.respuestasMulti
+        [Respuesta1]=cuestionario.idRespuesta1.respuesta            
+        [Respuesta2]=cuestionario.idRespuesta2.respuesta            
+        [Respuesta3]=cuestionario.idRespuesta3.respuesta            
+        [Respuesta4]=cuestionario.idRespuesta4.respuesta            
+        [Respuesta5]=cuestionario.idRespuesta5.respuesta            
+        [Respuesta6]=cuestionario.idRespuesta6.respuesta            
+        [Respuesta7]=cuestionario.idRespuesta7.respuesta            
+        [Respuesta8]=cuestionario.idRespuesta8.respuesta            
+        [Respuesta9]=cuestionario.idRespuesta9.respuesta            
+        [Respuesta10]=cuestionario.idRespuesta10.respuesta 
+        [IdCuestionarioNivel11]=cuestionario.idSubrespNivel11.respuesta    
+        [IdCuestionarioNivel12]=cuestionario.idSubrespNivel12.respuesta    
+        [IdCuestionarioNivel211]=cuestionario.idSubrespNivel211.respuesta  
+        [IdCuestionarioNivel212]=cuestionario.idSubrespNivel212.respuesta  
+        [IdCuestionarioNivel221]=cuestionario.idSubrespNivel221.respuesta  
+        [IdCuestionarioNivel222]=cuestionario.idSubrespNivel222.respuesta  
+        [IdCuestionarioNivel3111]=cuestionario.idSubrespNivel3111.respuesta     
+        [IdCuestionarioNivel3112]=cuestionario.idSubrespNivel3112.respuesta     
+        [IdCuestionarioNivel3121]=cuestionario.idSubrespNivel3121.respuesta     
+        [IdCuestionarioNivel3122]=cuestionario.idSubrespNivel3122.respuesta     
+        [IdCuestionarioNivel3211]=cuestionario.idSubrespNivel3211.respuesta     
+        [IdCuestionarioNivel3212]=cuestionario.idSubrespNivel3212.respuesta     
+        [IdCuestionarioNivel3221]=cuestionario.idSubrespNivel3221.respuesta     
+        [IdCuestionarioNivel3222]=cuestionario.idSubrespNivel3222.respuesta     
+        [IdCuestionarioNivel41111]=cuestionario.idSubrespNivel41111.respuesta     
+        [IdCuestionarioNivel41112]=cuestionario.idSubrespNivel41112.respuesta     
+        (notifyParent)="getNotification1($event)"
+        (notifyParent2)="getNotification2($event)"
+        
+        ></app-respuesta>               
+               
+        </div> 
+      </ng-template>
+    </div>
+  </ngb-carousel>
+<br>
+<div align="center">
+    
+<ng-template #content let-c="close" let-d="dismiss">
+  
+  <div class="modal-body">
+    <p>¡Gracias por contestar!</p>
+    <p>Será reenviado a una página web</p>
+<div align="right">
+    <button  type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cerrar</button>
+  </div>  </div>
+</ng-template>
+ 
+<!--
+<label>
+  <input [(ngModel)]=quest.id name="id">
+</label>
+<label>
+  <input [(ngModel)]=quest.resp1 name="resp1">
+</label>
+-->
+
+</div>
+</form>
+<button type="submit" class="btn btn-lg btn-outline-primary"  >Enviar</button>

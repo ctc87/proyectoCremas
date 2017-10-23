@@ -1,0 +1,381 @@
+<div class="card-deck">
+  
+<div *ngFor="let producto of productoss">
+          
+    <!--HD GLICODERM CREAM-->
+    <div *ngIf="
+    producto.id==1 
+    && (Resp3==9 
+    || Resp3==8 
+    || (Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33)
+    || (Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==33)
+    || (Resp5==24 && Subresp51==28 && Subresp52==33)
+    || (Resp5==24 && Subresp51==29 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block">            
+      <h5 class="card-title">{{producto.producto}}</h5>
+      <p class="card-text">{{producto.descripcion}}</p>
+      <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+      Ir</button>
+      </div> 
+    </div>
+
+    <!--HD NATURAL BALANCE-->
+    <div *ngIf="
+    producto.id==2 
+    && (Resp4==13 
+    || (Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33)
+    || (Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==33)
+    || (Resp5==22 && Subresp51==35) 
+    || (Resp5==24 && Subresp51==29 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap1" >
+      <div class="card-block">        
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button>
+      </div>
+    </div>
+  
+    <!--HD PERFECT V-->
+    <div *ngIf="
+    producto.id==3 
+    && (Resp4==13 
+    || (Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33)
+    || (Resp5==22 && Subresp51==35) 
+    || (Resp5==24 && Subresp51==29 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap2" >
+      <div class="card-block">
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button>
+      </div>
+    </div>
+
+    <!--HD WHITENING PLUS-->
+    <div *ngIf="
+    producto.id==4 
+    && (Resp4==13 
+    || Resp5==22 && Subresp51==34)" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD MOUSSE FACIAL-->
+    <div *ngIf="
+    producto.id==5 
+    && (Resp4==17 
+    || Resp5==21 
+    || (Resp5==22 && Subresp51==35))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD HYDRALIFT-->
+    <div *ngIf="
+    producto.id==6 
+    && (Resp5==20 
+    || (Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33)
+    || (Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==33)
+    || (Resp5==24 && Subresp51==28 && Subresp52==33) 
+    || (Resp5==24 && Subresp51==29 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD NIGHT SERUM-->
+    <div *ngIf="
+    producto.id==7 
+    && ((Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==32) 
+    || (Resp5==24 && Subresp51==28 && Subresp52==32))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD RECOVER DERMIC-->
+    <div *ngIf="
+    producto.id==8 
+    && (Resp4==14 
+    ||Resp4==15
+    ||Resp5==23)" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD DAY CREAM SPF 50+-->
+    <div *ngIf="
+    producto.id==9
+    && (Resp4==13 
+    ||(Resp5==19 && Subresp51==28 && Subresp52==30  && Subresp53==33)
+    ||(Resp5==24 && Subresp51==28 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD DAY SERUM -->
+    <div *ngIf="
+    producto.id==10
+    && (Resp5==24 && Subresp51==28 && Subresp52==32)" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD CLEANSING GEL ALOE VERA -->
+    <div *ngIf="
+    producto.id==11
+    && Resp5==21" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD CLEANSING GEL SENSITIVE SKIN -->
+    <div *ngIf="
+    producto.id==12
+    && Resp4==15" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD GEL SCRUB EXFOLIANTE -->
+    <div *ngIf="
+    producto.id==13
+    && Resp5==21" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD CLEANSING GEL SENSITIVE -->
+    <div *ngIf="
+    producto.id==14
+    && (Resp5==21 
+    ||Resp4==15 
+    ||Resp4==16
+    )" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD ANTIAGING NIGHT CREAM -->
+    <div *ngIf="
+    producto.id==15
+    && ((Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==33) 
+    ||(Resp5==24 && Subresp51==29 && Subresp52==30))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD ANTIAGING DAY CREAM -->
+    <div *ngIf="
+    producto.id==16
+    && ((Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33) 
+    ||(Resp5==24 && Subresp51==28 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD NEOLIFT-C-->
+    <div *ngIf="
+    producto.id==17
+    && ((Resp4==17) 
+    ||(Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==32) 
+    ||(Resp5==20)
+    ||(Resp5==24 && Subresp51==28 && Subresp52==32))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD EYES & LIPS-->
+    <div *ngIf="
+    producto.id==18
+    && ((Resp5==20) 
+    ||(Resp5==23))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD EYE CONTOUR REPAIR-->
+    <div *ngIf="
+    producto.id==19
+    && ((Resp5==20) 
+    ||(Resp5==23))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+    
+    <!--HD NUTRITIVE OIL-FREE-->
+    <div *ngIf="
+    producto.id==20
+    && ((Resp3==11) 
+    ||(Resp3==12)
+    ||(Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33)
+    ||(Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==33)
+    ||(Resp5==24 && Subresp51==28 && Subresp52==33)
+    ||(Resp5==24 && Subresp51==29 && Subresp52==33))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD BODYMILK-->
+    <div *ngIf="
+    producto.id==21
+    && ((Resp5==23) 
+    ||(Resp4==15)
+    ||(Resp4==16)
+    ||(Resp5==19 && Subresp51==28 && Subresp52==31)
+    ||(Resp5==19 && Subresp51==29 && Subresp52==31))" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+    
+    <!--HD HYDRALIFT-->
+    <div *ngIf="
+    producto.id==22
+    && ((Resp5==19 && Subresp51==28 && Subresp52==30 && Subresp53==33)
+    ||(Resp5==19 && Subresp51==29 && Subresp52==30 && Subresp53==33)
+    ||(Resp5==20)
+    ||(Resp5==24 && Subresp51==28 && Subresp52==33)
+    ||(Resp5==24 && Subresp51==29 && Subresp52==33)
+    )" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    <!--HD DEEP INTENSIVE CARE-->
+    <div *ngIf="
+    producto.id==23
+    && ((Resp4==14)
+    ||(Resp4==16)
+    ||(Resp5==19 && Subresp51==28 && Subresp52==31)
+    ||(Resp5==19 && Subresp51==29 && Subresp52==31)
+    ||(Resp5==23)
+    )" 
+    class="card">
+    <img [src]="producto.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block"> 
+        <h5 class="card-title">{{producto.producto}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <button type="button" (click)="onUrl(producto.rutaInfo)" class="btn btn-outline-primary btn-block">
+        Ir</button> 
+      </div> 
+    </div>
+
+    </div> 
+</div>

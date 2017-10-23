@@ -1,0 +1,55 @@
+<app-nav></app-nav>   
+<br> 
+
+  <ngb-alert [dismissible]="false" type="light">
+    <strong><h4>CUESTIONARIO</h4></strong>  <br>
+  </ngb-alert>
+
+<ul>
+    
+    <form>       
+        
+<div *ngFor="let pregunta of preguntas" >
+      <h4>Pregunta ->{{pregunta.idPregunta.pregunta}}</h4>    
+</div>
+        
+               <!--<div *ngFor="let pregunta of preguntas | unique">-->
+         <div *ngFor="let cuestionario of cuestionarios| unique" > 
+  <!--Key: {{cuestionario.key}}, value: {{cuestionario.value}}-->
+   <h4>id Cuestionario ->{{cuestionario.id}}</h4>
+   <h4>Pregunta ->{{cuestionario.idPregunta.pregunta}}</h4>
+   <h4>Respuesta ->{{cuestionario.idRespuesta.respuesta}}</h4>
+  ------------
+  
+          <div *ngFor="let cuestionario of cuestionarios| unique2" > 
+            <h4>id_respuesta de cuestionario{{cuestionario.idRespuesta}}</h4>
+            <h4>id de respuesta{{cuestionario.idRespuesta.id}}</h4>
+            <h4>Respuesta ->{{cuestionario.idRespuesta.respuesta}}</h4>
+
+                    <app-preguntas-boton></app-preguntas-boton>        
+
+        </div>
+ 
+
+
+<!--
+  <h4>id Cuestionario ->{{cuestionario.id}}</h4>
+        <h4>{{cuestionario.idPregunta.pregunta}}</h4>
+            {{cuestionario.idPregunta}}
+            {{cuestionario.idRespuesta.respuesta}}
+
+<div *ngFor="let i of cuestionario.idRespuesta.respuesta">
+s
+</div>-->
+            <!--<div *ngIf="cuestionario.id_respuesta == cuestionario.idRespuesta.id">
+            {{cuestionario.idRespuesta.respuesta}}
+            </div>-->            
+     
+        
+        <app-popup></app-popup>
+
+    </form>
+
+</ul>
+
+  

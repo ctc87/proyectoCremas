@@ -1,0 +1,49 @@
+<!--<ngb-alert [dismissible]="false" type="light">
+  <strong><h4>CUESTIONARIO</h4></strong>
+</ngb-alert>-->
+
+<form>       
+  <ngb-carousel interval=-1 >
+    <div *ngFor="let cuestionario of cuestionarios|unique">
+
+      <ng-template ngbSlide>
+        <img src="http://www.yoamoloszapatos.com/wp-content/uploads/2016/09/protector-solar.jpg" alt={{cuestionario.id}}>
+        <!--<img src="https://www.google.es/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=0ahUKEwjSoNGfhITWAhXQYlAKHeo9CM4QjRwIBw&url=http%3A%2F%2Fwww.esteticafuenlabrada.com%2F&psig=AFQjCNEj9D-_0XFRHMVZacX2jkd03o1CjA&ust=1504356884134202" alt={{cuestionario.id}} height="680" weight="900">-->
+        <div class="carousel-caption">
+        <h3>{{cuestionario.idPregunta.pregunta}}</h3>
+
+        <!--<div *ngFor="let cuestionario2 of cuestionarios">-->
+          
+          <div *ngIf ="cuestionario.idPregunta.respuestasMulti==0"  >      
+             <!--
+&& cuestionario2.idPregunta.id==cuestionario.idPregunta.id"
+[respuestaUni] =cuestionario2.idRespuesta.respuesta
+             -->          
+            <app-respuesta-unica
+            [PreguntaUni]=cuestionario.idPregunta.id            
+            ></app-respuesta-unica>       
+      
+          </div>
+
+       <!-- </div>-->
+        
+
+        <!--
+     
+
+        <div *ngIf ="cuestionario.idPregunta.respuestasMulti==1" >      
+          <app-respuesta-multi
+          [respuestaMulti] =cuestionario.idRespuesta.respuesta
+         ></app-respuesta-multi>
+        </div>-->
+      
+        </div>
+      </ng-template>
+
+    </div>
+  </ngb-carousel>
+<br>
+
+<app-popup></app-popup>
+
+</form>

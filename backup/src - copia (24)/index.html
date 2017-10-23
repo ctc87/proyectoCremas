@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hydradermica</title>
+
+  <!-- Load common libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/2.1.1/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.8.5/zone.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <script src="https://unpkg.com/zone.js@0.8.10/dist/long-stack-trace-zone.js"></script>
+  <script src="https://unpkg.com/reflect-metadata@^0.1.8/Reflect.js"></script>
+  <script src="https://unpkg.com/zone.js@0.8.10/dist/zone.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" data-semver="3.3.6" data-require="bootstrap.js@3.3.6"></script>
+  
+  <script src="./config.js"></script>  
+  <script>
+    System
+      .import('main.ts')
+      .catch(console.error.bind(console));
+  </script>
+
+<link rel="icon" href="http://www.hydradermica.com/wp-content/uploads/2017/04/cropped-favicon-ar-3-32x32.png" sizes="32x32" />
+  <style>body { font-family: Roboto, Arial, sans-serif; }</style>
+  <base href="/">
+</head>
+
+<body>
+<app-root>Cargando...</app-root>
+</body>
+
+</html>

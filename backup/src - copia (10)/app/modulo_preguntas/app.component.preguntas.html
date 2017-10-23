@@ -1,0 +1,43 @@
+<form>       
+  <ngb-carousel interval=-1 >
+    <div *ngFor="let cuestionario of cuestionarios">
+      <ng-template ngbSlide>
+        <img src="https://www.start.education/_uploads/images/bel1020x405.jpg" alt={{cuestionario.id}}
+        width="1024px"
+        >
+
+        <div class="carousel-caption">
+        <h3>{{cuestionario.idPregunta.pregunta}}</h3>
+              <app-respuesta
+              [RespuestaMulti]=cuestionario.idPregunta.respuestasMulti
+              [Respuesta1]=cuestionario.idRespuesta1.respuesta            
+              [Respuesta2]=cuestionario.idRespuesta2.respuesta            
+              [Respuesta3]=cuestionario.idRespuesta3.respuesta            
+              [Respuesta4]=cuestionario.idRespuesta4.respuesta            
+              [Respuesta5]=cuestionario.idRespuesta5.respuesta            
+              [Respuesta6]=cuestionario.idRespuesta6.respuesta            
+              [Respuesta7]=cuestionario.idRespuesta7.respuesta            
+              [Respuesta8]=cuestionario.idRespuesta8.respuesta            
+              [Respuesta9]=cuestionario.idRespuesta9.respuesta            
+              [Respuesta10]=cuestionario.idRespuesta10.respuesta 
+              [SubRespuestaNivel1]=cuestionario.idSubrespuestanivel1.idRespuesta.respuesta            
+              [SubRespuestaNivel1Origen1]=cuestionario.idSubrespuestanivel1.idRespuesta.respuesta            
+              [SubRespuestaNivel1Uni1]=cuestionario.idSubrespuestanivel1.idSubrespuesta1.respuesta            
+              [SubRespuestaNivel1Uni2]=cuestionario.idSubrespuestanivel1.idSubrespuesta2.respuesta            
+              [SubRespuestaNivel2]=cuestionario.idSubrespuestanivel2.idRespuesta.respuesta            
+              [SubRespuestaNivel2Uni1]=cuestionario.idSubrespuestanivel2.idSubrespuesta1.respuesta            
+              [SubRespuestaNivel2Uni2]=cuestionario.idSubrespuestanivel2.idSubrespuesta2.respuesta            
+              [SubRespuestaNivel3]=cuestionario.idSubrespuestanivel3.idRespuesta.respuesta            
+              [SubRespuestaNivel3Uni1]=cuestionario.idSubrespuestanivel3.idSubrespuesta1.respuesta            
+              [SubRespuestaNivel3Uni2]=cuestionario.idSubrespuestanivel3.idSubrespuesta2.respuesta            
+              ></app-respuesta>       
+      
+        </div> 
+      </ng-template>
+    </div>
+  </ngb-carousel>
+<br>
+<div align="center">
+<app-popup></app-popup>
+</div>
+</form>

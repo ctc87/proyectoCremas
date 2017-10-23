@@ -1,0 +1,34 @@
+<form>       
+  <ngb-carousel interval=-1 >
+    <div *ngFor="let cuestionario of cuestionarios">
+      <ng-template ngbSlide>
+        <img src="https://www.start.education/_uploads/images/bel1020x405.jpg" alt={{cuestionario.id}}
+        width="1024px">
+
+        <div class="carousel-caption">
+        <h3>{{cuestionario.idPregunta.pregunta}}</h3>
+        
+              <app-respuesta
+              [RespuestaMulti]=cuestionario.idPregunta.respuestasMulti
+              [Respuesta1]=cuestionario.idRespuesta1.respuesta            
+              [Respuesta2]=cuestionario.idRespuesta2.respuesta            
+              [Respuesta3]=cuestionario.idRespuesta3.respuesta            
+              [Respuesta4]=cuestionario.idRespuesta4.respuesta            
+              [Respuesta5]=cuestionario.idRespuesta5.respuesta            
+              [Respuesta6]=cuestionario.idRespuesta6.respuesta            
+              [Respuesta7]=cuestionario.idRespuesta7.respuesta            
+              [Respuesta8]=cuestionario.idRespuesta8.respuesta            
+              [Respuesta9]=cuestionario.idRespuesta9.respuesta            
+              [Respuesta10]=cuestionario.idRespuesta10.respuesta 
+              [SubRespuestaId]=cuestionario.idSubrespuesta.id    
+              ></app-respuesta>       
+      
+        </div> 
+      </ng-template>
+    </div>
+  </ngb-carousel>
+<br>
+<div align="center">
+<app-popup></app-popup>
+</div>
+</form>

@@ -1,0 +1,26 @@
+<form [formGroup]="radioGroupForm">
+  <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+     
+      <div class="btn-group" *ngIf="SubRespuestaNivel3Uni1!=0">   
+              
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" [value]="1">
+          {{SubRespuestaNivel3Uni1}}        
+        </label>
+      </div>
+      <div class="btn-group" *ngIf="SubRespuestaNivel3Uni2!=0">          
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" [value]="2">
+          {{SubRespuestaNivel3Uni2}}          
+        </label>
+      </div>
+    
+  </div> 
+</form>
+
+<!--
+ <div *ngIf="radioGroupForm.value['model'] ==0">
+    <div [ngStyle]="{'color': 'red'}">No ha seleccionado una opcion.</div>
+    </div>-->
+
+   <!-- <pre>{{radioGroupForm.value['model']}}</pre>-->

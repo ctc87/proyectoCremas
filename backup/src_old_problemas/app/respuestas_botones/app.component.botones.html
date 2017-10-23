@@ -1,0 +1,74 @@
+<form [formGroup]="radioGroupForm" > 
+
+  <table >
+    <div class="btn-group" ngbRadioGroup name="radioBasic" formControlName="model">
+    
+        <div class="btn-group" *ngIf= "respuesta1!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="1">{{respuesta1}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta2!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="2">{{respuesta2}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta3!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="3">{{respuesta3}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta4!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="4">{{respuesta4}}
+          </label>
+        </div>
+    <br>     
+        <div class="btn-group"   *ngIf= "respuesta5!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="5">{{respuesta5}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta6!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="6">{{respuesta6}}
+          </label>
+        </div>      
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta7!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="7">{{respuesta7}}
+          </label>
+        </div>
+    <br>
+         <div class="btn-group"   *ngIf= "respuesta8!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="8">{{respuesta8}}
+          </label>
+        </div>      
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta9!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="9">{{respuesta9}}
+          </label>
+        </div>
+    <br>
+        <div class="btn-group"   *ngIf= "respuesta10!=0">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="10">{{respuesta10}}
+          </label>
+        </div>
+
+    </div>
+    <!-- <div *ngIf="radioGroupForm.value['model'] ==0">
+    <div [ngStyle]="{'color': 'red'}">No ha seleccionado una opcion.</div>
+    </div>-->
+  </table> 
+  
+</form>
+
+    <pre>{{radioGroupForm.value['model']}}</pre>

@@ -1,0 +1,28 @@
+<form #f="ngForm" novalidate>
+    
+    <app-preguntas-template 
+    *ngFor="let cuestionario of cuestionarios;let i = index"
+    [indice]="i"
+    [pregunta]="cuestionario.idPregunta.pregunta"
+    [respu1]= "cuestionario.idRespuesta1.respuesta"
+    [respu2]= "cuestionario.idRespuesta2.respuesta"
+    [respu3]= "cuestionario.idRespuesta3.respuesta"
+    [respu4]= "cuestionario.idRespuesta4.respuesta"
+    [respu5]= "cuestionario.idRespuesta5.respuesta"
+    [respu6]= "cuestionario.idRespuesta6.respuesta"
+    [respu7]= "cuestionario.idRespuesta7.respuesta"
+    [respu8]= "cuestionario.idRespuesta8.respuesta"
+    [respu9]= "cuestionario.idRespuesta9.respuesta"
+    [respu10]="cuestionario.idRespuesta10.respuesta"  
+    >
+    </app-preguntas-template>      
+         
+    <input type="hidden" name="subresp51" [(ngModel)]="cuesto.subresp51" value="1">
+    <input type="hidden" name="subresp52" [(ngModel)]="cuesto.subresp52" value="1">
+    <input type="hidden" name="subresp53" [(ngModel)]="cuesto.subresp53" value="1">
+
+</form>
+
+<br>
+<button type="submit"  (click)="goHome(f.value['resp1'],f.value['resp2'],f.value['resp3'],f.value['resp4'],f.value['resp5'],f.value['subresp51'],f.value['subresp52'],f.value['subresp53'])"  class="btn btn-default">ENVIAR</button>
+    
