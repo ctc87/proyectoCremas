@@ -19,11 +19,13 @@ export class APIservice {
     headers: Headers;
     options: RequestOptions;
 
+   public static readonly IP = "http://169.154.11.26";
+   public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
     constructor (private http: Http) {}
     /*private*/
-    public SurveyUrl  = "http://localhost/hydradermica/web/app_dev.php/conexion"; 
-    public ProductospUrl = "http://localhost/hydradermica/web/app_dev.php/productos"; 
-    public LogUrl     = "http://localhost/hydradermica/web/app_dev.php/Log"; 
+    public SurveyUrl  = IP + SERVER_PATH + "conexion"; 
+    public ProductospUrl = IP + SERVER_PATH + "/productos"; 
+    public LogUrl     = "http://169.154.11.26/hydradermica/web/app_dev.php/Log"; 
     public Handleerror;
 
     getComments2() : Observable<survey[]>{
