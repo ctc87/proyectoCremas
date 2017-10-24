@@ -21,9 +21,9 @@ export class APIservice {
 
     constructor (private http: Http) {}
     /*private*/
-    public SurveyUrl  = "http://localhost/hydradermica/web/app_dev.php/conexion"; 
-    public ProductospUrl = "http://localhost/hydradermica/web/app_dev.php/productos"; 
-    public LogUrl     = "http://localhost/hydradermica/web/app_dev.php/Log"; 
+    public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
     public Handleerror;
 
     getComments2() : Observable<survey[]>{
