@@ -12,5 +12,8 @@ import { MyPost } from '../../interfaces/mypost';
 export class Producto implements MyPost {
 	
 	@Input() post: any;
+	public onUrl(url) {
+	 window.location.href = url; 
+	}
 
 }
