@@ -6,27 +6,34 @@ import { HttpClientModule } from '@angular/common/http';
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { APIservice  } from '../servicioAPI/app.servicioAPI';
+import { APIservice } from '../servicioAPI/app.servicioAPI';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { Cuesto } from '../quest.interface';
 import { survey } from '../constructor.survey';
 import { Router } from "@angular/router";
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-preguntas',
-  providers: [APIservice],
-  templateUrl: './app.component.preguntas.html',
+  providers: [NgbCarouselConfig],
+  templateUrl: './app.component.preguntas1.html',
 })  
 
 export class appComponentPreguntas implements OnInit{ 
+    
     constructor(
         private apiservice : APIservice, private modalService: NgbModal,
-        private router: Router
+        private router: Router,
+        config: NgbCarouselConfig
     ){
         this.showHide1  = false;
         this.showHide1b = false;
-        this.showHide2  = false;        
+        this.showHide2  = false; 
+        config.interval = 0;
+        config.wrap = true;
+        config.keyboard = true; 
+ 
     }
 
     public errorMessage;
@@ -40,9 +47,9 @@ export class appComponentPreguntas implements OnInit{
     showHide1e:boolean; 
     showHide1f:boolean; 
     showHide2:boolean;    
-    showHide2b:boolean;     
-    
-    OnSubmit() {          
+    showHide2b:boolean; 
+
+    OnSubmit() {         
         this.apiservice.putQuest(this.cuesto).
         subscribe(response=>{
                             console.log(response);
@@ -150,7 +157,8 @@ export class appComponentPreguntas implements OnInit{
             subresp51:1,
             subresp52:1,
             subresp53:1
-        }  
+        }         
+
     }  
 
     ngOnInit2(){ 

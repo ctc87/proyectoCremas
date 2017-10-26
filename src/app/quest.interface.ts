@@ -12,3 +12,6 @@ export interface Cuesto {
     subresp52:number;
     subresp53:number;
 } 
+
+
+

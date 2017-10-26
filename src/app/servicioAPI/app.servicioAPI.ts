@@ -4,6 +4,7 @@ import { survey } from '../constructor.survey';
 import { Cuesto } from '../quest.interface';
 import { Productos } from '../constructor.productos'; 
 import { Observable } from 'rxjs/Rx';
+import { Cuesto2 } from '../quest2.interface';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
@@ -17,14 +18,19 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class APIservice {
     headers: Headers;
-    options: RequestOptions;
+    options: RequestOptions;   
+    respuestas: Cuesto2[] = [ 
+        //respuestas: Array<Cuesto2> = [{ 
+        /*, 
+        subresp1:11,
+        subresp2:12,
+    subresp3:13 */];
 
     constructor (private http: Http) {}
-    /*private*/
-    public SurveyUrl  = "http://localhost/hydradermica/web/app_dev.php/conexion"; 
-    public ProductospUrl = "http://localhost/hydradermica/web/app_dev.php/productos"; 
-    public LogUrl     = "http://localhost/hydradermica/web/app_dev.php/Log"; 
-    public Handleerror;
+    public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
+    public Handleerror;           
 
     getComments2() : Observable<survey[]>{
 
