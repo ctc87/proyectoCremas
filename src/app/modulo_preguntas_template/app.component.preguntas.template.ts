@@ -74,14 +74,17 @@ export class appComponentPreguntasTemplate implements OnInit  {
     //this.apiservice.respuestas.push(cuesto2);    
     //this.apiservice.respuestas.push(cuesto2);
     this.loadComments2();
+    
     this.cuesto2 = {
       resp:1
     }  
+    console.log("cuestionarios")
+    console.log(this.cuestionarios)
     //this.apiservice.respuestas.push(cuesto2[0]);
     //console.log(cuesto2);
     //this.apiservice.respuestas.push(this.cuesto2.resp);
-    console.log(this.apiservice.respuestas);
-    console.log(this.cuesto2.resp);
+    // console.log(this.apiservice.respuestas);
+    // console.log(this.cuesto2.resp);
 
    }
 
