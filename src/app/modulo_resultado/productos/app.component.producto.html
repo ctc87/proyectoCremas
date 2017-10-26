@@ -1,0 +1,16 @@
+
+    <!--<div *ngIf="seMuestra">-->
+    <!--<p>mos</p>-->
+    <!--<div class="card" *ngIf="post.seMuestra" >-->
+    <div class="card">
+    <img [src]="post.rutaImagen" class="card-img-top" alt="Card image cap" >
+      <div class="card-block">
+      </div> 
+      <div class="card-footer text-center">
+      <p class="title-product">{{post.producto}}</p>
+      <!--<p class="card-text">{{post.descripcion}}</p>-->
+        <button type="button" (click)="onUrl(post.rutaInfo)" class="btn btn-primary btn-lg sharp card-button" >
+          ver más
+        </button>
+      </div>
+    </div>

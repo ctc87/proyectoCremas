@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+import { HttpConbinaciones } from './servicioAPI/app.servicioHttpConbinaciones';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
- 
+  selector: 'body',
+  templateUrl: './app.component.html',
+  providers : [HttpConbinaciones],
+  // styles: ['host {background-image: url("assets/solucion.png");}']
 })
 export class AppComponent { 
- 
+  // @HostBinding('style.background-image') backgroundIMG:string = 'url("assets/solucion.png")';
+  
+  public backgrounds = ['assets/solucion.png','https://rotaractkc.files.wordpress.com/2013/04/custom-blue-wallpaper.jpg']
+  public bck = 'assets/solucion.png'
+
+  constructor(public http: HttpConbinaciones, private _sanitizer: DomSanitizer){}
+  
+  getBackground(image) {
+    return this._sanitizer.bypassSecurityTrustStyle(`linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(${image})`);
+  }
+  
+  public change(i) {
+   this.bck =  this.backgrounds[i];
+  }
 }

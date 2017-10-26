@@ -18,6 +18,9 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class APIservice {
     headers: Headers;
+    public respuestas = [];
+    
+    
     options: RequestOptions;   
     respuestas: Cuesto2[] = [ 
         //respuestas: Array<Cuesto2> = [{ 
@@ -26,25 +29,40 @@ export class APIservice {
         subresp2:12,
     subresp3:13 */];
 
+   public static readonly IP = "http://169.154.11.26";
+   public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
     constructor (private http: Http) {}
-    public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
-    public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
-    public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
-    public Handleerror;           
+    // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    // public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
+    // public Handleerror;           
+    // /*private*/
+    
+    // public SurveyUrl  = IP + SERVER_PATH + "conexion"; 
+    // public ProductospUrl = IP + SERVER_PATH + "/productos"; 
+    // public LogUrl     = "http://169.154.11.26/hydradermica/web/app_dev.php/Log"; 
+    // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    // public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
+    
+     public SurveyUrl  = "assets/json/conexion.json"; 
+    public ProductospUrl = "assets/json/productos.json"; 
+    public LogUrl     = "assets/json/Log.json"; 
+    public Handleerror;
 
     getComments2() : Observable<survey[]>{
 
         return this.http.get(this.SurveyUrl)
                         .map((res:Response) => res.json())
                         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-    } 
+    };
 
     getComments3() : Observable<Productos[]>{
         
         return this.http.get(this.ProductospUrl)
                         .map((res:Response) => res.json())
                         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-    }
+    };
 
     putQuest(cuesto:Cuesto): Observable<any>{
         console.log(cuesto);
@@ -66,5 +84,4 @@ export class APIservice {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
-
 }
