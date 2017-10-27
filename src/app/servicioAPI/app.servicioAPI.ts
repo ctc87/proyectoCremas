@@ -19,12 +19,13 @@ import 'rxjs/add/operator/switchMap';
 export class APIservice {
     headers: Headers;
     options: RequestOptions;   
-    respuestas: Cuesto2[] = [ 
-        //respuestas: Array<Cuesto2> = [{ 
+    respuestas: Cuesto2[]=[];
+        //respuestas: Array<Cuesto2> =  
         /*, 
         subresp1:11,
         subresp2:12,
-    subresp3:13 */];
+    subresp3:13 */
+
 
     constructor (private http: Http) {}
     public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
@@ -32,7 +33,7 @@ export class APIservice {
     public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
     public Handleerror;           
 
-    getComments2() : Observable<survey[]>{
+    getComments2() {
 
         return this.http.get(this.SurveyUrl)
                         .map((res:Response) => res.json())

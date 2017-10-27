@@ -1,43 +1,169 @@
 <div *ngFor="let cuestionario of cuestionarios">
-  <div *ngIf="cuestionario.id==indice">   
-    {{cuestionario.idPregunta.pregunta}} 
-    <!--
-      
-      colocar ngfor  (mostrar datos dinamicamente)
+  <div *ngIf="cuestionario.id==indice+1">   
     
-    -->   
-  <div *ngIf="cuestionario.idTipocuestionario.id==1"><!--botones-->
-    <div role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta1.id!=1">{{cuestionario.idRespuesta1.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta2.id!=1">{{cuestionario.idRespuesta2.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta3.id!=1">{{cuestionario.idRespuesta3.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta4.id!=1">{{cuestionario.idRespuesta4.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta5.id!=1">{{cuestionario.idRespuesta5.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta6.id!=1">{{cuestionario.idRespuesta6.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta7.id!=1">{{cuestionario.idRespuesta7.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta8.id!=1">{{cuestionario.idRespuesta8.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta9.id!=1">{{cuestionario.idRespuesta9.respuesta}}</button>
-      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta10.id!=1">{{cuestionario.idRespuesta10.respuesta}}</button>
+    {{cuestionario.idPregunta.pregunta}} 
+ 
+    <div *ngIf="cuestionario.idTipocuestionario.id==1">
+     <!-- <div role="group" aria-label="Basic example" >-->
+      <div class="btn-group" ngbRadioGroup name="radioBasic" [(ngModel)]="cuesto2.resp">
+        <div *ngFor="let s of cuestionario.idrespuestas">
+           <!-- <button name="cuesto2.resp" [(ngModel)]="cuesto2.resp" role="group" aria-label="Basic example" type="button" class="btn btn-secondary" *ngIf="s.respuesta!=0">
+                {{s.respuesta}}
+            </button>-->
+          <label ngbButtonLabel class="btn-secondary">
+            <input ngbButton type="radio" [value]=" s.respuesta.id">  {{s.respuesta}}
+          </label>
+
+              
+              
+
+
+
+
+        </div>
+      </div> 
     </div>
-  </div> 
+ 
+    <div *ngIf="cuestionario.idTipocuestionario.id==2">
+      <select name="indice" class="btn" [(ngModel)]="cuesto2.resp" (ngModelChange)="toResp(indice)" >
+        <option *ngFor="let s of cuestionario.idrespuestas" [value]="s.respuesta">{{s.respuesta}}</option>
+      </select>       
+    </div>
+
+
+<!--respuesta nivel2 INICIO
+<div *ngIf="cuesto2.resp==cuestionario.idSubrespNivel1.subrespOrigen.id && cuestionario.idSubrespNivel1.id!=1">
+  <select  name="indice" [(ngModel)]="cuesto2.subresp" (ngModelChange)="toSubresp(indice-1)" >
+    <option [value]="1" selected="selected">Seleccione una opción</option>
+    <option [value]="cuestionario.idSubrespNivel1.idsubrespuesta1.id" >
+    {{cuestionario.idSubrespNivel1.idsubrespuesta1.respuesta}}</option>
+    <option [value]="cuestionario.idSubrespNivel1.idsubrespuesta2.id" >
+    {{cuestionario.idSubrespNivel1.idsubrespuesta2.respuesta}}</option>
+  </select>  
+</div>  -->
+
+ 
+
+
+<!--         
+        <div *ngIf="showHide1==true" align="right" class="btn-group">
+          <select  name="subresp52" [(ngModel)]="cuesto.subresp52" >
+            <option [value]="1" selected="selected">Seleccione una opción</option>
+            <option (click)="changeShowStatus1c()" (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel1.id1.idsubrespuesta1.id" >
+            {{cuestionario.idSubrespNivel1.id1.idsubrespuesta1.respuesta}}</option>
+            <option (click)="changeShowStatus1d()" (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel1.id1.idsubrespuesta2.id" >
+            {{cuestionario.idSubrespNivel1.id1.idsubrespuesta2.respuesta}}</option>
+          </select>
+        </div>
+
+            <div *ngIf="showHide1c==true" align="right" class="btn-group">
+                <select  name="subresp53" [(ngModel)]="cuesto.subresp53" >
+                  <option [value]="1" selected="selected">Seleccione una opción</option>
+                  <option [value]="cuestionario.idSubrespNivel1.id1.id1.idsubrespuesta1.id" >
+                  {{cuestionario.idSubrespNivel1.id1.id1.idsubrespuesta1.respuesta}}</option>
+                  <option [value]="cuestionario.idSubrespNivel1.id1.id1.idsubrespuesta2.id" >
+                  {{cuestionario.idSubrespNivel1.id1.id1.idsubrespuesta2.respuesta}}</option>
+                </select>                   
+            </div>
+            <div *ngIf="showHide1d==true" align="right" class="btn-group">                  
+                <select  name="subresp53" [(ngModel)]="cuesto.subresp53" >
+                  <option [value]="1" selected="selected">Seleccione una opción</option>
+                  <option [value]="cuestionario.idSubrespNivel1.id1.id2.idsubrespuesta1.id" >
+                  {{cuestionario.idSubrespNivel1.id1.id2.idsubrespuesta1.respuesta}}</option>
+                  <option [value]="cuestionario.idSubrespNivel1.id1.id2.idsubrespuesta2.id" >
+                  {{cuestionario.idSubrespNivel1.id1.id2.idsubrespuesta2.respuesta}}</option>
+                </select>                   
+            </div>                 
+
+        <div *ngIf="showHide1b==true" align="right" class="btn-group">
+          <select  name="subresp52" [(ngModel)]="cuesto.subresp52" >
+            <option [value]="1" selected="selected">Seleccione una opción</option>
+            <option (click)="changeShowStatus1e()" (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel1.id2.idsubrespuesta1.id" >
+            {{cuestionario.idSubrespNivel1.id2.idsubrespuesta1.respuesta}}</option>
+            <option (click)="changeShowStatus1f()" (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel1.id2.idsubrespuesta2.id" >
+            {{cuestionario.idSubrespNivel1.id2.idsubrespuesta2.respuesta}}</option>
+          </select>  
+        </div>
+
+            <div *ngIf="showHide1e==true" align="right" class="btn-group">
+              <select  name="subresp53" [(ngModel)]="cuesto.subresp53" >
+                <option [value]="1" selected="selected">Seleccione una opción</option>
+                <option [value]="cuestionario.idSubrespNivel1.id2.id1.idsubrespuesta1.id" >
+                {{cuestionario.idSubrespNivel1.id2.id1.idsubrespuesta1.respuesta}}</option>
+                <option [value]="cuestionario.idSubrespNivel1.id2.id1.idsubrespuesta2.id" >
+                {{cuestionario.idSubrespNivel1.id2.id1.idsubrespuesta2.respuesta}}</option>
+              </select> 
+            </div>
+            <div *ngIf="showHide1f==true" align="right" class="btn-group">
+              <select  name="subresp53" [(ngModel)]="cuesto.subresp53" >
+                <option [value]="1" selected="selected">Seleccione una opción</option>
+                <option [value]="cuestionario.idSubrespNivel1.id2.id2.idsubrespuesta1.id" >
+                {{cuestionario.idSubrespNivel1.id2.id2.idsubrespuesta1.respuesta}}</option>
+                <option [value]="cuestionario.idSubrespNivel1.id2.id2.idsubrespuesta2.id" >
+                {{cuestionario.idSubrespNivel1.id2.id2.idsubrespuesta2.respuesta}}</option>
+              </select>
+            </div>
+          -->
+     
+<!--
+          <div *ngIf="cuesto2.resp==cuestionario.idSubrespNivel2.subrespOrigen.id && cuestionario.idSubrespNivel2.id!=1">
+            <select  name="indice" [(ngModel)]="cuesto2.subresp.resp" (ngModelChange)="toSubresp(indice)" >
+              <option [value]="1" selected="selected">Seleccione una opción</option>
+              <option [value]="cuestionario.idSubrespNivel2.idsubrespuesta1.id" >
+              {{cuestionario.idSubrespNivel2.idsubrespuesta1.respuesta}}</option>
+              <option [value]="cuestionario.idSubrespNivel2.idsubrespuesta2.id" >
+              {{cuestionario.idSubrespNivel2.idsubrespuesta2.respuesta}}</option>
+            </select>  
+          </div>
    
-  <div *ngIf="cuestionario.idTipocuestionario.id==2"><!--desplegable-->
-    <select name="indice" class="btn" [(ngModel)]="cuesto2.resp" (ngModelChange)="toNumber()" >
-      <option [value]="1" selected="selected">Seleccione una opción</option>
-      <option [value]="cuestionario.idRespuesta1.id"  *ngIf="cuestionario.idRespuesta1.id!=1">{{cuestionario.idRespuesta1.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta2.id"  *ngIf="cuestionario.idRespuesta2.id!=1">{{cuestionario.idRespuesta2.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta3.id"  *ngIf="cuestionario.idRespuesta3.id!=1">{{cuestionario.idRespuesta3.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta4.id"  *ngIf="cuestionario.idRespuesta4.id!=1">{{cuestionario.idRespuesta4.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta5.id"  *ngIf="cuestionario.idRespuesta5.id!=1">{{cuestionario.idRespuesta5.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta6.id"  *ngIf="cuestionario.idRespuesta6.id!=1">{{cuestionario.idRespuesta6.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta7.id"  *ngIf="cuestionario.idRespuesta7.id!=1">{{cuestionario.idRespuesta7.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta8.id"  *ngIf="cuestionario.idRespuesta8.id!=1">{{cuestionario.idRespuesta8.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta9.id"  *ngIf="cuestionario.idRespuesta9.id!=1">{{cuestionario.idRespuesta9.respuesta}}</option>
-      <option [value]="cuestionario.idRespuesta10.id"  *ngIf="cuestionario.idRespuesta10.id!=1">{{cuestionario.idRespuesta10.respuesta}}</option>
-    </select>
-    <br>
-   <!-- <input  name="indice"  value="1" [(ngModel)]="cuesto2.resp"  >-->
-  </div>
+
+        <div *ngIf="showHide2==true" align="right" class="btn-group">
+          <select  name="subresp52" [(ngModel)]="cuesto.subresp52" >
+            <option [value]="1" selected="selected">Seleccione una opción</option>
+            <option (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel2.id1.idsubrespuesta1.id" >
+            {{cuestionario.idSubrespNivel2.id1.idsubrespuesta1.respuesta}}</option>
+            <option (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel2.id1.idsubrespuesta2.id" >
+            {{cuestionario.idSubrespNivel2.id1.idsubrespuesta2.respuesta}}</option>
+          </select>
+        </div>
+
+        <div *ngIf="showHide2b==true" align="right" class="btn-group">
+          <select  name="subresp52" [(ngModel)]="cuesto.subresp52" >
+            <option [value]="1" selected="selected">Seleccione una opción</option>
+            <option (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel2.id1.idsubrespuesta1.id" >
+            {{cuestionario.idSubrespNivel2.id1.idsubrespuesta1.respuesta}}</option>
+            <option (click)="ngOnInit4()" [value]="cuestionario.idSubrespNivel2.id1.idsubrespuesta2.id" >
+            {{cuestionario.idSubrespNivel2.id1.idsubrespuesta2.respuesta}}</option>
+          </select>
+        </div>
+      -->
+      <!--
+      <div *ngIf="cuesto2.resp==cuestionario.idSubrespNivel3.subrespOrigen.id && cuestionario.idSubrespNivel3.id!=1">
+        <select  name="indice" [(ngModel)]="cuesto2.subresp" (ngModelChange)="toSubresp(indice)" >
+          <option [value]="1" selected="selected">Seleccione una opción</option>
+          <option [value]="cuestionario.idSubrespNivel3.idsubrespuesta1.id" >
+          {{cuestionario.idSubrespNivel3.idsubrespuesta1.respuesta}}</option>
+          <option [value]="cuestionario.idSubrespNivel3.idsubrespuesta2.id" >
+          {{cuestionario.idSubrespNivel3.idsubrespuesta2.respuesta}}</option>
+        </select>  
+      </div>-->
+<!--respuesta nivel2 FIN-->     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </div>
     <!--
