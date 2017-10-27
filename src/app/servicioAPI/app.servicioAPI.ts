@@ -4,6 +4,7 @@ import { survey } from '../constructor.survey';
 import { Cuesto } from '../quest.interface';
 import { Productos } from '../constructor.productos'; 
 import { Observable } from 'rxjs/Rx';
+import { Cuesto2 } from '../quest2.interface';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
@@ -17,24 +18,36 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class APIservice {
     headers: Headers;
-    options: RequestOptions;
     public respuestas = [];
+    
+    
+    options: RequestOptions;   
+    // respuestas: Cuesto2[] = [ 
+    //     //respuestas: Array<Cuesto2> = [{ 
+    //     /*, 
+    //     subresp1:11,
+    //     subresp2:12,
+    // subresp3:13 */];
 
    public static readonly IP = "http://169.154.11.26";
    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
     constructor (private http: Http) {}
-    /*private*/
+    // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    // public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
+    // public Handleerror;           
+    // /*private*/
     
     // public SurveyUrl  = IP + SERVER_PATH + "conexion"; 
     // public ProductospUrl = IP + SERVER_PATH + "/productos"; 
     // public LogUrl     = "http://169.154.11.26/hydradermica/web/app_dev.php/Log"; 
-    // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
-    // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
-    // public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
+    public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
     
-     public SurveyUrl  = "assets/json/conexion.json"; 
-    public ProductospUrl = "assets/json/productos.json"; 
-    public LogUrl     = "assets/json/Log.json"; 
+    //  public SurveyUrl  = "assets/json/conexion.json"; 
+    // public ProductospUrl = "assets/json/productos.json"; 
+    // public LogUrl     = "assets/json/Log.json"; 
     public Handleerror;
 
     getComments2() : Observable<survey[]>{
@@ -42,14 +55,14 @@ export class APIservice {
         return this.http.get(this.SurveyUrl)
                         .map((res:Response) => res.json())
                         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-    } 
+    };
 
     getComments3() : Observable<Productos[]>{
         
         return this.http.get(this.ProductospUrl)
                         .map((res:Response) => res.json())
                         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-    }
+    };
 
     putQuest(cuesto:Cuesto): Observable<any>{
         console.log(cuesto);

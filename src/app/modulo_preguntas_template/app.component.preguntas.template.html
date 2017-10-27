@@ -1,21 +1,72 @@
-{{pregunta}}
-<div class="btn-group">
-
-  <!--hacer ngfor tamaño i-->
-
-  <select name="resp1" [(ngModel)]="cuesto.resp1">      
-    <option [value]="1" selected="selected">Seleccione una opción</option>
-    <option [value]="respu1"  *ngIf="respu1!=0">{{respu1}}</option>
-    <option [value]="respu2"  *ngIf="respu2!=0">{{respu2}}</option>
-    <option [value]="respu3"  *ngIf="respu3!=0">{{respu3}}</option>
-    <option [value]="respu4"  *ngIf="respu4!=0">{{respu4}}</option>
-    <option [value]="respu5"  *ngIf="respu5!=0">{{respu5}}</option>
-    <option [value]="respu6"  *ngIf="respu6!=0">{{respu6}}</option>
-    <option [value]="respu7"  *ngIf="respu7!=0">{{respu7}}</option>
-    <option [value]="respu8"  *ngIf="respu8!=0">{{respu8}}</option>
-    <option [value]="respu9"  *ngIf="respu9!=0">{{respu9}}</option>
-    <option [value]="respu10" *ngIf="respu10!=0">{{respu10}}</option>
-  </select>
-  <br>     
-
+<div *ngFor="let cuestionario of cuestionarios">
+  <div *ngIf="cuestionario.id==indice">   
+    {{cuestionario.idPregunta.pregunta}} 
+    <!--
+      
+      colocar ngfor  (mostrar datos dinamicamente)
+    
+    -->   
+  <div *ngIf="cuestionario.idTipocuestionario.id==1"><!--botones-->
+    <div role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta1.id!=1">{{cuestionario.idRespuesta1.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta2.id!=1">{{cuestionario.idRespuesta2.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta3.id!=1">{{cuestionario.idRespuesta3.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta4.id!=1">{{cuestionario.idRespuesta4.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta5.id!=1">{{cuestionario.idRespuesta5.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta6.id!=1">{{cuestionario.idRespuesta6.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta7.id!=1">{{cuestionario.idRespuesta7.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta8.id!=1">{{cuestionario.idRespuesta8.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta9.id!=1">{{cuestionario.idRespuesta9.respuesta}}</button>
+      <button type="button" class="btn btn-secondary" *ngIf="cuestionario.idRespuesta10.id!=1">{{cuestionario.idRespuesta10.respuesta}}</button>
+    </div>
+  </div> 
+   
+  <div *ngIf="cuestionario.idTipocuestionario.id==2"><!--desplegable-->
+    <select name="indice" class="btn" [(ngModel)]="cuesto2.resp" (ngModelChange)="toNumber()" >
+      <option [value]="1" selected="selected">Seleccione una opción</option>
+      <option [value]="cuestionario.idRespuesta1.id"  *ngIf="cuestionario.idRespuesta1.id!=1">{{cuestionario.idRespuesta1.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta2.id"  *ngIf="cuestionario.idRespuesta2.id!=1">{{cuestionario.idRespuesta2.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta3.id"  *ngIf="cuestionario.idRespuesta3.id!=1">{{cuestionario.idRespuesta3.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta4.id"  *ngIf="cuestionario.idRespuesta4.id!=1">{{cuestionario.idRespuesta4.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta5.id"  *ngIf="cuestionario.idRespuesta5.id!=1">{{cuestionario.idRespuesta5.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta6.id"  *ngIf="cuestionario.idRespuesta6.id!=1">{{cuestionario.idRespuesta6.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta7.id"  *ngIf="cuestionario.idRespuesta7.id!=1">{{cuestionario.idRespuesta7.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta8.id"  *ngIf="cuestionario.idRespuesta8.id!=1">{{cuestionario.idRespuesta8.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta9.id"  *ngIf="cuestionario.idRespuesta9.id!=1">{{cuestionario.idRespuesta9.respuesta}}</option>
+      <option [value]="cuestionario.idRespuesta10.id"  *ngIf="cuestionario.idRespuesta10.id!=1">{{cuestionario.idRespuesta10.respuesta}}</option>
+    </select>
+    <br>
+   <!-- <input  name="indice"  value="1" [(ngModel)]="cuesto2.resp"  >-->
+  </div>
 </div>
+</div>
+    <!--
+    <div *ngIf="subrespu1Origen!=1" align="right" class="btn-group">
+      <select name="subresp1" >      
+        <option [value]="1" selected="selected">Seleccione una opción</option>
+        <option [value]="subrespu1"  >{{subrespu11}}</option>
+        <option [value]="subrespu1"  >{{subrespu12}}</option>
+      </select>
+      <br>        
+    </div>
+
+    <div *ngIf="subrespu2Origen!=1" align="right" class="btn-group">
+      <select name="subresp1" >      
+        <option [value]="1" selected="selected">Seleccione una opción</option>
+        <option [value]="subrespu2"  >{{subrespu21}}</option>
+        <option [value]="subrespu2"  >{{subrespu22}}</option>
+      </select>
+      <br>        
+    </div>
+
+    <div *ngIf="subrespu3Origen!=1" align="right" class="btn-group">
+      <select name="subresp1" >      
+        <option [value]="1" selected="selected">Seleccione una opción</option>
+        <option [value]="subrespu3"  >{{subrespu31}}</option>
+        <option [value]="subrespu3"  >{{subrespu32}}</option>
+      </select>
+      <br>        
+    </div>
+  -->
+
+

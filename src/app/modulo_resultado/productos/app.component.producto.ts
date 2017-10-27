@@ -13,7 +13,6 @@ export class Producto implements MyPost {
 	
 	@Input() post: any;
 	public onUrl(url) {
-	  console.log()
 	 window.location.href = url; 
 	}
 

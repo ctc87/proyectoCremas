@@ -1959,7 +1959,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  border: 2px solid #2B2A2A;
+  border: 2px solid #234369;
   background-color: #FFFFFF;  
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
@@ -2019,15 +2019,15 @@ fieldset[disabled] a.btn {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #868e96;
-  border-color: #868e96;
+  color: #234369;
+  background-color: #fff;
+  border-color: #234369;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #727b84;
-  border-color: #6c757d;
+  background-color: #234369;
+  border-color: #234369;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -2490,7 +2490,7 @@ fieldset[disabled] a.btn {
   padding: 0.10rem 0.10rem;
   font-size: 0.875rem;
   line-height: 1.0;
-  border-radius: 0.1rem;
+  border-radius: 0.0rem;
 }
 
 .btn-block {
@@ -5212,8 +5212,8 @@ button.close {
   left: 5%;
   z-index: 10;
   padding-top: 20px;
-  padding-bottom: 20px;
-  color: #fff;
+  padding-bottom: 200px;
+  color: #234369;
   text-align: center;
 }
 
