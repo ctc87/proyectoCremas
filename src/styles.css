@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./files/css/bootstrap.min.css";
 @import "./files/css/bootstrap.css";
+@import url("./bootrap-5-cols.css");
 
 @font-face{font-family:ff1;src:url(font/f1.woff)format("woff");}
  div {
@@ -90,6 +91,10 @@
 	color: #234369;
 }
 
+
+
+
+
 .ff1{
  font-family:ff1;
  line-height:0.976000;
@@ -115,14 +120,16 @@
 }
 
 .descripcion {
- padding-left: 5%;
- padding-right: 5%;
+ padding: 5% 0%;
+ width:100%;
+ text-align: center;
+ 
 }
 
 .header {
  font-size:200%;
  font-family: ff1 !important;
- padding-bottom: 15px;
+ /*padding-bottom: 15px;*/
 text-decoration: none !important; 
 }
 
@@ -142,16 +149,24 @@ text-decoration: none !important;
 .card {
  border: 2px solid #234369;
  margin-bottom: 20%;
+ 	margin-left: 20%;
+ 	margin-right: 20%;
+ /*margin-left:25%*/
+}
+
+.container-center {
+ /*height:82%;*/
+ padding-top: 20px;
 }
 
 .footer
 {
     /*clear:both;*/
-    bottom: 0;
+    /*bottom: 0;*/
     width: 99%;
-    height: 18%;
+    /*height: 18%;*/
     padding:3px;
-    position: absolute;
+    /*position: absolute;*/
     text-align:center;
     /*background-color:rgba(111, 111, 111, 0.65);*/
     /*border-top:1px solid #bbb;*/
@@ -169,6 +184,78 @@ text-decoration: none !important;
  border: 2px solid #234369;
  height: 30px;
  width: 70%;
+}
+
+.sm-padding{ 
+    text-align: center;
+    padding-left:35%; 
+    padding-bottom:10%;   
+}
+.header {
+ text-align: center   
+}
+
+@media (min-width: 992px) {
+    .descripcion {
+         padding: 0% 5%;
+         text-align: left;
+    }
+    .card {
+         border: 2px solid #234369;
+         margin-bottom: 20%;
+     	margin-left: 15%;
+     	margin-right: 15%;
+     	height: 100%
+    }
+    .card-footer {
+        padding: 0%;
+        padding-top: 10%;
+        
+    }
+
+    .sm-padding{ 
+        padding-left:0%; 
+        padding-bottom:0%;   
+    }
+    
+    .main-content {
+        height: 100%
+    }
+    
+    .container-center {
+     height:90%;
+     /*padding-top: 20px;*/
+    }
+    
+    .header {
+     text-align: left;   
+    }
+    
+    .rightcol {
+       /* border:solid 1px red;
+       position: relative;
+       top: 0%;
+       left: 50%;  */
+       /*border:solid 1px red; */
+       overflow-y: scroll;
+       height: 50%;
+       /*padding-right: 10%*/
+    }
+
+    .footer
+    {
+        /*clear:both;*/
+        bottom: 0;
+        width: 99%;
+        height: 18%;
+        padding:3px;
+        position: absolute;
+        text-align:center;
+        /*background-color:rgba(111, 111, 111, 0.65);*/
+        /*border-top:1px solid #bbb;*/
+        color:#F3F3F3;
+    }
+
 }
 
 .logotipo-footer {
@@ -194,8 +281,18 @@ text-decoration: none !important;
    left: 50%;  */
    /*border:solid 1px red; */
    overflow-y: scroll;
-   height: 45%;
+   /*height: 67%;*/
+   /*padding-right: 10%*/
 }
+
+
+
+
+
+
+
+
+
 
 ::-webkit-scrollbar {
   width: 2px;
@@ -230,3 +327,4 @@ text-decoration: none !important;
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+

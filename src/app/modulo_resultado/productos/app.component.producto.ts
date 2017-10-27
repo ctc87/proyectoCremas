@@ -6,11 +6,15 @@ import { MyPost } from '../../interfaces/mypost';
 @Component({
   selector: 'app-producto',
   templateUrl: './app.component.producto.html',
-  host: {'class': 'col-sm-2'}
+  host: {'class': 'col-xs-5th-5 col-md-5th-1'}
 })  
 
 export class Producto implements MyPost {
 	
 	@Input() post: any;
+	public onUrl(url) {
+	  console.log()
+	 window.location.href = url; 
+	}
 
 }
