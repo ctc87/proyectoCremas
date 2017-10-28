@@ -48,13 +48,13 @@ export class APIservice {
     // public SurveyUrl  = IP + SERVER_PATH + "conexion"; 
     // public ProductospUrl = IP + SERVER_PATH + "/productos"; 
     // public LogUrl     = "http://169.154.11.26/hydradermica/web/app_dev.php/Log"; 
-    public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
-    public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
-    public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
+    // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
+    // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
+    // public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
     
-    //  public SurveyUrl  = "assets/json/conexion.json"; 
-    // public ProductospUrl = "assets/json/productos.json"; 
-    // public LogUrl     = "assets/json/Log.json"; 
+     public SurveyUrl  = "assets/json/conexion.json"; 
+    public ProductospUrl = "assets/json/productos.json"; 
+    public LogUrl     = "assets/json/Log.json"; 
     public Handleerror;
 
     getComments2() {
