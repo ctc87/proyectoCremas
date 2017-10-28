@@ -22,6 +22,13 @@ export class APIservice {
     
     
     options: RequestOptions;   
+    respuestas: Cuesto2[]=[];
+        //respuestas: Array<Cuesto2> =  
+        /*, 
+        subresp1:11,
+        subresp2:12,
+    subresp3:13 */
+
     // respuestas: Cuesto2[] = [ 
     //     //respuestas: Array<Cuesto2> = [{ 
     //     /*, 
@@ -50,7 +57,7 @@ export class APIservice {
     // public LogUrl     = "assets/json/Log.json"; 
     public Handleerror;
 
-    getComments2() : Observable<survey[]>{
+    getComments2() {
 
         return this.http.get(this.SurveyUrl)
                         .map((res:Response) => res.json())
