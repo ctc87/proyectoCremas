@@ -13,6 +13,7 @@
              type="button" 
              class="btn btn-primary btn-lg sharp btn-selected btn-outline" 
              (click)="rellenarRespuestas(indice, s.id, j)"
+             (click)="toResp()"
              [ngClass]="{'btn-selected': apiservice.btnSlected[indice][j]}"
            >
                 {{capitalizeFirstLetter(s.respuesta.toLowerCase())}}  
@@ -23,18 +24,13 @@
     </div>
     <div *ngIf="cuestionario.idTipocuestionario.id==2">
       <div class="div-exterior-select btn">
-      <!--<select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].resp">-->
-      <!--  <option [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe">-->
-      <!--      {{s.respuesta}}-->
-      <!--  </option>-->
-      <!--</select>-->
       <select style=
         "
         color:#234369 !important;
         font-family: 'Questrial', sans-serif !important;
         font-size: 135%  !important;
         " 
-      class="selectPregunta" name="indice" (change)="nextSlide()" class="btn" [(ngModel)]="apiservice.respuestas[indice].resp" >
+      class="selectPregunta" name="indice" (change)="toResp()" class="btn" [(ngModel)]="apiservice.respuestas[indice].resp" >
       
         <option class="opcion-select"  [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe; let i = index" [value]="s.respuesta">
         {{s.respuesta}}
@@ -42,12 +38,20 @@
       </select>
       </div>
     </div>
-    <!-- <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">-->
-    <!--    <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >-->
-    <!--      <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>-->
-    <!--      <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        -->
-    <!--    </select>          -->
-    <!--</div>-->
+     <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">
+        <div class="div-exterior-select btn">
+        <select style=
+        "
+        color:#234369 !important;
+        font-family: 'Questrial', sans-serif !important;
+        font-size: 135%  !important;
+        " 
+          class="selectPregunta btn" name="indice" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >
+          <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>
+          <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
+        </select>     
+        </div>
+    </div>
   </div>
 </div>
 
@@ -55,33 +59,4 @@
 
 
 
-<!--<div *ngFor="let cuestionario of cuestionarios">-->
-<!--  <div *ngIf="cuestionario.id==indice+1">   -->
-    
-<!--    {{cuestionario.idPregunta.pregunta}} -->
- 
-<!--    <div *ngIf="cuestionario.idTipocuestionario.id==1">-->
-<!--      <div  ngbRadioGroup name="radioBasic" [(ngModel)]="apiservice.respuestas[indice].resp">-->
-<!--          <label class="btn-group" *ngFor="let s of cuestionario.idrespuestas|respPipe" ngbButtonLabel class="btn-secondary">-->
-<!--            <input ngbButton type="radio" [value]="s.id">{{s.respuesta}}-->
-<!--          </label>-->
-<!--      </div> -->
-<!--    </div>-->
-    
-<!--    <div *ngIf="cuestionario.idTipocuestionario.id==2">-->
-<!--      <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].resp">-->
-<!--        <option [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe">-->
-<!--            {{s.respuesta}}-->
-<!--        </option>-->
-<!--      </select>          -->
-<!--    </div>-->
 
-<!--    <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">-->
-<!--        <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >-->
-<!--          <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>-->
-<!--          <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        -->
-<!--        </select>          -->
-<!--    </div>-->
-  
-<!--  </div>-->
-<!--</div>-->

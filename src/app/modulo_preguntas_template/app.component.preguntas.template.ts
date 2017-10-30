@@ -38,9 +38,11 @@ export class appComponentPreguntasTemplate implements OnInit  {
     this.apiservice.getComments2()
        .subscribe(
            cuestionarios =>{
-              let i:number;   
+              let i:number;
+              let j:number;   
               cuestionarios.forEach((element) => {
-              let aux: Array<Object>= []              
+              let aux: Array<Object>= [];
+              let aux2: Array<Object>= [];             
 
               for( i = 0; i < 10; i++)
                 { 
@@ -48,17 +50,18 @@ export class appComponentPreguntasTemplate implements OnInit  {
                 aux[i] = element["idRespuesta" + (i+1)];                 
                 // console.log(aux[i]);
                 }
+                
+                for( j = 0; j < 3; j++)
+              { 
+                aux2[j] = element["idSubrespNivel" + (j+1)];                 
+              }
               let a=new survey(
                 element.id,
-                //element.idRespuesta,                
                 element.idPregunta,
-               // element.idrespuestaOrigen,
-                //element.idPregunta.pregunta,
                 element.idSubrespNivel1,
                 element.idSubrespNivel2,
                 element.idSubrespNivel3,
-                //element.idRespuesta,
-                //element.idSubrespuesta,
+                aux2,
                 element.idTipocuestionario,
                 aux
              );
@@ -85,20 +88,10 @@ export class appComponentPreguntasTemplate implements OnInit  {
   
   toResp(){ 
     console.log(this.apiservice.respuestas);
+    this.apiservice.showButton();
+    console.log(this.apiservice.mostrarBottonEnviar);
   }
-  // toSubresp($resp){
-  // }
   
-  
-  // crearArraySinOpcionesVacias() {
-  //   let that = this;
-  //   that.cuestionarios_sin_vacias = that.cuestionarios.slice();
-  //   that.cuestionarios_sin_vacias.forEach( (element, index) => {
-  //       that.cuestionarios_sin_vacias[index].idrespuestas = element.idrespuestas.filter(function(respuesta){
-  //         return Number(respuesta.respuesta) != 0;
-  //       });
-  //   });
-  // }
   
   rellenarRespuestas(indice, valor, j) {
     this.apiservice.respuestas[indice].resp = valor;
@@ -121,5 +114,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
     //     this.carousel.next();
     // },500);
   }
+  
+  
   
 }

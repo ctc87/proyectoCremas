@@ -82,50 +82,55 @@ onUrl(param){
 
 rellenarRespuestas(params) {
   let that = this;
-  if(params['resp1']!=null){
-    that.respuestas[0] = {};
-    that.respuestas[0].respuesta = params['resp1']; 
-    that.Resp1 = params['resp1']; 
-  }
-  if(params['resp2']!=null){
-    that.respuestas[1] = {};
-    that.respuestas[1].respuesta = params['resp2'];
-    that.Resp2 = params['resp2']; 
-  }
-  if(params['resp3']!=null){
-    that.respuestas[2] = {};
-    that.respuestas[2].respuesta = params['resp3'];
-    that.Resp3 = params['resp3']; 
-  }
-  if(params['resp4']!=null){
-    that.respuestas[3] = {};
-    that.respuestas[3].respuesta = params['resp4'];
-    that.Resp4 = params['resp4']; 
-  }
-  if(params['resp5']!=null){
-    that.respuestas[4] = {};
-    that.respuestas[4].respuesta = params['resp5'];
-    that.Resp5 = params['resp5']; 
-  }        
-  if(params['subresp51']!=null){
-    that.respuestas[4].subrespuestas = [];
-    that.respuestas[4].subrespuestas[0] = params['subresp51'];
-    that.Subresp51 = params['subresp51']; 
-  }  
-  if(params['subresp52']!=null){
-    that.respuestas[4].subrespuestas[1] = params['subresp52'];
-    that.Subresp52 = params['subresp52']; 
-  }    
-  if(params['subresp53']!=null){
-    that.respuestas[4].subrespuestas[2] = params['subresp53'];
-    that.Subresp53 = params['subresp53']; 
-  }
+  this.apiservice.respuestas.forEach(function(element, index){
+    console.log(that.respuestas);
+    console.log(that.apiservice.respuestas);
+    
+  });
+  //   that.respuestas[0] = {};
+  //   that.respuestas[0].respuesta = params['resp1']; 
+
+  // if(params['resp2']!=null){
+  //   that.respuestas[1] = {};
+  //   that.respuestas[1].respuesta = params['resp2'];
+  //   that.Resp2 = params['resp2']; 
+  // }
+  // if(params['resp3']!=null){
+  //   that.respuestas[2] = {};
+  //   that.respuestas[2].respuesta = params['resp3'];
+  //   that.Resp3 = params['resp3']; 
+  // }
+  // if(params['resp4']!=null){
+  //   that.respuestas[3] = {};
+  //   that.respuestas[3].respuesta = params['resp4'];
+  //   that.Resp4 = params['resp4']; 
+  // }
+  // if(params['resp5']!=null){
+  //   that.respuestas[4] = {};
+  //   that.respuestas[4].respuesta = params['resp5'];
+  //   that.Resp5 = params['resp5']; 
+  // }        
+  // if(params['subresp51']!=null){
+  //   that.respuestas[4].subrespuestas = [];
+  //   that.respuestas[4].subrespuestas[0] = params['subresp51'];
+  //   that.Subresp51 = params['subresp51']; 
+  // }  
+  // if(params['subresp52']!=null){
+  //   that.respuestas[4].subrespuestas[1] = params['subresp52'];
+  //   that.Subresp52 = params['subresp52']; 
+  // }    
+  // if(params['subresp53']!=null){
+  //   that.respuestas[4].subrespuestas[2] = params['subresp53'];
+  //   that.Subresp53 = params['subresp53']; 
+  // }
 }
 
   ngOnInit() {
     let that = this;
     this.loadComments3(function(productoss){
       that.route.params.subscribe(params => {
+        console.log("PARAMS")
+        console.log(that.apiservice.respuestas)
         that.rellenarRespuestas(params);
         console.log(that.productoss);   
         let resp = that.respuestas;

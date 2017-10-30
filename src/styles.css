@@ -1,17 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/**************************
+ IMPORTS
+ **************************/
 @import "./files/css/bootstrap.min.css";
 @import "./files/css/bootstrap.css";
 @import url("./bootrap-5-cols.css");
 
 
+ /**************************
+  FUENTES
+ **************************/
 @font-face{font-family:ff1;src:url(font/f1.woff)format("woff");}
  div {
      font-family: 'Questrial', sans-serif !important;
  }
  
  /**************************
-  DEFAULT BOOTSTRAP STYLES
-**************************/
+  GENERAL
+ **************************/
+ 
+     
+     /**************************
+      DEFAULT BOOTSTRAP STYLES
+    **************************/
 
 .btn {
   display: inline-block;
@@ -115,6 +125,9 @@
   outline: none;
 }
 
+/**************************
+  RESULTADOS
+ **************************/
 .card-button {
  text-transform:none; 
  padding:2px 20px;
@@ -217,30 +230,21 @@ text-decoration: none !important;
 }
 
 .outer {
-    /*border:solid 1px #000;*/
 }
 
 .leftcol {
-  /* position: fixed;
-   top: 0%;
-   left: 0%; */
-   /*border:solid 1px green;*/
    overflow:hidden;
 }
 
 .rightcol {
-   /* border:solid 1px red;
-   position: relative;
-   top: 0%;
-   left: 50%;  */
-   /*border:solid 1px red; */
    overflow-y: scroll;
-   /*height: 67%;*/
-   /*padding-right: 10%*/
 }
 
 
-/*** PREGUNTAS **/
+/**************************
+  PREGUNTAS
+ **************************/
+
 .texto-pregunta {
     font-size: 200%;
     margin-bottom: 4%;
@@ -278,25 +282,24 @@ text-decoration: none !important;
     /*margin-top: 10%;*/
     /*margin-bottom: 50%;  */
 }
-    .carousel-indicators {
+
+.carousel-indicators {
      display:none !important;   
-    }
+}
 
 ngb-carousel:focus {
     outline: none;
     border: 0;
  }
- .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      height: 100px;
-      width: 100px;
-      outline: black;
-      /*background-size: 100%, 100%;*/
-      /*border-radius: 50%;*/
-      /*border: 1px solid black;*/
-      background-image: none;
-      display:none;
-    }
+ 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-image: none;
+  display:none;
+}
 
 .carousel-control-next-icon:after
 {
@@ -311,28 +314,21 @@ ngb-carousel:focus {
   color: #234369;
 }
 
-
-/*.opcion-select {*/
-/*    color:#234369 !important;*/
-/*    font-family: 'Questrial', sans-serif !important;*/
-/*    font-size: 135%  !important;*/
-/*}*/
-
-/*{*/
-/*    color:#234369;*/
-/*    font-family: 'Questrial', sans-serif !important;*/
-/*    font-size: 135%;*/
-/*}*/
-
 .div-exterior-select {
     border: solid 2px #234369;
     width: auto;
     padding: 0;
     margin: 0;
+    margin-bottom:5px;
     border-radius: 0%;
 }
 
-
+/**************************
+  RESPONSIVAS 
+  Aqui estan las clases modificadas para el tamaño de la pantalla,
+  Si se quiere modificar algo en un tamaño menor a 992px se deben modificar
+  las clases que están fuera no las que están dentro.
+ **************************/
 
 @media (min-width: 992px) {
     
@@ -494,8 +490,9 @@ ngb-carousel:focus {
 
 }
 
- 
-
+/**************************
+  SCROLLBAR
+ **************************/
 
 ::-webkit-scrollbar {
   width: 2px;
@@ -530,4 +527,3 @@ ngb-carousel:focus {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-

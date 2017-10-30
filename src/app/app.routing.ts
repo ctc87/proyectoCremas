@@ -5,7 +5,7 @@ import {appComponentPreguntas} from './modulo_preguntas/app.component.preguntas'
 
 const appRoutes: Routes = [
     {
-        path:'resultado/:resp1/:resp2/:resp3/:resp4/:resp5/:subresp51/:subresp52/:subresp53',
+        path:'resultado',
         component: appComponentResultado 
     },
     {

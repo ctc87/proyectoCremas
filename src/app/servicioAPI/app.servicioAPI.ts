@@ -26,11 +26,11 @@ export class APIservice {
         'assets/pregunta4.png',
         'assets/solucion.png'
         ]
-    public bck = 'assets/solucion.png'
+    public bck = 'assets/pregunta1.png'
     options: RequestOptions;   
     respuestas: Cuesto2[]=[];
     btnSlected = [];
-
+    public mostrarBottonEnviar = false;
 
    public static readonly IP = "http://169.154.11.26";
    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
@@ -96,5 +96,14 @@ export class APIservice {
             error.status ? `${error.status} - ${error.statusText}` : 'Server handle error';
         console.error(errMsg);
         return Observable.throw(errMsg);
+    }
+    
+    public showButton() {
+        let mostrar = true;
+        this.respuestas.forEach(function(element, index) {
+          mostrar = (element.resp != 0) && mostrar;
+          
+        });  
+        this.mostrarBottonEnviar = mostrar;
     }
 }
