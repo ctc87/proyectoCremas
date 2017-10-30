@@ -17,6 +17,9 @@ import { routing } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { MyPostComponent } from './modulo_resultado/componente_post/mypost.component';
 import { MyPostDirective } from './directivas/mypost.directive';
+import { respPipe } from './pipes/app.pipe.respuestas';
+import { respPipe2 } from './pipes/app.pipe.respuestas2';
+
 
 @NgModule({
   imports: [
@@ -38,7 +41,9 @@ import { MyPostDirective } from './directivas/mypost.directive';
   	MyPostComponent,
 	  MyPostDirective,	
     appNav,
-    UniquePipe
+    UniquePipe,
+    respPipe,
+    respPipe2
   ], 
   entryComponents: [ 
       Producto 

@@ -1,51 +1,87 @@
-<div *ngFor="let cuestionario of cuestionarios_sin_vacias">
+<div *ngFor="let cuestionario of cuestionarios">
   <div *ngIf="cuestionario.id==indice+1" class="custionario-container" >
   <div class="row" >
     <div class="col-12 texto-pregunta">
     {{cuestionario.idPregunta.pregunta.trim()}} 
     </div>
   </div>
-    <div *ngIf="cuestionario.idTipocuestionario.id==1" style="padding-left:15% ; padding-right:15%;">
-      <!-- <div role="group" aria-label="Basic example" >-->
-      <!--DESCOMENTAR-->
-      <!--<div class="btn-group" ngbRadioGroup name="radioBasic" [(ngModel)]="cuesto2.resp">-->
-        <div class="row justify-content-center" >
-          <ng-container *ngFor="let s of cuestionario.idrespuestas" class="btn-preguntas">
-          <!-- <button name="cuesto2.resp" [(ngModel)]="cuesto2.resp" role="group" aria-label="Basic example" type="button" class="btn btn-secondary" *ngIf="s.respuesta!=0">
-          {{s.respuesta}}
-          </button>-->
-          <!--<div class="{{asignarClaseALasRespuestas(cuestionario.idrespuestas)}}">  -->
-          <div class="col-md-2 col-12" >  
-            <button type="button" class="btn btn-primary btn-lg sharp">
-              {{maysPrimera(s.respuesta.toLowerCase())}}  
-            </button>
-          </div>
-          <!--DESCOMENTAR-->
-          <!--<label ngbButtonLabel class="btn btn-primary btn-lg sharp " *ngIf="s.respuesta!=0">-->
-          <!--  <input ngbButton type="radio" [value]=" s.respuesta.id">  {{maysPrimera(s.respuesta.toLowerCase())}}-->
-          <!--</label>-->
-          </ng-container>
-        </div>
-      <!--</div> -->
+  <div *ngIf="cuestionario.idTipocuestionario.id==1" style="padding-left:15% ; padding-right:15%;">
+      <div class="row justify-content-center">
+        <ng-container *ngFor="let s of cuestionario.idrespuestas|respPipe ; let j = index" class="btn-preguntas">
+        <div class="col-md-2 col-12" > 
+           <button
+             type="button" 
+             class="btn btn-primary btn-lg sharp btn-selected btn-outline" 
+             (click)="rellenarRespuestas(indice, s.id, j)"
+             [ngClass]="{'btn-selected': apiservice.btnSlected[indice][j]}"
+           >
+                {{capitalizeFirstLetter(s.respuesta.toLowerCase())}}  
+           </button>
+        </div> 
+        </ng-container>
       </div>
- 
+    </div>
     <div *ngIf="cuestionario.idTipocuestionario.id==2">
       <div class="div-exterior-select btn">
+      <!--<select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].resp">-->
+      <!--  <option [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe">-->
+      <!--      {{s.respuesta}}-->
+      <!--  </option>-->
+      <!--</select>-->
       <select style=
         "
         color:#234369 !important;
         font-family: 'Questrial', sans-serif !important;
         font-size: 135%  !important;
         " 
-      class="selectPregunta" name="indice" class="btn" [(ngModel)]="cuesto2.resp" (ngModelChange)="toResp(indice)" >
+      class="selectPregunta" name="indice" (change)="nextSlide()" class="btn" [(ngModel)]="apiservice.respuestas[indice].resp" >
       
-        <option class="opcion-select" *ngFor="let s of cuestionario.idrespuestas ; let i = index" [value]="s.respuesta">
+        <option class="opcion-select"  [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe; let i = index" [value]="s.respuesta">
         {{s.respuesta}}
         </option>
       </select>
       </div>
     </div>
+    <!-- <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">-->
+    <!--    <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >-->
+    <!--      <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>-->
+    <!--      <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        -->
+    <!--    </select>          -->
+    <!--</div>-->
   </div>
 </div>
 
 
+
+
+
+<!--<div *ngFor="let cuestionario of cuestionarios">-->
+<!--  <div *ngIf="cuestionario.id==indice+1">   -->
+    
+<!--    {{cuestionario.idPregunta.pregunta}} -->
+ 
+<!--    <div *ngIf="cuestionario.idTipocuestionario.id==1">-->
+<!--      <div  ngbRadioGroup name="radioBasic" [(ngModel)]="apiservice.respuestas[indice].resp">-->
+<!--          <label class="btn-group" *ngFor="let s of cuestionario.idrespuestas|respPipe" ngbButtonLabel class="btn-secondary">-->
+<!--            <input ngbButton type="radio" [value]="s.id">{{s.respuesta}}-->
+<!--          </label>-->
+<!--      </div> -->
+<!--    </div>-->
+    
+<!--    <div *ngIf="cuestionario.idTipocuestionario.id==2">-->
+<!--      <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].resp">-->
+<!--        <option [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe">-->
+<!--            {{s.respuesta}}-->
+<!--        </option>-->
+<!--      </select>          -->
+<!--    </div>-->
+
+<!--    <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">-->
+<!--        <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >-->
+<!--          <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>-->
+<!--          <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        -->
+<!--        </select>          -->
+<!--    </div>-->
+  
+<!--  </div>-->
+<!--</div>-->

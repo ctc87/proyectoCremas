@@ -22,11 +22,12 @@ import { survey } from '../constructor.survey';
 export class appComponentPreguntasTemplate implements OnInit  { 
   cuesto2;
   @Input () indice :number;
+  @Input () carousel;
      
   //respuestas:Array<Cuesto2>;
   respuestas:Cuesto2[];
   cuestionarios=[]; 
-  cuestionarios_sin_vacias=[];   
+  // cuestionarios_sin_vacias=[];   
   public errorMessage;
   public response;
   nombreSubResp:any[];
@@ -63,10 +64,15 @@ export class appComponentPreguntasTemplate implements OnInit  {
              );
               that.cuestionarios.push(a);
              });
-             this.crearArraySinOpcionesVacias();
-            //console.log(cuestionarios[0]["idRespuesta"  + i].id);
-            //this.cuestionarios=cuestionarios
-
+            // this.crearArraySinOpcionesVacias();
+            this.apiservice.numResp = this.cuestionarios.length;
+            this.apiservice.initRespuestas();
+            for(let i = 0; i < this.cuestionarios.length; i++) {
+              this.apiservice.btnSlected[i] = [];
+              for(let j = 0; j < this.cuestionarios[i].idrespuestas.length; j++) {
+                Number(this.cuestionarios[i].idrespuestas[j].respuesta) != 0 ? this.apiservice.btnSlected[i].push(false) : null;
+              }
+            }
            } ,
            err => {
                console.log(err);
@@ -77,30 +83,43 @@ export class appComponentPreguntasTemplate implements OnInit  {
     this.loadComments2();
   }
   
-  toResp($resp){ 
-    this.apiservice.respuestas[$resp]=this.cuesto2.resp;    
+  toResp(){ 
+    console.log(this.apiservice.respuestas);
   }
-  toSubresp($resp){
-    //console.log(this.cuesto2);    
-    //this.apiservice.respuestas[$resp].subresp.push(this.cuesto2.subresp);
-    //console.log(this.apiservice.respuestas); 
+  // toSubresp($resp){
+  // }
   
   
+  // crearArraySinOpcionesVacias() {
+  //   let that = this;
+  //   that.cuestionarios_sin_vacias = that.cuestionarios.slice();
+  //   that.cuestionarios_sin_vacias.forEach( (element, index) => {
+  //       that.cuestionarios_sin_vacias[index].idrespuestas = element.idrespuestas.filter(function(respuesta){
+  //         return Number(respuesta.respuesta) != 0;
+  //       });
+  //   });
+  // }
   
-   // images.push(new Array());
-
+  rellenarRespuestas(indice, valor, j) {
+    this.apiservice.respuestas[indice].resp = valor;
+    for(let i = 0; i < this.apiservice.btnSlected[indice].length; i++) {
+      if(i == j) {
+        this.apiservice.btnSlected[indice][i] = true; 
+      } else {
+        this.apiservice.btnSlected[indice][i] = false; 
+      }
+  }
+    // this.carousel.next()
   }
   
-  
-  crearArraySinOpcionesVacias() {
-    let that = this;
-    that.cuestionarios_sin_vacias = that.cuestionarios.slice();
-    that.cuestionarios_sin_vacias.forEach( (element, index) => {
-        that.cuestionarios_sin_vacias[index].idrespuestas = element.idrespuestas.filter(function(respuesta){
-          return Number(respuesta.respuesta) != 0;
-        });
-    });
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
+  nextSlide() {
+    // setTimeout(()=>{   
+    //     this.carousel.next();
+    // },500);
+  }
   
 }

@@ -18,8 +18,7 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class APIservice {
     headers: Headers;
-    // public respuestas = [];
-    
+    numResp : number;
     public backgrounds = [
         'assets/pregunta1.png',
         'assets/pregunta2.png',
@@ -30,12 +29,7 @@ export class APIservice {
     public bck = 'assets/solucion.png'
     options: RequestOptions;   
     respuestas: Cuesto2[]=[];
-        //respuestas: Array<Cuesto2> =  
-        /*, 
-        subresp1:11,
-        subresp2:12,
-    subresp3:13 */
-
+    btnSlected = [];
 
 
    public static readonly IP = "http://169.154.11.26";
@@ -59,10 +53,14 @@ export class APIservice {
     public LogUrl     = "assets/json/Log.json"; 
     public Handleerror;
 
-
+    public initRespuestas() {
+        for (var index = 0; index < this.numResp; index++) {
+            this.respuestas[index] = new Cuesto2(0,[]);
+            
+        }
+    }
   
     public change(i) {
-        console.log(i)
         this.bck =  this.backgrounds[i];
     }
     
@@ -81,7 +79,6 @@ export class APIservice {
     };
 
     putQuest(cuesto:Cuesto): Observable<any>{
-        console.log(cuesto);
         let json = JSON.stringify(cuesto);
         let headers = new Headers({"Content-Type":"application/json"});
         return this.http.post(this.LogUrl, json,this.options)
