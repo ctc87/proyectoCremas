@@ -25,7 +25,8 @@ export class appComponentPreguntasTemplate implements OnInit  {
      
   //respuestas:Array<Cuesto2>;
   respuestas:Cuesto2[];
-  cuestionarios=[];   
+  cuestionarios=[]; 
+  cuestionarios_sin_vacias=[];   
   public errorMessage;
   public response;
   nombreSubResp:any[];
@@ -39,7 +40,6 @@ export class appComponentPreguntasTemplate implements OnInit  {
               let i:number;   
               cuestionarios.forEach((element) => {
               let aux: Array<Object>= []              
-               console.log(element);
 
               for( i = 0; i < 10; i++)
                 { 
@@ -62,8 +62,8 @@ export class appComponentPreguntasTemplate implements OnInit  {
                 aux
              );
               that.cuestionarios.push(a);
-             console.log(a);
              });
+             this.crearArraySinOpcionesVacias();
             //console.log(cuestionarios[0]["idRespuesta"  + i].id);
             //this.cuestionarios=cuestionarios
 
@@ -83,6 +83,10 @@ export class appComponentPreguntasTemplate implements OnInit  {
     //console.log(this.apiservice.respuestas);
     //console.log(this.cuesto2);
   }
+  
+  maysPrimera(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+ }
     
     // this.cuesto2 = {
     //   resp:1
@@ -98,9 +102,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
   // }
 
   toResp($resp){ 
-    console.log(this.cuesto2);
     this.apiservice.respuestas[$resp]=this.cuesto2.resp;    
-    console.log(this.apiservice.respuestas);
   }
   toSubresp($resp){
     //console.log(this.cuesto2);    
@@ -112,4 +114,17 @@ export class appComponentPreguntasTemplate implements OnInit  {
    // images.push(new Array());
 
   }
+  
+  
+  crearArraySinOpcionesVacias() {
+    let that = this;
+    that.cuestionarios_sin_vacias = that.cuestionarios.slice();
+    that.cuestionarios_sin_vacias.forEach( (element, index) => {
+        that.cuestionarios_sin_vacias[index].idrespuestas = element.idrespuestas.filter(function(respuesta){
+          return Number(respuesta.respuesta) != 0;
+        });
+    });
+  }
+  
+  
 }

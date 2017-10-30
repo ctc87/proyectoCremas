@@ -62,6 +62,15 @@ export class appComponentPreguntas implements OnInit{
                                 }                  
                             })        
     } 
+    
+    onSlideClicked(value: any){
+        this.apiservice.change(/\d+$/g.exec(value.activeId)[0]);
+        // console.log(/\d+$/g.exec(value.activeId)[0]);
+    }
+    
+    colorBarraHorizontal(actual, pintar) {
+        return ++actual <= pintar ? "grey" : "#234369" ; 
+    }
 
     changeShowStatus1(){
         this.changeShowStatusTotal()        

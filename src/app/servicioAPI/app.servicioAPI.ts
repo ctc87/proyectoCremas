@@ -18,9 +18,16 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class APIservice {
     headers: Headers;
-    public respuestas = [];
+    // public respuestas = [];
     
-    
+    public backgrounds = [
+        'assets/pregunta1.png',
+        'assets/pregunta2.png',
+        'assets/pregunta3.png',
+        'assets/pregunta4.png',
+        'assets/solucion.png'
+        ]
+    public bck = 'assets/solucion.png'
     options: RequestOptions;   
     respuestas: Cuesto2[]=[];
         //respuestas: Array<Cuesto2> =  
@@ -57,6 +64,13 @@ export class APIservice {
     public LogUrl     = "assets/json/Log.json"; 
     public Handleerror;
 
+
+  
+    public change(i) {
+        console.log(i)
+        this.bck =  this.backgrounds[i];
+    }
+    
     getComments2() {
 
         return this.http.get(this.SurveyUrl)

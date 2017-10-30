@@ -72,7 +72,7 @@
 	border: 0 none;
 	font-weight: 700;
 	letter-spacing: 1px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
 	outline: 0 none;
@@ -200,9 +200,165 @@ text-decoration: none !important;
 .text-desc {
     margin-left:10%;
     }
+    
+   
+.container-cabezera {
+     height:auto;
+     padding-top: 10px;
+}
+
+.logotipo-footer {
+ width: 100%;
+}
+
+.outer {
+    /*border:solid 1px #000;*/
+}
+
+.leftcol {
+  /* position: fixed;
+   top: 0%;
+   left: 0%; */
+   /*border:solid 1px green;*/
+   overflow:hidden;
+}
+
+.rightcol {
+   /* border:solid 1px red;
+   position: relative;
+   top: 0%;
+   left: 50%;  */
+   /*border:solid 1px red; */
+   overflow-y: scroll;
+   /*height: 67%;*/
+   /*padding-right: 10%*/
+}
+
+
+/*** PREGUNTAS **/
+.texto-pregunta {
+    font-size: 200%;
+    margin-bottom: 4%;
+}
+.btn-preguntas {
+ margin-left: 30px;   
+}
+
+.barra-horizontal {
+     /*background-color: #234369;*/
+     height: 8px;
+     width: 8px;
+     cursor: pointer;
+     border-radius: 50%;
+}
+
+.contendedor-barra-horizontal {
+ padding-left: 10px;
+ padding-right: 10px;
+ margin-top: 10%;
+ margin-bottom: 10%;
+}
+
+.img_carousel {
+    opacity: 0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+       height: 83%;
+}
+
+.logo-preguntas {
+ width: 100%;   
+}
+
+.custionario-container {
+    /*margin-top: 10%;*/
+    /*margin-bottom: 50%;  */
+}
+    .carousel-indicators {
+     display:none !important;   
+    }
+
+ngb-carousel:focus {
+    outline: none;
+    border: 0;
+ }
+ .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 100px;
+      width: 100px;
+      outline: black;
+      /*background-size: 100%, 100%;*/
+      /*border-radius: 50%;*/
+      /*border: 1px solid black;*/
+      background-image: none;
+      display:none;
+    }
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #234369;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #234369;
+}
+
+
+/*.opcion-select {*/
+/*    color:#234369 !important;*/
+/*    font-family: 'Questrial', sans-serif !important;*/
+/*    font-size: 135%  !important;*/
+/*}*/
+
+/*{*/
+/*    color:#234369;*/
+/*    font-family: 'Questrial', sans-serif !important;*/
+/*    font-size: 135%;*/
+/*}*/
+
+.div-exterior-select {
+    border: solid 2px #234369;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 0%;
+}
+
+
 
 @media (min-width: 992px) {
     
+    
+ .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 100px;
+      width: 100px;
+      outline: black;
+      /*background-size: 100%, 100%;*/
+      /*border-radius: 50%;*/
+      /*border: 1px solid black;*/
+      background-image: none;
+    }
+
+    .carousel-control-next-icon:after
+    {
+      content: '>';
+      font-size: 55px;
+      color: #234369;
+    }
+    
+    .carousel-control-prev-icon:after {
+      content: '<';
+      font-size: 55px;
+      color: #234369;
+    }
+        
+    .carousel-indicators {
+     display:none !important;   
+    }
     .text-desc {
         margin-left:0%;
     }
@@ -292,50 +448,48 @@ text-decoration: none !important;
      height:auto;
      padding-top: 10px;
      padding-left: 20px;
-}
+    }
 
-}
-
+    .texto-pregunta {
+    font-size: 200%;
+    margin-bottom: 4%;
+    }
+    .btn-preguntas {
+     margin-left: 30px;   
+    }
     
-.container-cabezera {
-     height:auto;
-     padding-top: 10px;
+    .barra-horizontal {
+         /*background-color: #234369;*/
+         height: 8px;
+         cursor: pointer;
+         border-radius: 0%;
+         width: 100%;
+    }
+    
+    .contendedor-barra-horizontal {
+     padding-left: 10px;
+     padding-right: 10px;
+     margin-top: 10%;
+     margin-bottom: 10%;
+    }
+    
+    .img_carousel {
+        opacity: 0;
+        filter: alpha(opacity=0); /* For IE8 and earlier */
+        height:auto
+    }
+    
+    .logo-preguntas {
+         width: auto;   
+    }
+    .custionario-container {
+        margin-top: 10%;
+        margin-bottom: 6%; 
+    }
+
 }
 
-.logotipo-footer {
- width: 100%;
-}
-
-.outer {
-    /*border:solid 1px #000;*/
-}
-
-.leftcol {
-  /* position: fixed;
-   top: 0%;
-   left: 0%; */
-   /*border:solid 1px green;*/
-   overflow:hidden;
-}
-
-.rightcol {
-   /* border:solid 1px red;
-   position: relative;
-   top: 0%;
-   left: 50%;  */
-   /*border:solid 1px red; */
-   overflow-y: scroll;
-   /*height: 67%;*/
-   /*padding-right: 10%*/
-}
-
-
-
-
-
-
-
-
+ 
 
 
 ::-webkit-scrollbar {

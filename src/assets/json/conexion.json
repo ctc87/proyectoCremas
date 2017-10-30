@@ -3,7 +3,7 @@
       "id":1,
       "idPregunta":{
          "id":1,
-         "pregunta":"SEXO"
+         "pregunta":"Seleccione su sexo:"
       },
       "idRespuesta1":{
          "id":2,
@@ -467,7 +467,7 @@
       "id":2,
       "idPregunta":{
          "id":2,
-         "pregunta":"EDAD"
+         "pregunta":"¿Qué edad tienes?"
       },
       "idRespuesta1":{
          "id":4,
@@ -931,7 +931,7 @@
       "id":3,
       "idPregunta":{
          "id":3,
-         "pregunta":"\u00bfC\u00d3MO ES TU TIPO DE PIEL?"
+         "pregunta":"¿Cómo es tu tipo de piel?"
       },
       "idRespuesta1":{
          "id":8,
@@ -1395,7 +1395,7 @@
       "id":4,
       "idPregunta":{
          "id":4,
-         "pregunta":"\u00bfTIENE TU PIEL ALGUNA CARACTER\u00cdSTICA ESPECIAL?"
+         "pregunta":"¿Tiene tu piel alguna característica especial?"
       },
       "idRespuesta1":{
          "id":13,
@@ -1859,7 +1859,7 @@
       "id":5,
       "idPregunta":{
          "id":5,
-         "pregunta":"\u00bfQU\u00c9 DESEAS PARA TU PIEL?"
+         "pregunta":"¿Qué deseas para tu piel?"
       },
       "idRespuesta1":{
          "id":19,
