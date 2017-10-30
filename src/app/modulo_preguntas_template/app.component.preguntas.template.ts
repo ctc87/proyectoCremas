@@ -21,9 +21,7 @@ import { survey } from '../constructor.survey';
 
 export class appComponentPreguntasTemplate implements OnInit  { 
   
-  @Input () indice :number;     
-  //old---respuestas:Array<Cuesto2>;
-  //respuestas:Cuesto2[];
+  @Input () indice :number;  
   cuesto2:Cuesto2[]=[];
   cuestionarios=[];   
   public errorMessage;
@@ -76,24 +74,17 @@ export class appComponentPreguntasTemplate implements OnInit  {
   } 
 
   ngOnInit(){ 
-    this.loadComments2();
-    //console.log(this.cuesto2);
-    // this.cuesto2=[{resp:1[
-     // {subresp:1}]] 
-    
+    this.loadComments2();    
   }
 
-  toResp(){ 
-    console.log(this.apiservice.respuestas);
-   /** console.log($index);
-    console.log(this.apiservice.respuestas[$index].resp);    
-    this.apiservice.respuestas[$index].resp=this.cuesto2[$index].resp;  **/  
+  toSet(indice,indiceJ){  
+    let len = this.apiservice.respuestas[indice].subresp;
+    for (var index = indiceJ; index < len.length; index++) {
+      //var element = indiceJ[index]; 
+      len[index] = 1;     
+    }
+  
+    console.log( this.apiservice.respuestas[indice]);
   }
-  toSubresp($index,$value){
-    /*console.log($index);
-    console.log($value);    
-    console.log(this.apiservice.respuestas[$index].subresp);          
-    this.apiservice.respuestas[$index].subresp.push($value);*/
-    //console.log(this.apiservice.respuestas);  
-  }
+
 }
