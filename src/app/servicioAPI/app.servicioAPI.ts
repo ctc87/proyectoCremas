@@ -36,12 +36,7 @@ export class APIservice {
         subresp2:12,
     subresp3:13 */
 
-    // respuestas: Cuesto2[] = [ 
-    //     //respuestas: Array<Cuesto2> = [{ 
-    //     /*, 
-    //     subresp1:11,
-    //     subresp2:12,
-    // subresp3:13 */];
+
 
    public static readonly IP = "http://169.154.11.26";
    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";

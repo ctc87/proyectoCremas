@@ -75,32 +75,8 @@ export class appComponentPreguntasTemplate implements OnInit  {
 
   ngOnInit(){ 
     this.loadComments2();
-    this.cuesto2 = [{
-      resp:1,
-      subresp:[{subresp:21}]
-    } ]; 
-      
-    //console.log(this.apiservice.respuestas);
-    //console.log(this.cuesto2);
   }
   
-  maysPrimera(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
- }
-    
-    // this.cuesto2 = {
-    //   resp:1
-    // }  
-    // console.log("cuestionarios")
-  //   console.log(this.cuestionarios)
-  //   //this.apiservice.respuestas.push(cuesto2[0]);
-  //   //console.log(cuesto2);
-  //   //this.apiservice.respuestas.push(this.cuesto2.resp);
-  //   // console.log(this.apiservice.respuestas);
-  //   // console.log(this.cuesto2.resp);
-
-  // }
-
   toResp($resp){ 
     this.apiservice.respuestas[$resp]=this.cuesto2.resp;    
   }
