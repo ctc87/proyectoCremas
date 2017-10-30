@@ -4,32 +4,51 @@
     {{cuestionario.idPregunta.pregunta}} 
  
     <div *ngIf="cuestionario.idTipocuestionario.id==1">
-     <!-- <div role="group" aria-label="Basic example" >-->
-      <div class="btn-group" ngbRadioGroup name="radioBasic" [(ngModel)]="cuesto2.resp">
-        <div *ngFor="let s of cuestionario.idrespuestas">
-           <!-- <button name="cuesto2.resp" [(ngModel)]="cuesto2.resp" role="group" aria-label="Basic example" type="button" class="btn btn-secondary" *ngIf="s.respuesta!=0">
-                {{s.respuesta}}
-            </button>-->
-          <label ngbButtonLabel class="btn-secondary">
-            <input ngbButton type="radio" [value]=" s.respuesta.id">  {{s.respuesta}}
+      <div  ngbRadioGroup name="radioBasic" [(ngModel)]="apiservice.respuestas[indice].resp">
+          <label class="btn-group" *ngFor="let s of cuestionario.idrespuestas|respPipe" ngbButtonLabel class="btn-secondary">
+            <input ngbButton type="radio" [value]="s.id">{{s.respuesta}}
           </label>
-
-              
-              
-
-
-
-
-        </div>
       </div> 
     </div>
- 
+    
     <div *ngIf="cuestionario.idTipocuestionario.id==2">
-      <select name="indice" class="btn" [(ngModel)]="cuesto2.resp" (ngModelChange)="toResp(indice)" >
-        <option *ngFor="let s of cuestionario.idrespuestas" [value]="s.respuesta">{{s.respuesta}}</option>
-      </select>       
+      <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].resp">
+        <option [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe">
+            {{s.respuesta}}
+        </option>
+      </select>          
     </div>
 
+    <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">
+        <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >
+          <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>
+          <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
+        </select>          
+    </div>
+  
+  </div>
+</div>
+    <!--Sub respuestas-->
+    <!--
+    <div *ngIf="cuestionario.idSubrespNivel1.subrespOrigen.id !=1 && cuestionario.idSubrespNivel1.subrespOrigen.id==cuesto2.resp">
+      <select  name="indice" class="btn-group" [(ngModel)]="cuesto2.subresp" (ngModelChange)="toResp(indice)">
+        <option [value]="cuestionario.idSubrespNivel1.idsubrespuesta1.id">{{cuestionario.idSubrespNivel1.idsubrespuesta1.respuesta}}</option>
+        <option [value]="cuestionario.idSubrespNivel1.idsubrespuesta2.id">{{cuestionario.idSubrespNivel1.idsubrespuesta2.respuesta}}</option>
+      </select> 
+    </div>
+    <div *ngIf="cuestionario.idSubrespNivel2.subrespOrigen.id !=1 && cuestionario.idSubrespNivel2.subrespOrigen.id==cuesto2.resp">
+      <select  name="indice" class="btn-group" [(ngModel)]="cuesto2.subresp" (ngModelChange)="toResp(indice)">
+        <option [value]="cuestionario.idSubrespNivel2.idsubrespuesta1.id">{{cuestionario.idSubrespNivel2.idsubrespuesta1.respuesta}}</option>
+        <option [value]="cuestionario.idSubrespNivel2.idsubrespuesta2.id">{{cuestionario.idSubrespNivel2.idsubrespuesta2.respuesta}}</option>
+      </select> 
+    </div>
+    <div *ngIf="cuestionario.idSubrespNivel3.subrespOrigen.id !=1 && cuestionario.idSubrespNivel3.subrespOrigen.id==cuesto2.resp">
+      <select  name="indice" class="btn-group" [(ngModel)]="cuesto2.subresp" (ngModelChange)="toResp(indice)">
+        <option [value]="cuestionario.idSubrespNivel3.idsubrespuesta1.id">{{cuestionario.idSubrespNivel3.idsubrespuesta1.respuesta}}</option>
+        <option [value]="cuestionario.idSubrespNivel3.idsubrespuesta2.id">{{cuestionario.idSubrespNivel3.idsubrespuesta2.respuesta}}</option>
+      </select> 
+    </div>
+  --> 
 
 <!--respuesta nivel2 INICIO
 <div *ngIf="cuesto2.resp==cuestionario.idSubrespNivel1.subrespOrigen.id && cuestionario.idSubrespNivel1.id!=1">
@@ -40,12 +59,7 @@
     <option [value]="cuestionario.idSubrespNivel1.idsubrespuesta2.id" >
     {{cuestionario.idSubrespNivel1.idsubrespuesta2.respuesta}}</option>
   </select>  
-</div>  -->
-
- 
-
-
-<!--         
+</div>         
         <div *ngIf="showHide1==true" align="right" class="btn-group">
           <select  name="subresp52" [(ngModel)]="cuesto.subresp52" >
             <option [value]="1" selected="selected">Seleccione una opción</option>
@@ -103,9 +117,7 @@
                 {{cuestionario.idSubrespNivel1.id2.id2.idsubrespuesta2.respuesta}}</option>
               </select>
             </div>
-          -->
-     
-<!--
+  
           <div *ngIf="cuesto2.resp==cuestionario.idSubrespNivel2.subrespOrigen.id && cuestionario.idSubrespNivel2.id!=1">
             <select  name="indice" [(ngModel)]="cuesto2.subresp.resp" (ngModelChange)="toSubresp(indice)" >
               <option [value]="1" selected="selected">Seleccione una opción</option>
@@ -116,7 +128,6 @@
             </select>  
           </div>
    
-
         <div *ngIf="showHide2==true" align="right" class="btn-group">
           <select  name="subresp52" [(ngModel)]="cuesto.subresp52" >
             <option [value]="1" selected="selected">Seleccione una opción</option>
@@ -136,8 +147,7 @@
             {{cuestionario.idSubrespNivel2.id1.idsubrespuesta2.respuesta}}</option>
           </select>
         </div>
-      -->
-      <!--
+
       <div *ngIf="cuesto2.resp==cuestionario.idSubrespNivel3.subrespOrigen.id && cuestionario.idSubrespNivel3.id!=1">
         <select  name="indice" [(ngModel)]="cuesto2.subresp" (ngModelChange)="toSubresp(indice)" >
           <option [value]="1" selected="selected">Seleccione una opción</option>
@@ -146,27 +156,8 @@
           <option [value]="cuestionario.idSubrespNivel3.idsubrespuesta2.id" >
           {{cuestionario.idSubrespNivel3.idsubrespuesta2.respuesta}}</option>
         </select>  
-      </div>-->
-<!--respuesta nivel2 FIN-->     
+      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    <!--
     <div *ngIf="subrespu1Origen!=1" align="right" class="btn-group">
       <select name="subresp1" >      
         <option [value]="1" selected="selected">Seleccione una opción</option>
@@ -192,7 +183,4 @@
         <option [value]="subrespu3"  >{{subrespu32}}</option>
       </select>
       <br>        
-    </div>
-  -->
-
-
+    </div>  -->

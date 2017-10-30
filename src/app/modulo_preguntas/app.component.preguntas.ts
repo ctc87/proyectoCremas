@@ -27,27 +27,15 @@ export class appComponentPreguntas implements OnInit{
         private router: Router,
         config: NgbCarouselConfig
     ){
-        this.showHide1  = false;
-        this.showHide1b = false;
-        this.showHide2  = false; 
         config.interval = 0;
         config.wrap = true;
-        config.keyboard = true; 
- 
+        config.keyboard = true;  
     }
 
     public errorMessage;
     public response;
     public cuesto:Cuesto;
     cuestionarios:survey[];
-    showHide1:boolean; 
-    showHide1b:boolean; 
-    showHide1c:boolean; 
-    showHide1d:boolean; 
-    showHide1e:boolean; 
-    showHide1f:boolean; 
-    showHide2:boolean;    
-    showHide2b:boolean; 
 
     OnSubmit() {         
         this.apiservice.putQuest(this.cuesto).
@@ -61,69 +49,7 @@ export class appComponentPreguntas implements OnInit{
                                 console.log(this.errorMessage);
                                 }                  
                             })        
-    } 
-
-    changeShowStatus1(){
-        this.changeShowStatusTotal()        
-        this.showHide1  = !this.showHide1; 
-    }
-
-    changeShowStatus1b(){
-        this.changeShowStatusTotal()
-        this.showHide1b = !this.showHide1b;             
-    }
-
-    changeShowStatus1c(){
-        this.showHide1c = !this.showHide1c;
-        this.showHide1d = false;               
-        this.showHide1e = false; 
-        this.showHide1f = false;          
-        this.showHide2  = false;     
-    }
-    changeShowStatus1d(){
-        this.showHide1c = false;        
-        this.showHide1d = !this.showHide1d;
-        this.showHide1e = false; 
-        this.showHide1f = false;  
-        this.showHide2  = false;     
-    }
-    changeShowStatus1e(){
-        this.showHide1c = false;
-        this.showHide1d = false;       
-        this.showHide1e = !this.showHide1e;   
-        this.showHide1f = false;     
-        this.showHide2  = false;     
-    }
-    changeShowStatus1f(){
-        this.showHide1c = false;
-        this.showHide1d = false;       
-        this.showHide1e = false;
-        this.showHide1f = !this.showHide1f;       
-        this.showHide2  = false;     
-    }
-
-    changeShowStatus2(){
-        this.showHide2  = !this.showHide2;   
-        this.showHide1  = false;    
-        this.showHide2b = false;  
-    }
-
-    changeShowStatus2b(){
-        this.showHide1  = false; 
-        this.showHide2  = false;  
-        this.showHide2b = !this.showHide2b;          
-    }
-
-    changeShowStatusTotal(){
-        this.showHide1  = false;  
-        this.showHide1b = false; 
-        this.showHide1c = false;        
-        this.showHide1d = false; 
-        this.showHide1e = false; 
-        this.showHide1f = false;          
-        this.showHide2  = false;     
-        this.showHide2b = false;     
-    }
+    }  
    
     goHome(resp1,resp2,resp3,resp4,resp5,subresp51,subresp52,subresp53){
         this.router.navigate(['/resultado',resp1,resp2,resp3,resp4,resp5,subresp51,subresp52,subresp53]);
@@ -144,7 +70,7 @@ export class appComponentPreguntas implements OnInit{
 
     ngOnInit(){ 
         this.loadComments2(); 
-        this.cuesto = {
+        /*this.cuesto = {
             resp1:1,
             resp2:1,
             resp3:1,
@@ -157,23 +83,8 @@ export class appComponentPreguntas implements OnInit{
             subresp51:1,
             subresp52:1,
             subresp53:1
-        }         
+        }    */     
 
     }  
-
-    ngOnInit2(){ 
-        this.cuesto.subresp51 =1;
-        this.cuesto.subresp52 =1;
-        this.cuesto.subresp53 =1;
-    }
-
-    ngOnInit3(){ 
-        this.cuesto.subresp52 =1;
-        this.cuesto.subresp53 =1;
-    }
-
-    ngOnInit4(){ 
-        this.cuesto.subresp53 =1;
-    }
 
  }

@@ -20,53 +20,55 @@ import { survey } from '../constructor.survey';
 })  
 
 export class appComponentPreguntasTemplate implements OnInit  { 
-  cuesto2;
-  @Input () indice :number;
-     
-  //respuestas:Array<Cuesto2>;
-  respuestas:Cuesto2[];
+  
+  @Input () indice :number;     
+  //old---respuestas:Array<Cuesto2>;
+  //respuestas:Cuesto2[];
+  cuesto2:Cuesto2[]=[];
   cuestionarios=[];   
   public errorMessage;
   public response;
-  nombreSubResp:any[];
   constructor(private apiservice : APIservice )  {} 
    
   loadComments2(){
     let that =this; 
     this.apiservice.getComments2()
-       .subscribe(
-           cuestionarios =>{
-              let i:number;   
-              cuestionarios.forEach((element) => {
-              let aux: Array<Object>= []              
-               console.log(element);
+      .subscribe(
+        cuestionarios =>{
+          let i:number;
+          let j:number;                 
+          cuestionarios.forEach((element) => {                
+            let aux:  Array<Object>= []    
+            let aux2: Array<Object>= []              
+            //console.log(element);
 
               for( i = 0; i < 10; i++)
-                { 
+              { 
                 // console.log(element["idRespuesta" + (i+1)]);
                 aux[i] = element["idRespuesta" + (i+1)];                 
                 // console.log(aux[i]);
-                }
-              let a=new survey(
-                element.id,
-                //element.idRespuesta,                
-                element.idPregunta,
-               // element.idrespuestaOrigen,
-                //element.idPregunta.pregunta,
-                element.idSubrespNivel1,
-                element.idSubrespNivel2,
-                element.idSubrespNivel3,
-                //element.idRespuesta,
-                //element.idSubrespuesta,
-                element.idTipocuestionario,
-                aux
-             );
-              that.cuestionarios.push(a);
-             console.log(a);
-             });
-            //console.log(cuestionarios[0]["idRespuesta"  + i].id);
-            //this.cuestionarios=cuestionarios
+              }
+              for( j = 0; j < 3; j++)
+              { 
+                aux2[j] = element["idSubrespNivel" + (j+1)];                 
+              }
 
+            let a=new survey(
+              element.id,
+              element.idPregunta,
+              element.idSubrespNivel1,
+              element.idSubrespNivel2,
+              element.idSubrespNivel3,
+              aux2,		
+              element.idTipocuestionario,
+              aux
+             );
+          that.cuestionarios.push(a);
+          //console.log(a);
+          });
+          //this.cuestionarios=cuestionarios
+          this.apiservice.numResp = cuestionarios.length;
+          this.apiservice.initRespuestas();
            } ,
            err => {
                console.log(err);
@@ -75,28 +77,23 @@ export class appComponentPreguntasTemplate implements OnInit  {
 
   ngOnInit(){ 
     this.loadComments2();
-    this.cuesto2 = [{
-      resp:1,
-      subresp:[{subresp:21}]
-    } ]; 
-      
-    //console.log(this.apiservice.respuestas);
     //console.log(this.cuesto2);
+    // this.cuesto2=[{resp:1[
+     // {subresp:1}]] 
+    
   }
 
-  toResp($resp){ 
-    console.log(this.cuesto2);
-    this.apiservice.respuestas[$resp]=this.cuesto2.resp;    
+  toResp(){ 
     console.log(this.apiservice.respuestas);
+   /** console.log($index);
+    console.log(this.apiservice.respuestas[$index].resp);    
+    this.apiservice.respuestas[$index].resp=this.cuesto2[$index].resp;  **/  
   }
-  toSubresp($resp){
-    //console.log(this.cuesto2);    
-    //this.apiservice.respuestas[$resp].subresp.push(this.cuesto2.subresp);
-    //console.log(this.apiservice.respuestas); 
-  
-  
-  
-   // images.push(new Array());
-
+  toSubresp($index,$value){
+    /*console.log($index);
+    console.log($value);    
+    console.log(this.apiservice.respuestas[$index].subresp);          
+    this.apiservice.respuestas[$index].subresp.push($value);*/
+    //console.log(this.apiservice.respuestas);  
   }
 }

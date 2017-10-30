@@ -11,6 +11,9 @@ import { appNav }   from './modulo_barraNav/app.component.nav';
 import { APIservice } from './servicioAPI/app.servicioAPI';
 import { UniquePipe } from './pipes/app.pipe.preguntas';
 import { routing } from './app.routing';
+import { respPipe } from './pipes/app.pipe.respuestas';
+import { respPipe2 } from './pipes/app.pipe.respuestas2';
+
 
 @NgModule({
   imports: [
@@ -28,7 +31,9 @@ import { routing } from './app.routing';
     appComponentPreguntasTemplate,
     appComponentResultado,
     appNav,
-    UniquePipe
+    UniquePipe,
+    respPipe,
+    respPipe2
   ],
   bootstrap: [ AppComponent ],
   providers: [ APIservice]

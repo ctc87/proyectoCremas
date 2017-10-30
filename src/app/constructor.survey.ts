@@ -9,7 +9,8 @@ export class survey {
 		public idPregunta : Object,		
 		public idSubrespNivel1 : Object,
 		public idSubrespNivel2 : Object,
-		public idSubrespNivel3 : Object,			
+		public idSubrespNivel3 : Object,
+		public idSubrespuestas : Array<Object>,			
 		//public idRespuesta : number,
 		//public idSubrespuesta : number,
 		public idTipocuestionario : Object,
@@ -25,7 +26,5 @@ export class survey {
 		public idrespuesta9 : number,
 		public idrespuesta10 : number,
 		*/
-	
-		
 	) { }
 }
