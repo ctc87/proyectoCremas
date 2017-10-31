@@ -30,38 +30,41 @@ export class appComponentPreguntasTemplate implements OnInit  {
   // cuestionarios_sin_vacias=[];   
   public errorMessage;
   public response;
-  nombreSubResp:any[];
   constructor(private apiservice : APIservice )  {} 
    
   loadComments2(){
     let that =this; 
     this.apiservice.getComments2()
-       .subscribe(
-           cuestionarios =>{
-              let i:number;   
-              cuestionarios.forEach((element) => {
-              let aux: Array<Object>= []              
+      .subscribe(
+        cuestionarios =>{
+          let i:number;
+          let j:number;                 
+          cuestionarios.forEach((element) => {                
+            let aux:  Array<Object>= []    
+            let aux2: Array<Object>= []              
+            //console.log(element);
 
               for( i = 0; i < 10; i++)
-                { 
+              { 
                 // console.log(element["idRespuesta" + (i+1)]);
                 aux[i] = element["idRespuesta" + (i+1)];                 
                 // console.log(aux[i]);
                 }
+                for( j = 0; j < 3; j++)
+                { 
+                  aux2[j] = element["idSubrespNivel" + (j+1)];                 
+                }
+
               let a=new survey(
-                element.id,
-                //element.idRespuesta,                
-                element.idPregunta,
-               // element.idrespuestaOrigen,
-                //element.idPregunta.pregunta,
-                element.idSubrespNivel1,
-                element.idSubrespNivel2,
-                element.idSubrespNivel3,
-                //element.idRespuesta,
-                //element.idSubrespuesta,
-                element.idTipocuestionario,
-                aux
-             );
+              element.id,
+              element.idPregunta,
+              element.idSubrespNivel1,
+              element.idSubrespNivel2,
+              element.idSubrespNivel3,
+              aux2,		
+              element.idTipocuestionario,
+              aux
+              );
               that.cuestionarios.push(a);
              });
             // this.crearArraySinOpcionesVacias();
@@ -72,7 +75,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
               for(let j = 0; j < this.cuestionarios[i].idrespuestas.length; j++) {
                 Number(this.cuestionarios[i].idrespuestas[j].respuesta) != 0 ? this.apiservice.btnSlected[i].push(false) : null;
               }
-            }
+            }     
            } ,
            err => {
                console.log(err);
@@ -121,5 +124,15 @@ export class appComponentPreguntasTemplate implements OnInit  {
     //     this.carousel.next();
     // },500);
   }
+
+  toSet(indice,indiceJ){  
+    let len = this.apiservice.respuestas[indice].subresp;
+    for (var index = indiceJ; index < len.length; index++) {
+      //var element = indiceJ[index]; 
+      len[index] = 1;     
+    }
   
+    console.log( this.apiservice.respuestas[indice]);
+  }
+
 }
