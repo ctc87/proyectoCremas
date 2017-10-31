@@ -30,7 +30,6 @@ export class appComponentPreguntasTemplate implements OnInit  {
   // cuestionarios_sin_vacias=[];   
   public errorMessage;
   public response;
-  nombreSubResp:any[];
   constructor(private apiservice : APIservice )  {} 
    
   loadComments2(){
@@ -45,7 +44,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
               let aux2: Array<Object>= [];             
 
               for( i = 0; i < 10; i++)
-                { 
+              { 
                 // console.log(element["idRespuesta" + (i+1)]);
                 aux[i] = element["idRespuesta" + (i+1)];                 
                 // console.log(aux[i]);
@@ -75,7 +74,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
               for(let j = 0; j < this.cuestionarios[i].idrespuestas.length; j++) {
                 Number(this.cuestionarios[i].idrespuestas[j].respuesta) != 0 ? this.apiservice.btnSlected[i].push(false) : null;
               }
-            }
+            }     
            } ,
            err => {
                console.log(err);
@@ -114,7 +113,12 @@ export class appComponentPreguntasTemplate implements OnInit  {
     //     this.carousel.next();
     // },500);
   }
-  
-  
+
+  toSet(indice,indiceJ){  
+    let len = this.apiservice.respuestas[indice].subresp;
+    for (var index = indiceJ; index < len.length; index++) {
+      //var element = indiceJ[index]; 
+      len[index] = 1;     
+    }
   
 }

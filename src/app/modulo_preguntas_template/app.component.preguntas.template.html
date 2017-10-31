@@ -55,8 +55,33 @@
   </div>
 </div>
 
+<!--
+   
+    <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">
+      <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (change)=toSet(indice)>
+        <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option> 
+        <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
+      </select>  
 
+      <div *ngIf="d.id1.subrespOrigen.id == apiservice.respuestas[indice].subresp[j]">
+        <select name="indice2" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j+1]" (change)=toSet(indice,(j+1))>
+          <option [value]="d.id1.idsubrespuesta1.id">{{d.id1.idsubrespuesta1.respuesta}}</option> 
+          <option [value]="d.id1.idsubrespuesta2.id">{{d.id1.idsubrespuesta2.respuesta}}</option>        
+        </select> 
+      </div>
 
+      <div *ngIf="d.id2.subrespOrigen.id == apiservice.respuestas[indice].subresp[j]">
+          <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j+1]" (change)=toSet(indice,(j+1))> 
+            <option [value]="d.id2.idsubrespuesta1.id">{{d.id2.idsubrespuesta1.respuesta}}</option> 
+            <option [value]="d.id2.idsubrespuesta2.id">{{d.id2.idsubrespuesta2.respuesta}}</option>        
+          </select> 
+      </div>    
 
+        <div *ngIf="d.id1.id1.subrespOrigen.id == apiservice.respuestas[indice].subresp[j+1]">
+          <select name="indice2" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j+2]">
+            <option [value]="d.id1.id1.idsubrespuesta1.id">{{d.id1.id1.idsubrespuesta1.respuesta}}</option> 
+            <option [value]="d.id1.id1.idsubrespuesta2.id">{{d.id1.id1.idsubrespuesta2.respuesta}}</option>        
+          </select> 
+        </div>
 
 
