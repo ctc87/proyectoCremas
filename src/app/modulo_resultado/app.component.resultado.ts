@@ -17,7 +17,6 @@ import { PostItem } from './contenedorPostItem/post-item';
 
 @Component({
   selector: 'app-resultado',
-  providers: [APIservice],
   templateUrl: './app.component.resultado.html',
   styleUrls: ['./app.component.resultado.css']
 })  
@@ -83,9 +82,7 @@ onUrl(param){
 rellenarRespuestas(params) {
   let that = this;
   this.apiservice.respuestas.forEach(function(element, index){
-    console.log(that.respuestas);
-    console.log(that.apiservice.respuestas);
-    
+    that.respuestas.push({respuesta:element.resp, subrespuestas:element.subresp})
   });
   //   that.respuestas[0] = {};
   //   that.respuestas[0].respuesta = params['resp1']; 
@@ -127,13 +124,15 @@ rellenarRespuestas(params) {
 
   ngOnInit() {
     let that = this;
+        console.log("RESPUETAS")
+        console.log(that.apiservice.respuestas)
     this.loadComments3(function(productoss){
       that.route.params.subscribe(params => {
-        console.log("PARAMS")
-        console.log(that.apiservice.respuestas)
+        // console.log("PARAMS")
+        // console.log(that.apiservice.respuestas)
         that.rellenarRespuestas(params);
-        console.log(that.productoss);   
-        let resp = that.respuestas;
+        // console.log(that.productoss);   
+        let resp = that.apiservice.respuestas;
         that.postItems = that.postService.getAllPosts(that.productoss, resp, that.httpConbinaciones);
         that.postItems.forEach(function(element, index) {
             that.postService.loadComponent(that.myPostDirective.viewContainerRef, element);

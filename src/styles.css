@@ -18,6 +18,9 @@
   GENERAL
  **************************/
  
+ html, body {
+  height: 100%;   
+ }
      
      /**************************
       DEFAULT BOOTSTRAP STYLES

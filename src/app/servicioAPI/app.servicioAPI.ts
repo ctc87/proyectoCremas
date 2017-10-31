@@ -31,10 +31,14 @@ export class APIservice {
     respuestas: Cuesto2[]=[];
     btnSlected = [];
     public mostrarBottonEnviar = false;
+    public mail;
 
    public static readonly IP = "http://169.154.11.26";
    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
-    constructor (private http: Http) {}
+    constructor (private http: Http) {
+        console.log("creado servicio api")
+        
+        }
     // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
     // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
     // public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
@@ -106,4 +110,27 @@ export class APIservice {
         });  
         this.mostrarBottonEnviar = mostrar;
     }
+    
+    
+    
+    // public createJsonMailObject() {
+    // //     return {
+    // //     "email":this.mail,
+    // // 	"quest1":"Sexo",
+    // // 	"resp1":"Hombre",
+    // // 	"quest2":"¿Que edad tienes?",
+    // // 	"resp2":"35",
+    // // 	"quest3":"¿Cómo es tu tipo de piel?",
+    // // 	"resp3":"Mixta",
+    // // 	"quest4":"¿Qué deseas para tu piel?",
+    // // 	"resp4":"Hidratar mi piel",
+    // // 	"subresp1":"Cuidado nocturno",
+    // // 	"subresp2":"piel",
+    // // 	"subresp3":"Serum"
+    //     }
+    // }
+    
+    
+    
+	
 }

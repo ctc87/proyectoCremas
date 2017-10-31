@@ -88,7 +88,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
   toResp(){ 
     console.log(this.apiservice.respuestas);
     this.apiservice.showButton();
-    console.log(this.apiservice.mostrarBottonEnviar);
+    // console.log(this.apiservice.mostrarBottonEnviar);
   }
   
   
@@ -121,4 +121,6 @@ export class appComponentPreguntasTemplate implements OnInit  {
       len[index] = 1;     
     }
   
+}
+
 }
