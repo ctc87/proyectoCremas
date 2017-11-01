@@ -54,6 +54,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
               { 
                 aux2[j] = element["idSubrespNivel" + (j+1)];                 
               }
+              that.apiservice.preguntas.push(element.idPregunta.pregunta)
               let a=new survey(
                 element.id,
                 element.idPregunta,
@@ -101,7 +102,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
         this.apiservice.btnSlected[indice][i] = false; 
       }
   }
-    // this.carousel.next()
+    this.nextSlide();
   }
   
   capitalizeFirstLetter(string) {
@@ -109,9 +110,10 @@ export class appComponentPreguntasTemplate implements OnInit  {
   }
   
   nextSlide() {
-    // setTimeout(()=>{   
-    //     this.carousel.next();
-    // },500);
+    let that = this;
+    setTimeout(()=>{   
+        that.carousel.next();
+    },500);
   }
 
   toSet(indice,indiceJ){  
@@ -123,4 +125,10 @@ export class appComponentPreguntasTemplate implements OnInit  {
   
 }
 
+
+  onChange(newValue, i) {
+    console.log("CAMBIADOOOOO");
+    console.log(newValue, i)
+    this.apiservice.respuestas[i].resp = newValue;
+  }
 }

@@ -1,59 +1,82 @@
-<div *ngFor="let cuestionario of cuestionarios">
+<ng-container *ngFor="let cuestionario of cuestionarios; let i = index;">
   <div *ngIf="cuestionario.id==indice+1" class="custionario-container" >
-  <div class="row" >
-    <div class="col-12 texto-pregunta">
-    {{cuestionario.idPregunta.pregunta.trim()}} 
-    </div>
-  </div>
-  <div *ngIf="cuestionario.idTipocuestionario.id==1" style="padding-left:15% ; padding-right:15%;">
+  <div *ngIf="cuestionario.idTipocuestionario.id==1" style="padding-left:11% ; padding-right:11%;">
+       <div class="row" >
+        <div class="col-12 texto-pregunta">
+        {{cuestionario.idPregunta.pregunta.trim() || '&nbsp;'}} 
+        </div>
+      </div>
       <div class="row justify-content-center">
         <ng-container *ngFor="let s of cuestionario.idrespuestas|respPipe ; let j = index" class="btn-preguntas">
-        <div class="col-md-2 col-12" > 
-           <button
-             type="button" 
-             class="btn btn-primary btn-lg sharp btn-selected btn-outline" 
-             (click)="rellenarRespuestas(indice, s.id, j)"
-             (click)="toResp()"
-             [ngClass]="{'btn-selected': apiservice.btnSlected[indice][j]}"
-           >
-                {{capitalizeFirstLetter(s.respuesta.toLowerCase())}}  
-           </button>
-        </div> 
+        <div class="col-md-2 col-12 contenedor-botton">
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-8" > 
+               <button
+                 type="button" 
+                 class="btn btn-primary btn-lg sharp btn-selected btn-outline btn-block" 
+                 (click)="rellenarRespuestas(i, s.id, j)"
+                 (click)="toResp()"
+                 [ngClass]="{'btn-selected': apiservice.btnSlected[i][j]}"
+               >
+                    {{capitalizeFirstLetter(s.respuesta.toLowerCase())}}  
+               </button>
+            </div> 
+          </div>
+        </div>
         </ng-container>
       </div>
     </div>
     <div *ngIf="cuestionario.idTipocuestionario.id==2">
-      <div class="div-exterior-select btn">
-      <select style=
-        "
-        color:#234369 !important;
-        font-family: 'Questrial', sans-serif !important;
-        font-size: 135%  !important;
-        " 
-      class="selectPregunta" name="indice" (change)="toResp()" class="btn" [(ngModel)]="apiservice.respuestas[indice].resp" >
-      
-        <option class="opcion-select"  [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe; let i = index" [value]="s.respuesta">
-        {{s.respuesta}}
-        </option>
-      </select>
+      <div class="row" >
+        <div class="col-12 texto-pregunta" style="text-align:left">
+          {{cuestionario.idPregunta.pregunta.trim() || '&nbsp;'}} 
+        </div>
+        <div class="col-12" style="text-align:left"> 
+          <div class="div-exterior-select btn " style="text-align:left">
+          <select style=
+            "
+            padding-left:0px;
+            padding-right:0px;
+            color:#234369 !important;
+            font-family: 'Questrial', sans-serif !important;
+            font-size: 135%  !important;
+            " 
+            class="selectPregunta" 
+            name="indice" 
+            (change)="toResp()" 
+            class="btn" 
+            [(ngModel)]="apiservice.respuestas[indice].resp"
+            (ngModelChange)="onChange($event, indice)"
+          >
+            <option class="opcion-select" selected disabled>Selecciona una opci&oacute;n</option>
+            <option class="opcion-select"  [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe; let i = index" [value]="s.respuesta">
+            {{s.respuesta}}
+            </option>
+          </select>
+          </div>
+        </div>
+    
+       <div style="text-align:left" class="col-12" *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">
+          <div class="div-exterior-select btn">
+          <select style=
+          "
+          padding-left:0px;
+          padding-right:0px;
+          color:#234369 !important;
+          font-family: 'Questrial', sans-serif !important;
+          font-size: 135%  !important;
+          " 
+            class="selectPregunta btn" name="indice" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >
+            <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>
+            <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
+          </select>     
+          </div>
+      </div>
       </div>
     </div>
-     <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">
-        <div class="div-exterior-select btn">
-        <select style=
-        "
-        color:#234369 !important;
-        font-family: 'Questrial', sans-serif !important;
-        font-size: 135%  !important;
-        " 
-          class="selectPregunta btn" name="indice" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >
-          <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>
-          <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
-        </select>     
-        </div>
-    </div>
+    
   </div>
-</div>
+</ng-container>
 
 <!--
    

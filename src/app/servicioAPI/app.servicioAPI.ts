@@ -32,6 +32,7 @@ export class APIservice {
     btnSlected = [];
     public mostrarBottonEnviar = false;
     public mail;
+    public preguntas =[];
 
    public static readonly IP = "http://169.154.11.26";
    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
@@ -54,7 +55,8 @@ export class APIservice {
     
      public SurveyUrl  = "assets/json/conexion.json"; 
     public ProductospUrl = "assets/json/productos.json"; 
-    public LogUrl     = "assets/json/Log.json"; 
+    // public LogUrl     = "assets/json/Log.json"; 
+    public mailUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Mail";
     public Handleerror;
 
     public initRespuestas() {
@@ -82,10 +84,10 @@ export class APIservice {
                         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     };
 
-    putQuest(cuesto:Cuesto): Observable<any>{
-        let json = JSON.stringify(cuesto);
+    putQuest(obj): Observable<any>{
+        let json = JSON.stringify(obj);
         let headers = new Headers({"Content-Type":"application/json"});
-        return this.http.post(this.LogUrl, json,this.options)
+        return this.http.post(this.mailUrl, json,this.options)
         .map(this.extractData)
         .catch(this.handleError);
     }
@@ -113,22 +115,24 @@ export class APIservice {
     
     
     
-    // public createJsonMailObject() {
-    // //     return {
-    // //     "email":this.mail,
-    // // 	"quest1":"Sexo",
-    // // 	"resp1":"Hombre",
-    // // 	"quest2":"¿Que edad tienes?",
-    // // 	"resp2":"35",
-    // // 	"quest3":"¿Cómo es tu tipo de piel?",
-    // // 	"resp3":"Mixta",
-    // // 	"quest4":"¿Qué deseas para tu piel?",
-    // // 	"resp4":"Hidratar mi piel",
-    // // 	"subresp1":"Cuidado nocturno",
-    // // 	"subresp2":"piel",
-    // // 	"subresp3":"Serum"
-    //     }
-    // }
+    public createJsonMailObject() {
+        let obj =  {
+        "email":this.mail,
+    	"quest1":this.preguntas[0],
+    	"resp1":this.respuestas[0].resp,
+    	"quest2":this.preguntas[1],
+    	"resp2":this.respuestas[1].resp,
+    	"quest3":this.preguntas[2],
+    	"resp3":this.respuestas[2].resp,
+    	"quest4":this.preguntas[3],
+    	"resp4":this.respuestas[3].resp,
+    	"subresp1":this.respuestas[3].subresp[0] ? this.respuestas[3].subresp[0] : "",
+    	"subresp2":this.respuestas[3].subresp[1] ? this.respuestas[3].subresp[1] : "",
+    	"subresp3":this.respuestas[3].subresp[2] ? this.respuestas[3].subresp[2] : ""
+        }
+        console.log(obj)
+        this.putQuest(obj);
+    }
     
     
     

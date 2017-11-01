@@ -19,9 +19,21 @@
  **************************/
  
  html, body {
-  height: 100%;   
+  /*height: auto; */
+    min-height:100%;  
  }
-     
+ 
+ .h-100,  .carousel-inner,  .carousel-item {
+    /*height: auto;*/
+    min-height:100vh;
+ }
+ 
+ /*option, select {*/
+ /* text-align: center;*/
+ /* text-align-last: center;*/
+ /*}*/
+ 
+
      /**************************
       DEFAULT BOOTSTRAP STYLES
     **************************/
@@ -83,7 +95,7 @@
 .btn {
 	padding: 5px 20px;
 	border: 0 none;
-	font-weight: 700;
+	/*font-weight: 700;*/
 	letter-spacing: 1px;
 	/*text-transform: uppercase;*/
 }
@@ -101,14 +113,15 @@
 
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-	background: #c9ced6;
-	color: #234369;
+  background-color: #234369;
+  color:white;
   outline: 0;
 }
 
 
 .btn-selected {
-  background-color: #c9ced6;
+  background-color: #234369;
+  color:white;
   outline: 0;
 }
 
@@ -128,6 +141,109 @@
   outline: none;
 }
 
+
+
+
+/**************************
+  PREGUNTAS
+ **************************/
+
+.texto-pregunta {
+    font-size: 200%;
+    margin-bottom: 4%;
+}
+.btn-preguntas {
+ margin-left: 30px;   
+}
+
+.barra-horizontal {
+     /*background-color: #234369;*/
+     height: 8px;
+     width: 8px;
+     cursor: pointer;
+     border-radius: 50%;
+         margin-left: auto;
+    margin-right: auto;
+}
+
+.contendedor-barra-horizontal {
+ padding-left: 10px;
+ padding-right: 10px;
+ margin-top: 10%;
+ margin-bottom: 10%;
+}
+
+.img_carousel {
+    opacity: 0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+       /*height: 83%;*/
+}
+
+.contenedor-logo-preguntas-flex {
+ display: flex;
+  flex-flow: column;
+}
+
+.div-superior-logo-preguntas {
+    flex-grow: 1;
+}
+
+.logo-preguntas {
+ width: 100%;   
+ margin-bottom: 10px;
+}
+
+
+
+.custionario-container {
+    margin-top: 10%;
+    /*margin-bottom: 50%;  */
+}
+
+.carousel-caption {
+ top:0px;
+ position: initial;
+ min-height:100vh;
+ 
+ 
+ display: flex;
+  flex-flow: column;
+}
+
+.carousel-indicators {
+     display:none !important;   
+}
+
+ngb-carousel:focus {
+    outline: none;
+    border: 0;
+ }
+ 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-image: none;
+  display:none;
+}
+
+
+.div-exterior-select {
+    border: solid 2px #234369;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    margin-bottom:5px;
+    border-radius: 0%;
+}
+
+.contenedor-botton {
+   margin-bottom: 10px; 
+}
+
+
+
 /**************************
   RESULTADOS
  **************************/
@@ -137,12 +253,14 @@
   font-size: 15px;
 }
 
+
+
 .text {
  color:rgb(79,76,77);
 }
 
 .descripcion {
- padding: 5% 0%;
+ /*padding: 5% 0%;*/
  width:100%;
  text-align: center;
  /*margin-left: 1%;*/
@@ -162,6 +280,7 @@ text-decoration: none !important;
 }
 .link-no-underline:focus, .link-no-underline:hover, .link-no-underline:active, .link-no-underline:link, .link-no-underline:visited{
  text-decoration: none !important; 
+ color:rgb(79,76,77);
 }
 
 .title-product {
@@ -243,88 +362,18 @@ text-decoration: none !important;
    overflow-y: scroll;
 }
 
-
-/**************************
-  PREGUNTAS
- **************************/
-
-.texto-pregunta {
-    font-size: 200%;
-    margin-bottom: 4%;
-}
-.btn-preguntas {
- margin-left: 30px;   
-}
-
-.barra-horizontal {
-     /*background-color: #234369;*/
-     height: 8px;
-     width: 8px;
-     cursor: pointer;
-     border-radius: 50%;
-}
-
-.contendedor-barra-horizontal {
- padding-left: 10px;
- padding-right: 10px;
- margin-top: 10%;
- margin-bottom: 10%;
-}
+.container-logo {
+        position: initial;
+        bottom: initial;
+        /*width:100%;*/
+        /*padding-top: 35%;*/
+        flex: 1 1 auto;
+    }
 
 .img_carousel {
-    opacity: 0;
-    filter: alpha(opacity=0); /* For IE8 and earlier */
-       height: 83%;
+ position:absolute;   
 }
 
-.logo-preguntas {
- width: 100%;   
-}
-
-.custionario-container {
-    /*margin-top: 10%;*/
-    /*margin-bottom: 50%;  */
-}
-
-.carousel-indicators {
-     display:none !important;   
-}
-
-ngb-carousel:focus {
-    outline: none;
-    border: 0;
- }
- 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  outline: black;
-  background-image: none;
-  display:none;
-}
-
-.carousel-control-next-icon:after
-{
-  content: '>';
-  font-size: 55px;
-  color: #234369;
-}
-
-.carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 55px;
-  color: #234369;
-}
-
-.div-exterior-select {
-    border: solid 2px #234369;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    margin-bottom:5px;
-    border-radius: 0%;
-}
 
 /**************************
   RESPONSIVAS 
@@ -334,7 +383,23 @@ ngb-carousel:focus {
  **************************/
 
 @media (min-width: 992px) {
-    
+ .carousel-caption {
+     top :20px;
+     position: absolute;
+ }
+ .img_carousel {
+ position:relative;   
+}
+
+ 
+ .h-100 {
+      height: 100%;   
+ }
+ .contenedor-logo-preguntas-flex {
+     display: block;
+      flex-flow: none;
+    }
+     
     
  .carousel-control-prev-icon,
     .carousel-control-next-icon {
@@ -346,20 +411,20 @@ ngb-carousel:focus {
       /*border: 1px solid black;*/
       background-image: none;
     }
-
-    .carousel-control-next-icon:after
-    {
-      content: '>';
-      font-size: 55px;
-      color: #234369;
+    
+    .container-botton-enviar {
+        
+        /*position: absolute;*/
+        /*bottom: 10px;*/
+        /*width:100%;*/
     }
     
-    .carousel-control-prev-icon:after {
-      content: '<';
-      font-size: 55px;
-      color: #234369;
+    .container-logo {
+        position: absolute;
+        bottom: 10px;
+        width:100%;
     }
-        
+
     .carousel-indicators {
      display:none !important;   
     }
@@ -456,10 +521,14 @@ ngb-carousel:focus {
 
     .texto-pregunta {
     font-size: 200%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     }
     .btn-preguntas {
      margin-left: 30px;   
+    }
+    
+    .contenedor-botton {
+       margin-bottom: initial; 
     }
     
     .barra-horizontal {
@@ -473,8 +542,8 @@ ngb-carousel:focus {
     .contendedor-barra-horizontal {
      padding-left: 10px;
      padding-right: 10px;
-     margin-top: 10%;
-     margin-bottom: 10%;
+     margin-top: 5%;
+     margin-bottom: 3%;
     }
     
     .img_carousel {
@@ -487,11 +556,13 @@ ngb-carousel:focus {
          width: auto;   
     }
     .custionario-container {
-        margin-top: 10%;
-        margin-bottom: 6%; 
+        /*margin-top: 10%;*/
+        /*margin-bottom: 6%; */
     }
 
 }
+
+
 
 /**************************
   SCROLLBAR

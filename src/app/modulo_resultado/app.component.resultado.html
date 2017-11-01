@@ -42,10 +42,10 @@
       </div>
       <div class="row">
         <div class="col-12 col-sm-8 text-left">
-          <p class="text footer-text-diagnostico">Email: <input type="text" class="mail-input" name=""/></p>
+          <p class="text footer-text-diagnostico" [(ngModel)]="apiservice.mail"  ngDefaultControl>Email: <input type="text" class="mail-input" name=""/></p>
         </div>
         <div class="col-12 col-sm-4 text-left sm-padding">
-          <button type="button" class="btn btn-primary btn-lg sharp">Enviar</button>
+          <button type="button" class="btn btn-primary btn-lg sharp" (click)="apiservice.createJsonMailObject()">Enviar</button>
         </div>
       </div>
     </div>
