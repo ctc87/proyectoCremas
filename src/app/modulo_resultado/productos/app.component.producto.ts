@@ -6,7 +6,7 @@ import { MyPost } from '../../interfaces/mypost';
 @Component({
   selector: 'app-producto',
   templateUrl: './app.component.producto.html',
-  host: {'class': 'col-xs-5th-5 col-md-5th-1'}
+  host: {'class': 'col-12 col-md-101'}
 })  
 
 export class Producto implements MyPost {

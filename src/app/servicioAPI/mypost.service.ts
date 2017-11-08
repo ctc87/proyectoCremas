@@ -9,17 +9,17 @@ import { Producto } from '../modulo_resultado/productos/app.component.producto';
 export class MyPostService { 
         constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 	
-	respuestas;
+	respuestas ;
 	
 	loadComponent(viewContainerRef: ViewContainerRef, postItem: PostItem) {
-	    let debug = true;
-	    if(debug || postItem.data.seMuestra) {
-		let componentFactory = this.componentFactoryResolver.resolveComponentFactory(postItem.component);
-		
-// 		viewContainerRef.clear();
-		let componentRef = viewContainerRef.createComponent(componentFactory);
-		let myPost: MyPost = <MyPost>componentRef.instance;
-		myPost.post = postItem.data;
+	   // console.log(postItem.data.seMuestra ? "si" : "no")
+	    if(postItem.data.seMuestra) {
+    		let componentFactory = this.componentFactoryResolver.resolveComponentFactory(postItem.component);
+    		
+    // 		viewContainerRef.clear();
+    		let componentRef = viewContainerRef.createComponent(componentFactory);
+    		let myPost: MyPost = <MyPost>componentRef.instance;
+    		myPost.post = postItem.data;
 	    }
 
 		
@@ -27,23 +27,30 @@ export class MyPostService {
 	
       
       calcularConbinaciones(respuestas, id, servicioHttpConbinaciones) {
+        //   console.log(JSON.stringify(respuestas))
            let conb = servicioHttpConbinaciones.productosConbinaciones[id-1];
             for(var _i = 0; _i < conb.conbinaciones.length; _i++) {
                 let auxiliarBooleano = true;
                 for(var _j = 0; _j < conb.conbinaciones[_i].length; _j++) {
                     let element = conb.conbinaciones[_i][_j];
-                    if(_j < 1) {
+                    if(!element.subrespuesta) {
+                        // console.log("id resp", Number(respuestas[element.id_pregunta - 1].resp))
+                        // console.log("id resp en conb", element.id_respuesta)
                         auxiliarBooleano = (
                             auxiliarBooleano && 
-                            (Number(respuestas[element.id_pregunta - 1].respuesta) === element.id_respuesta)
-                            );  
+                            (Number(respuestas[element.id_pregunta - 1].resp) === element.id_respuesta)
+                            ); 
                     } else {
+                        // console.log("id subresp", respuestas[element.id_pregunta - 1].subresp[_j - 2])
+                        // console.log("id resp en conb", element.id_respuesta)
                         auxiliarBooleano = (
                             auxiliarBooleano && 
-                            (Number(respuestas[element.id_pregunta - 1].subrespuestas[_j - 1]) === element.id_respuesta)
+                            (Number(respuestas[element.id_pregunta - 1].subresp[_j - 2].id) === element.id_respuesta)
                             );  
                     }
                 }
+                if(auxiliarBooleano)
+                    console.log(conb.producto )
                 if(auxiliarBooleano) {
                     return true;
                 }
@@ -59,8 +66,7 @@ export class MyPostService {
 	    this.respuestas = resp;
 	    
 	   productoss.forEach(function(element, index) {
-        // depurar
-        if(index < 9) {
+	       //if(index < 1) {
            let obj = {
                id : element.id, 
                producto : element.producto,
@@ -72,7 +78,7 @@ export class MyPostService {
            }
           
           postArray.push(new PostItem(Producto, obj));
-        }
+	       //}
         });
             return postArray;
         }

@@ -36,25 +36,15 @@ export class appComponentResultado implements OnInit {
    private httpConbinaciones: HttpConbinaciones,
    private postService: MyPostService,
    
-  ) {}
+  ) {
+    this.returnHome();
+    }
  
-
-  public Resp1:number;
-  public Resp2:number;
-  public Resp3:number;
-  public Resp4:number;
-  public Resp5:number;
-  public Subresp51:number;
-  public Subresp52:number;  
-  public Subresp53:number;
   
+  public isCollapsed = true;
   public respuestas = [];
   postItems: PostItem[];
-  
-  
-  
-  
-  
+  public aceptadosTerminos = false;
   productoss:Productos[];
   productos = [];
   
@@ -84,64 +74,33 @@ rellenarRespuestas(params) {
   this.apiservice.respuestas.forEach(function(element, index){
     that.respuestas.push({respuesta:element.resp, subrespuestas:element.subresp})
   });
-  //   that.respuestas[0] = {};
-  //   that.respuestas[0].respuesta = params['resp1']; 
-
-  // if(params['resp2']!=null){
-  //   that.respuestas[1] = {};
-  //   that.respuestas[1].respuesta = params['resp2'];
-  //   that.Resp2 = params['resp2']; 
-  // }
-  // if(params['resp3']!=null){
-  //   that.respuestas[2] = {};
-  //   that.respuestas[2].respuesta = params['resp3'];
-  //   that.Resp3 = params['resp3']; 
-  // }
-  // if(params['resp4']!=null){
-  //   that.respuestas[3] = {};
-  //   that.respuestas[3].respuesta = params['resp4'];
-  //   that.Resp4 = params['resp4']; 
-  // }
-  // if(params['resp5']!=null){
-  //   that.respuestas[4] = {};
-  //   that.respuestas[4].respuesta = params['resp5'];
-  //   that.Resp5 = params['resp5']; 
-  // }        
-  // if(params['subresp51']!=null){
-  //   that.respuestas[4].subrespuestas = [];
-  //   that.respuestas[4].subrespuestas[0] = params['subresp51'];
-  //   that.Subresp51 = params['subresp51']; 
-  // }  
-  // if(params['subresp52']!=null){
-  //   that.respuestas[4].subrespuestas[1] = params['subresp52'];
-  //   that.Subresp52 = params['subresp52']; 
-  // }    
-  // if(params['subresp53']!=null){
-  //   that.respuestas[4].subrespuestas[2] = params['subresp53'];
-  //   that.Subresp53 = params['subresp53']; 
-  // }
+ 
 }
 
   ngOnInit() {
+    console.log(this.apiservice.consejos.split('<br/>'))
     let that = this;
-        console.log("RESPUETAS")
-        console.log(that.apiservice.respuestas)
     this.loadComments3(function(productoss){
       that.route.params.subscribe(params => {
-        // console.log("PARAMS")
-        // console.log(that.apiservice.respuestas)
         that.rellenarRespuestas(params);
-        // console.log(that.productoss);   
         let resp = that.apiservice.respuestas;
         that.postItems = that.postService.getAllPosts(that.productoss, resp, that.httpConbinaciones);
         that.postItems.forEach(function(element, index) {
             that.postService.loadComponent(that.myPostDirective.viewContainerRef, element);
 
         });
-        
-        console.log(that.postItems)
       });
     });     
      
     }
+     returnHome() {
+        if(!this.apiservice.resultadosMostrar)
+            this.router.navigate(['/']) ;
+    }
+    
+    emailValido() {
+      let mailREGXP = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return !mailREGXP.test(this.apiservice.mail)
+    }
+    
 }

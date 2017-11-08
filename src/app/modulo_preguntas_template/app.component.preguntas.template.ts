@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/Observable';
 import { APIservice } from '../servicioAPI/app.servicioAPI';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
-import { Cuesto } from '../quest.interface';
 import { Cuesto2 } from '../quest2.interface';
 import { Router } from "@angular/router";
 import { survey } from '../constructor.survey';
@@ -24,10 +23,8 @@ export class appComponentPreguntasTemplate implements OnInit  {
   @Input () indice :number;
   @Input () carousel;
      
-  //respuestas:Array<Cuesto2>;
   respuestas:Cuesto2[];
   cuestionarios=[]; 
-  // cuestionarios_sin_vacias=[];   
   public errorMessage;
   public response;
   constructor(private apiservice : APIservice )  {} 
@@ -43,18 +40,20 @@ export class appComponentPreguntasTemplate implements OnInit  {
               let aux: Array<Object>= [];
               let aux2: Array<Object>= [];             
 
-              for( i = 0; i < 10; i++)
-              { 
-                // console.log(element["idRespuesta" + (i+1)]);
+              for( i = 0; i < 10; i++) { 
                 aux[i] = element["idRespuesta" + (i+1)];                 
-                // console.log(aux[i]);
-                }
-                
-                for( j = 0; j < 3; j++)
-              { 
+              }
+              for( j = 0; j < 3; j++) { 
                 aux2[j] = element["idSubrespNivel" + (j+1)];                 
               }
-              that.apiservice.preguntas.push(element.idPregunta.pregunta)
+              if(element.id == 3) {
+                that.apiservice.DescripcionesConsejos = [];
+               for(let i = 1; i < 6 ; i++) {
+                 that.apiservice.DescripcionesConsejos.push(element["idRespuesta" + i]);
+               }
+                
+              }
+              that.apiservice.preguntas.push({pregunta:element.idPregunta.pregunta, id:element.idPregunta.id})
               let a=new survey(
                 element.id,
                 element.idPregunta,
@@ -67,7 +66,6 @@ export class appComponentPreguntasTemplate implements OnInit  {
              );
               that.cuestionarios.push(a);
              });
-            // this.crearArraySinOpcionesVacias();
             this.apiservice.numResp = this.cuestionarios.length;
             this.apiservice.initRespuestas();
             for(let i = 0; i < this.cuestionarios.length; i++) {
@@ -84,17 +82,19 @@ export class appComponentPreguntasTemplate implements OnInit  {
 
   ngOnInit(){ 
     this.loadComments2();
+    console.log('Cuestionario')
+    console.log(this.cuestionarios)
   }
   
   toResp(){ 
-    console.log(this.apiservice.respuestas);
     this.apiservice.showButton();
-    // console.log(this.apiservice.mostrarBottonEnviar);
   }
   
   
-  rellenarRespuestas(indice, valor, j) {
+  rellenarRespuestas(indice, valor, j, respuestaTexto) {
     this.apiservice.respuestas[indice].resp = valor;
+    this.apiservice.respuestas[indice].tituloResp = respuestaTexto;
+    console.log(valor, respuestaTexto)
     for(let i = 0; i < this.apiservice.btnSlected[indice].length; i++) {
       if(i == j) {
         this.apiservice.btnSlected[indice][i] = true; 
@@ -119,16 +119,27 @@ export class appComponentPreguntasTemplate implements OnInit  {
   toSet(indice,indiceJ){  
     let len = this.apiservice.respuestas[indice].subresp;
     for (var index = indiceJ; index < len.length; index++) {
-      //var element = indiceJ[index]; 
-      len[index] = 1;     
+      len[index].id = 1;     
     }
   
 }
 
 
-  onChange(newValue, i) {
-    console.log("CAMBIADOOOOO");
-    console.log(newValue, i)
-    this.apiservice.respuestas[i].resp = newValue;
+  onChange(newValue, i, elementRoot, esSubrespuesta, j) {
+    let texto;
+    if(!esSubrespuesta) {
+    let arrayFiltrado = elementRoot.filter(
+          element => Number(element.id) === Number(newValue)
+    );
+    
+      this.apiservice.respuestas[i].resp = newValue;
+      texto = arrayFiltrado[arrayFiltrado.length - 1].respuesta
+      this.apiservice.respuestas[i].tituloResp = texto;
+    } else {
+      texto = Number(elementRoot.idsubrespuesta1.id) === Number(newValue) ?  elementRoot.idsubrespuesta1.respuesta :  elementRoot.idsubrespuesta2.respuesta;
+      this.apiservice.respuestas[i].subresp[j].texto = texto;
+    }
+    console.log(newValue)
+    console.log(texto)
   }
 }

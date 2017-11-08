@@ -31,7 +31,7 @@
       "id":5,
       "producto":"HD MOUSSE FACIAL",
       "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hydradermica-mousse-facial-263x325.jpg",
+      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/mousse-facial-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-mousse-facial\/"
    },
    {
@@ -73,14 +73,14 @@
       "id":11,
       "producto":"HD CLEANSING GEL ALOE VERA",
       "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hydradermica-cleansing-aloe-vera-263x325.jpg",
+      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/cleansing-aloe-vera-gel-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-cleansing-gel-aloe-vera\/"
    },
    {
       "id":12,
       "producto":"HD CLEANSING GEL SENSITIVE SKIN",
       "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hydradermica-cleansing-sensitive-skin-263x325.jpg",
+      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/cleansing-sensitive-skin-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-cleansing-gel-sensitive\/"
    },
    {
@@ -94,7 +94,7 @@
       "id":14,
       "producto":"HD CLEANSING GEL SENSITIVE",
       "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hydradermica-cleansing-sensitive-skin-263x325.jpg",
+      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/cleansing-sensitive-skin-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-cleansing-gel-sensitive\/"
    },
    {
@@ -106,55 +106,41 @@
    },
    {
       "id":16,
-      "producto":"HD ANTIAGING DAY CREAM",
-      "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hdantiagingdaycream-263x325.jpg",
-      "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-antiaging-day-cream\/"
-   },
-   {
-      "id":17,
       "producto":"HD NEOLIFT-C",
       "descripcion":"",
       "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hdserumneoliftc-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-neolift-c\/"
    },
    {
-      "id":18,
+      "id":17,
       "producto":"HD EYES & LIPS",
       "descripcion":"",
       "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hdeyesandlips-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-eyes-lips\/"
    },
    {
-      "id":19,
+      "id":18,
       "producto":"HD EYE CONTOUR REPAIR",
       "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hydradermica-eye-contour-repair-1-263x325.jpg",
+      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/eye-contour-repair-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-eye-contour-repair\/"
    },
    {
-      "id":20,
+      "id":19,
       "producto":"HD NUTRITIVE OIL-FREE",
       "descripcion":"",
       "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hdnutritiveoilfree-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-nutritive-oil-free\/"
    },
    {
-      "id":21,
+      "id":20,
       "producto":"HD BODYMILK",
       "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hdbodymilk-263x325.jpg",
+      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/body-milk-263x325.jpg",
       "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-bodymilk\/"
    },
    {
-      "id":22,
-      "producto":"HD HYDRALIFT",
-      "descripcion":"",
-      "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/05\/hdhydralift-263x325.jpg",
-      "rutaInfo":"http:\/\/www.hydradermica.com\/productos\/hd-hydralift\/"
-   },
-   {
-      "id":23,
+      "id":21,
       "producto":"HD DEEP INTENSIVE CARE",
       "descripcion":"",
       "rutaImagen":"http:\/\/www.hydradermica.com\/wp-content\/uploads\/2017\/06\/hddeepintensive-263x325.jpg",

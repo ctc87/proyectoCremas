@@ -1,6 +1,6 @@
 <ng-container *ngFor="let cuestionario of cuestionarios; let i = index;">
   <div *ngIf="cuestionario.id==indice+1" class="custionario-container" >
-  <div *ngIf="cuestionario.idTipocuestionario.id==1" style="padding-left:11% ; padding-right:11%;">
+  <div *ngIf="cuestionario.idTipocuestionario.id==1" >
        <div class="row" >
         <div class="col-12 texto-pregunta">
         {{cuestionario.idPregunta.pregunta.trim() || '&nbsp;'}} 
@@ -14,7 +14,7 @@
                <button
                  type="button" 
                  class="btn btn-primary btn-lg sharp btn-selected btn-outline btn-block" 
-                 (click)="rellenarRespuestas(i, s.id, j)"
+                 (click)="rellenarRespuestas(i, s.id, j, s.respuesta)"
                  (click)="toResp()"
                  [ngClass]="{'btn-selected': apiservice.btnSlected[i][j]}"
                >
@@ -46,9 +46,9 @@
             (change)="toResp()" 
             class="btn" 
             [(ngModel)]="apiservice.respuestas[indice].resp"
-            (ngModelChange)="onChange($event, indice)"
+            (ngModelChange)="onChange($event, indice, cuestionario.idrespuestas, false)"
           >
-            <option class="opcion-select" selected disabled>Selecciona una opci&oacute;n</option>
+            <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
             <option class="opcion-select"  [value]="s.id" *ngFor="let s of cuestionario.idrespuestas|respPipe; let i = index" [value]="s.respuesta">
             {{s.respuesta}}
             </option>
@@ -66,14 +66,88 @@
           font-family: 'Questrial', sans-serif !important;
           font-size: 135%  !important;
           " 
-            class="selectPregunta btn" name="indice" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (click)="toResp()" >
+            class="selectPregunta btn" 
+            name="indice"
+            [(ngModel)]="apiservice.respuestas[indice].subresp[j].id" 
+            (click)="toResp()" 
+            (ngModelChange)="onChange($event, i, d, true, j)"
+            >
+            <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
             <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option>
             <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
           </select>     
           </div>
-      </div>
+          <div *ngIf="(d.id1.subrespOrigen.id == apiservice.respuestas[indice].subresp[j].id) &&  d.id1.subrespOrigen.id != 1">
+            <div class="div-exterior-select btn">
+              <select style=
+              "
+              padding-left:0px;
+              padding-right:0px;
+              color:#234369 !important;
+              font-family: 'Questrial', sans-serif !important;
+              font-size: 135%  !important;
+              " 
+                class="selectPregunta btn" 
+                name="indice" 
+                [(ngModel)]="apiservice.respuestas[indice].subresp[j+1].id" 
+                (click)="toResp()"
+                (ngModelChange)="onChange($event, i, d.id1, true, j+1)"
+                >
+              <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
+              <option [value]="d.id1.idsubrespuesta1.id">{{d.id1.idsubrespuesta1.respuesta}}</option> 
+              <option [value]="d.id1.idsubrespuesta2.id">{{d.id1.idsubrespuesta2.respuesta}}</option>       
+              </select>     
+            </div>
+          </div>
+    
+          <div *ngIf="d.id2.subrespOrigen.id == apiservice.respuestas[indice].subresp[j].id &&  d.id2.subrespOrigen.id != 1">
+            <div class="div-exterior-select btn">
+              <select style=
+              "
+              padding-left:0px;
+              padding-right:0px;
+              color:#234369 !important;
+              font-family: 'Questrial', sans-serif !important;
+              font-size: 135%  !important;
+              " 
+                class="selectPregunta btn" 
+                name="indice" 
+                 [(ngModel)]="apiservice.respuestas[indice].subresp[j+1].id" 
+                (click)="toResp()" 
+                (ngModelChange)="onChange($event, i, d.id2, true, j+1)">
+                <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
+                <option [value]="d.id2.idsubrespuesta1.id">{{d.id2.idsubrespuesta1.respuesta}}</option> 
+                <option [value]="d.id2.idsubrespuesta2.id">{{d.id2.idsubrespuesta2.respuesta}}</option>            
+              </select>     
+            </div>
+          </div>    
+
+          <div *ngIf="d.id1.id1.subrespOrigen.id == apiservice.respuestas[indice].subresp[j+1].id && d.id1.id1.subrespOrigen.id != 1">
+             <div class="div-exterior-select btn">
+              <select style=
+              "
+              padding-left:0px;
+              padding-right:0px;
+              color:#234369 !important;
+              font-family: 'Questrial', sans-serif !important;
+              font-size: 135%  !important;
+              " 
+                class="selectPregunta btn"
+                name="indice" 
+                [(ngModel)]="apiservice.respuestas[indice].subresp[j+2].id"
+                (click)="toResp()" 
+                (ngModelChange)="onChange($event, i, d.id1.id1, true, j+2)" 
+                >
+                <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
+              <option [value]="d.id1.id1.idsubrespuesta1.id">{{d.id1.id1.idsubrespuesta1.respuesta}}</option> 
+              <option [value]="d.id1.id1.idsubrespuesta2.id">{{d.id1.id1.idsubrespuesta2.respuesta}}</option>               
+              </select>     
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
     
   </div>
 </ng-container>
@@ -82,19 +156,22 @@
    
     <div *ngFor="let d of cuestionario.idSubrespuestas|respPipe2:apiservice.respuestas[indice].resp;let j = index">
       <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j]" (change)=toSet(indice)>
+            <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
         <option [value]="d.idsubrespuesta1.id">{{d.idsubrespuesta1.respuesta}}</option> 
         <option [value]="d.idsubrespuesta2.id">{{d.idsubrespuesta2.respuesta}}</option>        
       </select>  
 
       <div *ngIf="d.id1.subrespOrigen.id == apiservice.respuestas[indice].subresp[j]">
         <select name="indice2" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j+1]" (change)=toSet(indice,(j+1))>
+            <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
           <option [value]="d.id1.idsubrespuesta1.id">{{d.id1.idsubrespuesta1.respuesta}}</option> 
           <option [value]="d.id1.idsubrespuesta2.id">{{d.id1.idsubrespuesta2.respuesta}}</option>        
         </select> 
       </div>
 
       <div *ngIf="d.id2.subrespOrigen.id == apiservice.respuestas[indice].subresp[j]">
-          <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j+1]" (change)=toSet(indice,(j+1))> 
+          <select name="indice" class="btn-group" [(ngModel)]="apiservice.respuestas[indice].subresp[j+1]" (change)=toSet(indice,(j+1
+            <option class="opcion-select"  [value]="1" selected disabled>Selecciona una opci&oacute;n</option>
             <option [value]="d.id2.idsubrespuesta1.id">{{d.id2.idsubrespuesta1.respuesta}}</option> 
             <option [value]="d.id2.idsubrespuesta2.id">{{d.id2.idsubrespuesta2.respuesta}}</option>        
           </select> 

@@ -7,10 +7,15 @@
       <div class="card-block">
       </div> 
       <div class="card-footer text-center">
-      <p class="title-product">{{post.producto}}</p>
-      <!--<p class="card-text">{{post.descripcion}}</p>-->
-        <button type="button" (click)="onUrl(post.rutaInfo)" class="btn btn-primary btn-lg sharp card-button" >
-          ver más
-        </button>
+        <div class="contenedor-texto-card">
+          <p class="title-product">{{post.producto}}</p>
+        </div>
+        <div class="div-tamanyo-dinamico">
+        </div>
+        <div class="contendeor-boton-card-footer">
+          <button type="button" (click)="onUrl(post.rutaInfo)" class="btn btn-primary btn-lg sharp card-button" >
+            ver más
+          </button>
+        </div>
       </div>
     </div>

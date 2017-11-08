@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/Observable';
 import { APIservice } from '../servicioAPI/app.servicioAPI';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
-import { Cuesto } from '../quest.interface';
 import { survey } from '../constructor.survey';
 import { Router } from "@angular/router";
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -30,33 +29,21 @@ export class appComponentPreguntas implements OnInit{
         config.interval = 0;
         config.wrap = true;
         config.keyboard = true;  
+        
     }
 
     public errorMessage;
     public response;
-    public cuesto:Cuesto;
     cuestionarios:survey[];
 
-    OnSubmit() {         
-        this.apiservice.putQuest(this.cuesto).
-        subscribe(response=>{
-                            console.log(response);
-                            },
-                    error=>{
-                            this.errorMessage = <any>error;
-                                if(this.errorMessage!=null)
-                                {
-                                console.log(this.errorMessage);
-                                }                  
-                            })        
-    } 
+    
     
     onSlideClicked(value: any){
         this.apiservice.change(/\d+$/g.exec(value.activeId)[0]);
     }
     
     colorBarraHorizontal(actual, pintar) {
-        return ++actual <= pintar ? "grey" : "#234369" ; 
+        return ++actual <= pintar ? "#d1ddec" : "#234369" ; 
     }
 
 
@@ -75,7 +62,9 @@ export class appComponentPreguntas implements OnInit{
 
     ngOnInit(){ 
         this.loadComments2(); 
-
+        this.apiservice.resultadosMostrar = false;
     }  
+    
+   
 
  }
