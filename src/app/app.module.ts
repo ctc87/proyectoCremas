@@ -19,7 +19,7 @@ import { MyPostComponent } from './modulo_resultado/componente_post/mypost.compo
 import { MyPostDirective } from './directivas/mypost.directive';
 import { respPipe } from './pipes/app.pipe.respuestas';
 import { respPipe2 } from './pipes/app.pipe.respuestas2';
-import { KeysPipe } from './pipes/app.pipe.array.ts';
+import { KeysPipe } from './pipes/app.pipe.array';
 
 
 @NgModule({

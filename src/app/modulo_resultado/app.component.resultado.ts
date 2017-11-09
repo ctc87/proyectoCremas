@@ -32,7 +32,7 @@ export class appComponentResultado implements OnInit {
   constructor(
    private route: ActivatedRoute,
    private router: Router,
-   private apiservice : APIservice,
+   public apiservice : APIservice,
    private httpConbinaciones: HttpConbinaciones,
    private postService: MyPostService,
    

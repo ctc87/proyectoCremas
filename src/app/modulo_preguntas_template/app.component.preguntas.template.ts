@@ -27,7 +27,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
   cuestionarios=[]; 
   public errorMessage;
   public response;
-  constructor(private apiservice : APIservice )  {} 
+  constructor(public  apiservice : APIservice )  {} 
    
   loadComments2(){
     let that =this; 

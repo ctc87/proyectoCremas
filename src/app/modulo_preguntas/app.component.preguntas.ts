@@ -22,7 +22,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class appComponentPreguntas implements OnInit{ 
     
     constructor(
-        private apiservice : APIservice, private modalService: NgbModal,
+        public apiservice : APIservice, private modalService: NgbModal,
         private router: Router,
         config: NgbCarouselConfig
     ){
