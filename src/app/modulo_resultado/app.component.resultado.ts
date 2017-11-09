@@ -78,8 +78,8 @@ rellenarRespuestas(params) {
 }
 
   ngOnInit() {
-    console.log(this.apiservice.consejos.split('<br/>'))
     let that = this;
+    this.apiservice.enviarLog();
     this.loadComments3(function(productoss){
       that.route.params.subscribe(params => {
         that.rellenarRespuestas(params);

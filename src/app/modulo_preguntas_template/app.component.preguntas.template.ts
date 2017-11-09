@@ -39,11 +39,11 @@ export class appComponentPreguntasTemplate implements OnInit  {
               cuestionarios.forEach((element) => {
               let aux: Array<Object>= [];
               let aux2: Array<Object>= [];             
-
+              let NUMERO_SUBNIVELES = 6;
               for( i = 0; i < 10; i++) { 
                 aux[i] = element["idRespuesta" + (i+1)];                 
               }
-              for( j = 0; j < 3; j++) { 
+              for( j = 0; j < NUMERO_SUBNIVELES; j++) { 
                 aux2[j] = element["idSubrespNivel" + (j+1)];                 
               }
               if(element.id == 3) {
@@ -60,6 +60,9 @@ export class appComponentPreguntasTemplate implements OnInit  {
                 element.idSubrespNivel1,
                 element.idSubrespNivel2,
                 element.idSubrespNivel3,
+                element.idSubrespNivel4,
+                element.idSubrespNivel5,
+                element.idSubrespNivel6,
                 aux2,
                 element.idTipocuestionario,
                 aux
@@ -82,8 +85,6 @@ export class appComponentPreguntasTemplate implements OnInit  {
 
   ngOnInit(){ 
     this.loadComments2();
-    console.log('Cuestionario')
-    console.log(this.cuestionarios)
   }
   
   toResp(){ 
@@ -94,7 +95,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
   rellenarRespuestas(indice, valor, j, respuestaTexto) {
     this.apiservice.respuestas[indice].resp = valor;
     this.apiservice.respuestas[indice].tituloResp = respuestaTexto;
-    console.log(valor, respuestaTexto)
+    // console.log(valor, respuestaTexto)
     for(let i = 0; i < this.apiservice.btnSlected[indice].length; i++) {
       if(i == j) {
         this.apiservice.btnSlected[indice][i] = true; 
@@ -139,7 +140,7 @@ export class appComponentPreguntasTemplate implements OnInit  {
       texto = Number(elementRoot.idsubrespuesta1.id) === Number(newValue) ?  elementRoot.idsubrespuesta1.respuesta :  elementRoot.idsubrespuesta2.respuesta;
       this.apiservice.respuestas[i].subresp[j].texto = texto;
     }
-    console.log(newValue)
-    console.log(texto)
+    // console.log(newValue)
+    // console.log(texto)
   }
 }

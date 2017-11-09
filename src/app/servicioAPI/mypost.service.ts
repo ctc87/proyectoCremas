@@ -27,7 +27,6 @@ export class MyPostService {
 	
       
       calcularConbinaciones(respuestas, id, servicioHttpConbinaciones) {
-        //   console.log(JSON.stringify(respuestas))
            let conb = servicioHttpConbinaciones.productosConbinaciones[id-1];
             for(var _i = 0; _i < conb.conbinaciones.length; _i++) {
                 let auxiliarBooleano = true;
@@ -49,8 +48,6 @@ export class MyPostService {
                             );  
                     }
                 }
-                if(auxiliarBooleano)
-                    console.log(conb.producto )
                 if(auxiliarBooleano) {
                     return true;
                 }
@@ -74,7 +71,8 @@ export class MyPostService {
                rutaImagen : element.rutaImagen,
                rutaInfo : element.rutaInfo,
                httpConbinaciones : httpConbinaciones,
-               seMuestra: that.calcularConbinaciones(resp, element.id, httpConbinaciones)
+            //   seMuestra:true
+              seMuestra: that.calcularConbinaciones(resp, element.id, httpConbinaciones)
            }
           
           postArray.push(new PostItem(Producto, obj));

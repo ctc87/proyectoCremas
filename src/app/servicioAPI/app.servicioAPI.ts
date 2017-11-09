@@ -41,7 +41,7 @@ export class APIservice {
    public static readonly IP = "http://169.154.11.26";
    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
     constructor (private http: Http) {
-        console.log("creado servicio api")
+        // console.log("creado servicio api")
         
         }
     // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
@@ -49,8 +49,8 @@ export class APIservice {
     
     public SurveyUrl  = "assets/json/conexion.json"; 
     public ProductospUrl = "assets/json/productos.json"; 
-    public LogUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Log"; 
-    public mailUrl     = "http://192.168.10.106/hydradermica/web/app_dev.php/Mail";
+    public LogUrl     = "http://192.168.10.11/hydradermica/web/app_dev.php/Log"; 
+    public mailUrl     = "http://192.168.10.11/hydradermica/web/app_dev.php/Mail";
     public Handleerror;
 
     public initRespuestas() {
@@ -90,7 +90,7 @@ export class APIservice {
     putLog(obj:Object){
         let json = JSON.stringify(obj);
         let headers = new Headers({"Content-Type":"application/json"});
-        console.log("ENVIANDO", json)
+        // console.log("ENVIANDO", json)
         return this.http.post(this.LogUrl, json, this.options)
         .map(this.extractData)
         .catch(this.handleError);
@@ -99,7 +99,7 @@ export class APIservice {
     
     
     onLoginSuccess(res: Response) {
-     console.log("BIEN")
+    //  console.log("BIEN")
      return res.json();
     }
     
@@ -116,7 +116,6 @@ export class APIservice {
     }
 
     private handleError(error: any) {
-        console.log("ERROR");
         let errMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : 'Server handle error';
         console.error(errMsg);
@@ -166,19 +165,14 @@ export class APIservice {
             	"descripcion":this.descripcion,
                 "consejos":this.consejos
             };
-            
             this.putQuest(obj).subscribe(
-              (data) => console.log(data)
-            );
-            
-            this.putLog(this.createObjLog).subscribe(
               (data) => console.log(data)
             );
         } else {
             console.error("acepta los terminos")
         }
     }
-    
+
       
     createObjLog() {
       return  {
@@ -190,13 +184,20 @@ export class APIservice {
           'quest3':this.preguntas[2].id,
           'resp3':this.respuestas[2].resp,
           'quest4':this.preguntas[3].id,
-          'resp4':this.respuestas[3].resp,
+          'resp4':Number(this.respuestas[3].resp),
           'subresp1':Number(this.respuestas[3].subresp[0].id) || 1,
           'subresp2':Number(this.respuestas[3].subresp[1].id) || 1,
           'subresp3':Number(this.respuestas[3].subresp[2].id) || 1,
-           email:this.mail, 
-           fecha:Date.now()
+           email:"prueba_final@ff.com", 
+           fecha:"01/01/2017"
       }
+    }
+    
+    enviarLog() {
+        let log = this.createObjLog();
+        this.putLog(log).subscribe(
+          (data) => console.log(data)
+        );   
     }
 
     

@@ -2,6 +2,7 @@ import { Component, HostBinding } from '@angular/core';
 import { HttpConbinaciones } from './servicioAPI/app.servicioHttpConbinaciones';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { APIservice } from './servicioAPI/app.servicioAPI';
+import { enableProdMode } from '@angular/core'
 
 @Component({
   selector: 'body',
@@ -19,7 +20,8 @@ export class AppComponent {
     public http: HttpConbinaciones, 
     private _sanitizer: DomSanitizer,
     private apiservice : APIservice
-    ){}
+    ){
+      }
   
   getBackground(image) {
     return this._sanitizer.bypassSecurityTrustStyle(`linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(${image})`);
