@@ -37,20 +37,23 @@ export class APIservice {
     public DescripcionesConsejos = [];
     public descripcion: String;
     public consejos: String;
+    public ip: String;
 
-   public static readonly IP = "http://169.154.11.26";
-   public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
+
+    public static readonly IP = "http://encuesta.binhex.es";
+    public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
     constructor (private http: Http) {
-        // console.log("creado servicio api")
-        
-        }
+        this.http.get("https://jsonip.com").subscribe(data => {
+            this.ip = data["ip"];
+        })    
+    }
     // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
     // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
     
     public SurveyUrl  = "assets/json/conexion.json"; 
     public ProductospUrl = "assets/json/productos.json"; 
-    public LogUrl     = "http://192.168.10.11/hydradermica/web/app_dev.php/Log"; 
-    public mailUrl     = "http://192.168.10.11/hydradermica/web/app_dev.php/Mail";
+    public LogUrl     = APIservice.IP + "/web/app_dev.php/Log"; 
+    public mailUrl     = APIservice.IP + "/web/app_dev.php/Mail";
     public Handleerror;
 
     public initRespuestas() {
@@ -65,7 +68,6 @@ export class APIservice {
     }
     
     getComments2() {
-
         return this.http.get(this.SurveyUrl)
                         .map((res:Response) => res.json())
                         .catch(this.handleError);
@@ -78,7 +80,6 @@ export class APIservice {
                         .catch(this.handleError);
     };
 
-
     putQuest(obj:Mail){
         let json = JSON.stringify(obj);
         let headers = new Headers({"Content-Type":"application/json"});
@@ -90,7 +91,6 @@ export class APIservice {
     putLog(obj:Object){
         let json = JSON.stringify(obj);
         let headers = new Headers({"Content-Type":"application/json"});
-        // console.log("ENVIANDO", json)
         return this.http.post(this.LogUrl, json, this.options)
         .map(this.extractData)
         .catch(this.handleError);
@@ -99,7 +99,6 @@ export class APIservice {
     
     
     onLoginSuccess(res: Response) {
-    //  console.log("BIEN")
      return res.json();
     }
     
@@ -188,8 +187,8 @@ export class APIservice {
           'subresp1':Number(this.respuestas[3].subresp[0].id) || 1,
           'subresp2':Number(this.respuestas[3].subresp[1].id) || 1,
           'subresp3':Number(this.respuestas[3].subresp[2].id) || 1,
-           email:"prueba_final@ff.com", 
-           fecha:"01/01/2017"
+          'ip':this.ip, 
+          fecha:"01/01/2017"
       }
     }
     

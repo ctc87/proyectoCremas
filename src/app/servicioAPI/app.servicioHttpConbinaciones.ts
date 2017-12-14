@@ -9,7 +9,6 @@ export class HttpConbinaciones {
     public static readonly EXT = ".json";
     
     public static readonly PATH = '/conbinaciones';
-    public ip: String;
     public productosConbinaciones: Object
     
     constructor(public http : HttpClient) { 
@@ -17,9 +16,5 @@ export class HttpConbinaciones {
         this.http.get(HttpConbinaciones.SREVER_PATH + HttpConbinaciones.PATH + HttpConbinaciones.EXT).subscribe(data => {
             this.productosConbinaciones = data;
         });
-        
-        this.http.get("https://jsonip.com").subscribe(data => {
-            this.ip = data["ip"];
-        })
     }
 }

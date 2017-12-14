@@ -5,6 +5,8 @@
 @import "./files/css/bootstrap.css";
 @import url("./bootrap-5-cols.css");
 @import url("./bootrap-10-cols.css");
+@import url("./carga.css");
+
 
 
 
@@ -297,7 +299,7 @@ ngb-carousel:focus {
 }
 
 .botton-expand {
- font-size: 100% !important;  
+ font-size: 80% !important;  
 }
 
 .header {
@@ -365,6 +367,8 @@ ngb-carousel:focus {
  	color: #234369;
  	font-size: 65%;
  	font-weight:bold; 
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .card {
@@ -713,6 +717,7 @@ app-producto {
 /*::-webkit-scrollbar-track:active {*/
 /*  background: #333333;*/
 /*}*/
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
+/*::-webkit-scrollbar-corner {*/
+/*  background: transparent;*/
+/*}*/
+

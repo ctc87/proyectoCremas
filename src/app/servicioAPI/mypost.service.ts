@@ -12,20 +12,15 @@ export class MyPostService {
 	respuestas ;
 	
 	loadComponent(viewContainerRef: ViewContainerRef, postItem: PostItem) {
-	   // console.log(postItem.data.seMuestra ? "si" : "no")
 	    if(postItem.data.seMuestra) {
     		let componentFactory = this.componentFactoryResolver.resolveComponentFactory(postItem.component);
-    		
     // 		viewContainerRef.clear();
     		let componentRef = viewContainerRef.createComponent(componentFactory);
     		let myPost: MyPost = <MyPost>componentRef.instance;
     		myPost.post = postItem.data;
 	    }
-
-		
 	}
 	
-      
       calcularConbinaciones(respuestas, id, servicioHttpConbinaciones) {
            let conb = servicioHttpConbinaciones.productosConbinaciones[id-1];
             for(var _i = 0; _i < conb.conbinaciones.length; _i++) {
@@ -61,23 +56,18 @@ export class MyPostService {
 	    let postArray = [];
 	    let that = this
 	    this.respuestas = resp;
-	    
-	   productoss.forEach(function(element, index) {
-	       //if(index < 1) {
-           let obj = {
+	    productoss.forEach(function(element, index) {
+            let obj = {
                id : element.id, 
                producto : element.producto,
                descripcion : element.descripcion,
                rutaImagen : element.rutaImagen,
                rutaInfo : element.rutaInfo,
                httpConbinaciones : httpConbinaciones,
-            //   seMuestra:true
-              seMuestra: that.calcularConbinaciones(resp, element.id, httpConbinaciones)
-           }
-          
-          postArray.push(new PostItem(Producto, obj));
-	       //}
+               seMuestra: that.calcularConbinaciones(resp, element.id, httpConbinaciones)
+            }
+            postArray.push(new PostItem(Producto, obj));
         });
-            return postArray;
+        return postArray;
         }
 } 
