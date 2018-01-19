@@ -127,16 +127,20 @@ export class appComponentPreguntasTemplate implements OnInit  {
 
 
   onChange(newValue, i, elementRoot, esSubrespuesta, j) {
+    
     let texto;
     if(!esSubrespuesta) {
-    let arrayFiltrado = elementRoot.filter(
-          element => Number(element.id) === Number(newValue)
-    );
+    
+      this.apiservice.resetarSubresp(-1);
+      let arrayFiltrado = elementRoot.filter(
+            element => Number(element.id) === Number(newValue)
+      );
     
       this.apiservice.respuestas[i].resp = newValue;
       texto = arrayFiltrado[arrayFiltrado.length - 1].respuesta
       this.apiservice.respuestas[i].tituloResp = texto;
     } else {
+      this.apiservice.resetarSubresp(j);
       texto = Number(elementRoot.idsubrespuesta1.id) === Number(newValue) ?  elementRoot.idsubrespuesta1.respuesta :  elementRoot.idsubrespuesta2.respuesta;
       this.apiservice.respuestas[i].subresp[j].texto = texto;
     }

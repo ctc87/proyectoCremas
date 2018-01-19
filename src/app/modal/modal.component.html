@@ -1,0 +1,15 @@
+<!-- Large modal -->
+<a class="link-no-underline" style="cursor:pointer;" (click)="open(content)">cerrar</a>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Salir</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-info" (click)="d('Cross click')" data-dismiss="modal">Cancelar</button>
+        <button type="button" (click)="goto('http://www.hydradermica.com')" class="btn btn-danger">Salir</button>
+        <button type="button"  (click)="reboot()"  (click)="d('Cross click')" class="btn btn-warning">Volver a empezar</button>
+    </div>
+</ng-template>

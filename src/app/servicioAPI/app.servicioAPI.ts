@@ -5,6 +5,8 @@ import { Mail } from '../mail.interface';
 import { Productos } from '../constructor.productos'; 
 import { Observable } from 'rxjs/Rx';
 import { Cuesto2 } from '../quest2.interface';
+import { ActivatedRoute, Router } from "@angular/router";
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
@@ -38,15 +40,25 @@ export class APIservice {
     public descripcion: String;
     public consejos: String;
     public ip: String;
+    public textoBotonEmail = "Enviar";
+    public emailEnviado = false;
 
 
     public static readonly IP = "http://encuesta.binhex.es";
     public static readonly SERVER_PATH = "hydradermica/web/app_dev.php";
-    constructor (private http: Http) {
-        this.http.get("https://jsonip.com").subscribe(data => {
-            this.ip = data["ip"];
-        })    
-    }
+    constructor 
+            (
+                private http: Http, 
+                private router: Router
+            ) 
+        {
+            this.http.get("https://jsonip.com").subscribe(data => {
+                this.ip = JSON.parse(data["_body"])["ip"];
+            })
+        }
+        
+    
+    
     // public SurveyUrl  = "http://192.168.10.106/hydradermica/web/app_dev.php/conexion"; 
     // public ProductospUrl = "http://192.168.10.106/hydradermica/web/app_dev.php/productos"; 
     
@@ -61,6 +73,12 @@ export class APIservice {
             this.respuestas[index] = new Cuesto2(1,"",[]);
             
         }
+    }
+  
+  
+    
+    cambiarTextoMail(str) {
+      this.textoBotonEmail = str  
     }
   
     public change(i) {
@@ -81,10 +99,13 @@ export class APIservice {
     };
 
     putQuest(obj:Mail){
+        let that = this;
         let json = JSON.stringify(obj);
+        this.textoBotonEmail = "Enviado";
+        this.emailEnviado = true;
         let headers = new Headers({"Content-Type":"application/json"});
         return this.http.post(this.mailUrl, json, this.options)
-        .map(this.extractData)
+        .map(that.extractDataMail)
         .catch(this.handleError);
     }
     
@@ -109,21 +130,54 @@ export class APIservice {
     
 
     private extractData(res: Response) {
-        console.log(res)
         let json2 = res.json();
         return json2 || {};
     }
+    
+
+    private extractDataMail(res: Response) {
+        let json2 = res.json();
+        return json2 || {};
+    }  
 
     private handleError(error: any) {
         let errMsg = (error.message) ? error.message :
-            error.status ? `${error.status} - ${error.statusText}` : 'Server handle error';
-        console.error(errMsg);
+        error.status ? `${error.status} - ${error.statusText}` : 'Server handle error';
+        console.log(errMsg);
         return Observable.throw(errMsg);
     }
     
     public showButton() {
         let mostrar = true;
         this.respuestas.forEach(function(element, index) {
+        // Hidratar mi piel
+          if(Number(element.resp) == 19) {
+              let nobreack = true;
+              for(let i = 0; i < element.subresp.length && nobreack ;i++) {
+                if(Number(element.subresp[i].id) == 31) {
+                    nobreack = false;
+                }
+                mostrar = (element.subresp[i].id != 0 && element.subresp[i].id != 1) && mostrar;
+              }
+          }
+        //   corregir is manchas, cuidar , aliviar proteger 
+          if(
+              Number(element.resp) ==  22 ||
+              Number(element.resp) ==  37 ||
+              Number(element.resp) ==  38 ||
+              Number(element.resp) ==  39
+            ) {
+              for(let i = 0; i < 1; i++) {
+                mostrar = (element.subresp[i].id != 0 && element.subresp[i].id != 1) && mostrar;
+              }
+          }
+          
+        //   Rejuvenecer mi piel
+          if(Number(element.resp) == 24) {
+              for(let i = 0; i < 2; i++) {
+                mostrar = (element.subresp[i].id != 0 && element.subresp[i].id != 1) && mostrar;
+              }
+          }
           mostrar = (element.resp != 0 && element.resp != 1) && mostrar;
           
         });
@@ -141,6 +195,15 @@ export class APIservice {
                 that.consejos = element.consejo;
             }
         });
+    }
+    
+    
+    public resetarSubresp(nivel) {
+        let that = this;
+        for(let i = nivel + 1; i < this.respuestas[3].subresp.length; i++) {
+            this.respuestas[3].subresp[i].id = 1;
+            this.respuestas[3].subresp[i].texto = "";
+        }
     }
     
     
@@ -187,56 +250,20 @@ export class APIservice {
           'subresp1':Number(this.respuestas[3].subresp[0].id) || 1,
           'subresp2':Number(this.respuestas[3].subresp[1].id) || 1,
           'subresp3':Number(this.respuestas[3].subresp[2].id) || 1,
-          'ip':this.ip, 
-          fecha:"01/01/2017"
+          'ip':this.ip || '1.1.1.1', 
+          'fecha':"01/01/2017",
+          "email":"a@a.com"
       }
     }
     
+
     enviarLog() {
         let log = this.createObjLog();
+        // console.log(log)
         this.putLog(log).subscribe(
           (data) => console.log(data)
         );   
     }
-
-    
-    
-    // createObjLog() {
-    //   return  {
-    //       'idCuestionario':0, 
-    //       'preguntas':[
-    //             {
-    //                 idPregunta:this.preguntas[0].id,
-    //                 idRespuesta:this.respuestas[0].resp,
-    //                 idSubrespuesta:[1,1,1]
-    //             },
-    //             {
-    //                 idPregunta:this.preguntas[1].id,
-    //                 idRespuesta:this.respuestas[1].resp,
-    //                 idSubrespuesta:[1,1,1]
-    //             },
-    //             {
-    //                 idPregunta:this.preguntas[2].id,
-    //                 idRespuesta:this.respuestas[2].resp,
-    //                 idSubrespuesta:[1,1,1]
-    //             },
-    //             {
-    //                 idPregunta:this.preguntas[3].id,
-    //                 idRespuesta:Number(this.respuestas[3].resp),
-    //                 idSubrespuesta:[
-    //                                  Number(this.respuestas[3].subresp[0]) || 1,
-    //                                  Number(this.respuestas[3].subresp[1]) || 1,
-    //                                  Number(this.respuestas[3].subresp[2]) || 1
-    //                                 ]
-    //             }
-    //         ], 
-    //       email:this.mail, 
-    //       fecha:Date.now()
-    //       };
-       
-       
-    // }
-    
     
 	
 }

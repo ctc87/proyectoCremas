@@ -20,6 +20,7 @@ import { MyPostDirective } from './directivas/mypost.directive';
 import { respPipe } from './pipes/app.pipe.respuestas';
 import { respPipe2 } from './pipes/app.pipe.respuestas2';
 import { KeysPipe } from './pipes/app.pipe.array';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { KeysPipe } from './pipes/app.pipe.array';
     appComponentPreguntasTemplate,
     appComponentResultado,
     Producto,
+    ModalComponent,
   	MyPostComponent,
 	  MyPostDirective,	
     appNav,

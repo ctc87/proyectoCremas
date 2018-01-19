@@ -1122,6 +1122,7 @@
    {  
       "producto":6,
       "conbinaciones":[  
+           
          [  
             {  
                "id_pregunta":3,
@@ -1130,82 +1131,12 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":9,
+               "id_respuesta":37,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":12,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":8,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
          ],
@@ -1217,83 +1148,42 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":19,
+               "id_respuesta":37,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":28,
+               "id_respuesta":31,
                "subrespuesta":true
+            }
+         ],
+		 [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
+               "id_respuesta":23,
+               "subrespuesta":false
             }
          ],
          [  
             {  
                "id_pregunta":3,
-               "id_respuesta":10,
+               "id_respuesta":9,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":19,
+               "id_respuesta":23,
                "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
             }
-         ],
-         [  
+         ],[  
             {  
                "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
+               "id_respuesta":8,
                "subrespuesta":false
             },
             {  
@@ -1308,43 +1198,11 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
          ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":12,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
+		 [  
             {  
                "id_pregunta":3,
                "id_respuesta":8,
@@ -1362,12 +1220,29 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":30,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+		[  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
                "subrespuesta":true
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
          ],
@@ -1389,96 +1264,11 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
          ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":12,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
+         
          [  
             {  
                "id_pregunta":3,
@@ -1487,20 +1277,15 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":24,
+               "id_respuesta":38,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
-         ],
+         ],  
          [  
             {  
                "id_pregunta":3,
@@ -1509,86 +1294,15 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":24,
+               "id_respuesta":38,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":24,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":24,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":12,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":24,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
+         ],  
          [  
             {  
                "id_pregunta":3,
@@ -1597,20 +1311,15 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":24,
+               "id_respuesta":39,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
-         ],
+         ]   ,  
          [  
             {  
                "id_pregunta":3,
@@ -1619,158 +1328,15 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":24,
+               "id_respuesta":39,
                "subrespuesta":false
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
+               "id_respuesta":31,
                "subrespuesta":true
             }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":24,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":24,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":12,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":24,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":8,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":9,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":10,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":12,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":20,
-               "subrespuesta":false
-            }
-         ]
+         ]   
       ]
    },
    {  
@@ -2026,7 +1592,124 @@
    {  
       "producto":8,
       "conbinaciones":[  
+           [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],[  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],[  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+		[  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ], 
          [  
+             {  
+                "id_pregunta":3,
+                "id_respuesta":10,
+                "subrespuesta":false
+             },
+             {  
+                "id_pregunta":4,
+                "id_respuesta":37,
+                "subrespuesta":false
+             },
+             {  
+                "id_pregunta":4,
+                "id_respuesta":31,
+                "subrespuesta":true
+             }
+          ], 
+          [  
+              {  
+                 "id_pregunta":3,
+                 "id_respuesta":9,
+                 "subrespuesta":false
+              },
+              {  
+                 "id_pregunta":4,
+                 "id_respuesta":38,
+                 "subrespuesta":false
+              },
+              {  
+                 "id_pregunta":4,
+                 "id_respuesta":30,
+                 "subrespuesta":true
+              }
+           ], 
+           [  
+               {  
+                  "id_pregunta":3,
+                  "id_respuesta":9,
+                  "subrespuesta":false
+               },
+               {  
+                  "id_pregunta":4,
+                  "id_respuesta":38,
+                  "subrespuesta":false
+               },
+               {  
+                  "id_pregunta":4,
+                  "id_respuesta":31,
+                  "subrespuesta":true
+               }
+            ], 
+		 [  
             {  
                "id_pregunta":3,
                "id_respuesta":8,
@@ -2085,8 +1768,229 @@
                "id_respuesta":23,
                "subrespuesta":false
             }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":37,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
          ]
-      ]
+    ]     
    },
    {  
       "producto":9,
@@ -2425,7 +2329,7 @@
    },
    {  
       "producto":10,
-      "conbinaciones":[  
+      "conbinaciones":[ 
          [  
             {  
                "id_pregunta":3,
@@ -2447,7 +2351,7 @@
                "id_respuesta":32,
                "subrespuesta":true
             }
-         ],
+         ], 
          [  
             {  
                "id_pregunta":3,
@@ -2901,7 +2805,177 @@
                "id_respuesta":21,
                "subrespuesta":false
             }
-         ]
+         ],  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]  ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]    ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]  ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]   ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]    ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]       ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]       ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]     ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]     ,  
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            }
+         ]         
       ]
    },
    {  
@@ -3377,6 +3451,34 @@
             {  
                "id_pregunta":4,
                "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":32,
+               "subrespuesta":true
+            }
+         ],
+
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
                "subrespuesta":true
             },
             {  
@@ -3894,6 +3996,33 @@
    {  
       "producto":19,
       "conbinaciones":[  
+    [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],	
          [  
             {  
                "id_pregunta":3,
@@ -3918,33 +4047,6 @@
             {  
                "id_pregunta":4,
                "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":28,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":32,
                "subrespuesta":true
             }
          ],
@@ -3999,33 +4101,6 @@
             {  
                "id_pregunta":4,
                "id_respuesta":33,
-               "subrespuesta":true
-            }
-         ],
-         [  
-            {  
-               "id_pregunta":3,
-               "id_respuesta":11,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":19,
-               "subrespuesta":false
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":29,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":30,
-               "subrespuesta":true
-            },
-            {  
-               "id_pregunta":4,
-               "id_respuesta":32,
                "subrespuesta":true
             }
          ],
@@ -4372,12 +4447,171 @@
                "id_respuesta":23,
                "subrespuesta":false
             }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":38,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":39,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":31,
+               "subrespuesta":true
+            }
          ]
       ]
    },
    {  
       "producto":21,
-      "conbinaciones":[  
+      "conbinaciones":[ 
+         
          [  
             {  
                "id_pregunta":3,
@@ -4396,7 +4630,12 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":31,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
                "subrespuesta":true
             }
          ],
@@ -4418,14 +4657,19 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":31,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
                "subrespuesta":true
             }
-         ],
+         ],    
          [  
             {  
                "id_pregunta":3,
-               "id_respuesta":9,
+               "id_respuesta":12,
                "subrespuesta":false
             },
             {  
@@ -4435,12 +4679,17 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":28,
+               "id_respuesta":29,
                "subrespuesta":true
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":31,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
                "subrespuesta":true
             }
          ],
@@ -4462,11 +4711,151 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":31,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
                "subrespuesta":true
             }
          ],
          [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+		 [  
             {  
                "id_pregunta":3,
                "id_respuesta":8,
@@ -4474,7 +4863,7 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":23,
+               "id_respuesta":20,
                "subrespuesta":false
             }
          ],
@@ -4486,10 +4875,293 @@
             },
             {  
                "id_pregunta":4,
-               "id_respuesta":23,
+               "id_respuesta":20,
                "subrespuesta":false
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":20,
+               "subrespuesta":false
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":20,
+               "subrespuesta":false
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":20,
+               "subrespuesta":false
+            }
+         ],[  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":8,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":10,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":11,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":12,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":24,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":29,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
+            }
+         ],
+         [  
+            {  
+               "id_pregunta":3,
+               "id_respuesta":9,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":19,
+               "subrespuesta":false
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":28,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":30,
+               "subrespuesta":true
+            },
+            {  
+               "id_pregunta":4,
+               "id_respuesta":33,
+               "subrespuesta":true
             }
          ]
+        
       ]
    }
 ]

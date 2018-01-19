@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-5 text ff1 header">Resultado diagn&oacute;stico de la piel</div>
     <div class="col-12 col-sm-2 text ff1 header"><div class="div-colores-corporativos">PIEL {{apiservice.respuestas[2].tituloResp.toUpperCase()}}</div></div>
     <div class="col-12 col-sm-3 text ff1"></div>
-    <div class="col-12 col-sm-2 text ff1 header"> <a class="link-no-underline" href="http://www.hydradermica.com">cerrar</a></div>
+    <div class="col-12 col-sm-2 text ff1 header"><app-modal></app-modal></div>
     <div class="col-12 descripcion text">
       <p class="text-desc">
         {{apiservice.descripcion}}
@@ -58,11 +58,11 @@
           </div>
           
           <div class="col-12 col-sm-6 text-right text div-padding-zero-left div-padding-zero-right">
-            <div class="row">
-              <div class="col-11 col-sm-11 text-right text div-padding-zero-right">He le&iacute;do la <a class="link-politicas-privacidad" href="http://www.hydradermica.com/politica-de-privacidad/">POL&iacute;TICA DE PRIVACIDAD</a> y la acepto&nbsp;</div>
-              <div class="col-1 col-sm-1 text-left" style="padding: 0px 0px">
+              <div class="row"><div class="col-1 col-sm-1 text-rigth" style="padding: 0px 0px">
                <input [(ngModel)]="aceptadosTerminos" type="checkBox">
               </div>
+              <div class="col-11 col-sm-11 text-left text div-padding-zero-right">He le&iacute;do la <a class="link-politicas-privacidad" target="_blank" href="http://www.hydradermica.com/politica-de-privacidad/">POL&iacute;TICA DE PRIVACIDAD</a> y la acepto&nbsp;</div>
+              
             </div>
           </div>
           
@@ -70,7 +70,7 @@
           <div class="col-3 col-sm-3 text-left">
           </div>
           <div class="col-6 col-sm-2 text-left boton-enviar-margenes div-padding-zero-right">
-            <button type="button" [ngClass]="{'desactivado': !aceptadosTerminos || emailValido()}" class="btn btn-primary btn-lg sharp btn-block" (click)="apiservice.createJsonMailObject(aceptadosTerminos)">Enviar</button>
+            <button type="button" [ngClass]="{'desactivado': !aceptadosTerminos || emailValido() || apiservice.emailEnviado}" class="btn btn-primary btn-lg sharp btn-block" (click)="apiservice.createJsonMailObject(aceptadosTerminos)">{{apiservice.textoBotonEmail}}</button>
           </div>
         </div>
         <div class="row">
@@ -91,3 +91,5 @@
     </div>
   </div>
 </div>
+
+

@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(
     public http: HttpConbinaciones, 
     private _sanitizer: DomSanitizer,
-    private apiservice : APIservice
+    public apiservice : APIservice
     ){
       }
   

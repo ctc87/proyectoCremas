@@ -13,7 +13,11 @@ export class Producto implements MyPost {
 	
 	@Input() post: any;
 	public onUrl(url) {
-	 window.location.href = url; 
+// 	 window.location.href = url; 
+	 window.open(
+          url,
+          '_blank'
+        );
 	}
 
 }

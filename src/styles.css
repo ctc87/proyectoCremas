@@ -481,6 +481,7 @@ app-producto {
  border: 2px solid #234369;
  height: 30px;
  width: 100%;
+ font-family: "Times New Roman", Georgia, Serif;
 }
 
 .sm-padding{ 
@@ -496,7 +497,7 @@ app-producto {
 
 .texto-advertencia-final {
     font-size:100%;
-    text-align: center !important;
+    /*text-align: center !important;*/
 }
 
 
@@ -605,6 +606,7 @@ app-producto {
      top :20px;
      position: absolute;
  }
+ 
  .img_carousel {
  position:relative;   
 }

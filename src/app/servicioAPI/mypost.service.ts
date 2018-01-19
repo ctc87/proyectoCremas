@@ -2,14 +2,19 @@ import { Injectable, ComponentFactoryResolver, ViewContainerRef } from '@angular
 import { MyPost } from '../interfaces/mypost';
 import { PostItem } from '../modulo_resultado/contenedorPostItem/post-item';
 import { Producto } from '../modulo_resultado/productos/app.component.producto';
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 @Injectable()
 
 export class MyPostService { 
-        constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+        constructor(
+            private componentFactoryResolver: ComponentFactoryResolver, 
+            private router: Router
+            ) 
+            {}
 	
-	respuestas ;
+	respuestas;
 	
 	loadComponent(viewContainerRef: ViewContainerRef, postItem: PostItem) {
 	    if(postItem.data.seMuestra) {

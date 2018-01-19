@@ -63,6 +63,8 @@ export class appComponentPreguntas implements OnInit{
     ngOnInit(){ 
         this.loadComments2(); 
         this.apiservice.resultadosMostrar = false;
+        this.apiservice.emailEnviado = false;
+        this.apiservice.textoBotonEmail = "Enviar";
     }  
     
    
