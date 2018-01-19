@@ -67,7 +67,7 @@
           </div>
           
           
-          <div class="col-3 col-sm-3 text-left">
+          <div class="col-3 col-sm-3 text-left"   >
           </div>
           <div class="col-6 col-sm-2 text-left boton-enviar-margenes div-padding-zero-right">
             <button type="button" [ngClass]="{'desactivado': !aceptadosTerminos || emailValido() || apiservice.emailEnviado}" class="btn btn-primary btn-lg sharp btn-block" (click)="apiservice.createJsonMailObject(aceptadosTerminos)">{{apiservice.textoBotonEmail}}</button>
