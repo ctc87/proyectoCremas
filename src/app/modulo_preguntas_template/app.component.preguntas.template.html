@@ -1,7 +1,7 @@
 <ng-container *ngFor="let cuestionario of cuestionarios; let i = index;">
   <div *ngIf="cuestionario.id==indice+1" class="custionario-container" >
   <div *ngIf="cuestionario.idTipocuestionario.id==1" >
-       <div class="row" >
+       <div class="row margen-preguntas" >
         <div class="col-12 texto-pregunta">
         {{cuestionario.idPregunta.pregunta.trim() || '&nbsp;'}} 
         </div>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div *ngIf="cuestionario.idTipocuestionario.id==2">
-      <div class="row" >
+      <div class="row margen-preguntas" >
         <div class="col-12 texto-pregunta" style="text-align:left">
           {{cuestionario.idPregunta.pregunta.trim() || '&nbsp;'}} 
         </div>
