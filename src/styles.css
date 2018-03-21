@@ -182,6 +182,10 @@
  /*margin-bottom: 10%;*/
 }
 
+.contendedor-barras-puntos {
+    margin-top: 50px
+}
+
 .img_carousel {
     opacity: 0;
     filter: alpha(opacity=0); /* For IE8 and earlier */
